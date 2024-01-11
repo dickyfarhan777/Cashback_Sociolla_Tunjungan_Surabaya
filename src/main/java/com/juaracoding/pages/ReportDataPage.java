@@ -34,6 +34,10 @@ public class ReportDataPage {
     private WebElement ;
     @FindBy(xpath = "")
     private WebElement ;
+    @FindBy(xpath = "")
+    private WebElement ;
+    @FindBy(xpath = "")
+    private WebElement ;
 
     public void click_menu_report_data(){
 

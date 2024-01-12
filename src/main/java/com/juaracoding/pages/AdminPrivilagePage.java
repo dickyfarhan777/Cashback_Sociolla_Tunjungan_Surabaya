@@ -20,6 +20,8 @@ public class AdminPrivilagePage {
     private WebElement txtMenuDashboard1;
     @FindBy(xpath = "//h3[normalize-space()='Dashboard SPG']")
     private WebElement txtMenuDashboard2;
+    @FindBy(xpath = "//h3[@class='card-title']")
+    private WebElement txtMenuDashboard3;
     @FindBy(xpath = "//i[@class='nav-icon fas fa-home']")
     private WebElement clickMenuHome;
     @FindBy(xpath = "//i[@class='nav-icon fas fa-registered']")
@@ -36,7 +38,7 @@ public class AdminPrivilagePage {
     private WebElement txtMenuReportData2;
     @FindBy(xpath = "//h3[@class='card-title']")
     private WebElement txtMenuRegister2;
-    @FindBy(xpath = "//center[normalize-space()='Selamat datang, admintiara2']")
+    @FindBy(xpath = "//center[(text() = ' Selamat datang, admintiara2            ' or . = ' Selamat datang, admintiara2            ')]")
     private WebElement txtMenuHome;
     @FindBy(xpath = "//span[contains(@class, 'login100-form-title p-b-41')]")
     private WebElement txtLogout;
@@ -79,10 +81,13 @@ public class AdminPrivilagePage {
         return txtMenuReportData2.getText();
     }
     public String getTxtMenuDashboard1(){
-        return txtMenuDashboard1().getText();
+        return txtMenuDashboard1.getText();
     }
     public String getTxtMenuDashboard2(){
         return txtMenuDashboard2.getText();
+    }
+    public String getTxtMenuDashboard3(){
+        return txtMenuDashboard3.getText();
     }
 
 }

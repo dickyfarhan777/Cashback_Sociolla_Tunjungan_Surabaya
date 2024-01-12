@@ -24,8 +24,14 @@ public class LoginPage {
     @FindBy(xpath = "//button[contains(@class, 'login100-form-btn')]")
     private WebElement btnLogin;
 
-    @FindBy(xpath = "//div[contains(@class, 'panel panel-default')]")
+    @FindBy(xpath = "//center[(text() = ' Selamat datang, admintiara2            ' or . = ' Selamat datang, admintiara2            ')]")
     private WebElement txtHome;
+
+    public void loginAdmin(String username, String password){
+        this.username.sendKeys(username);
+        this.password.sendKeys(password);
+        btnLogin.click();
+    }
 
 
     public void setUsername(String username){

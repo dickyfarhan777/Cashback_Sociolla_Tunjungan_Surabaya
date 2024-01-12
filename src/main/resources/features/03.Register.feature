@@ -2,7 +2,7 @@ Feature: Register
   Scenario: Admin input data register valid
     Given Klik menu Register
     When Klik add new data
-    And Input Soco Id
+    And Input Soco Id dengan benar
     And Input Nama Lengkap Nasabah Dengan Benar
     And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
     And Input Nomor Rekening Bca Dengan Benar

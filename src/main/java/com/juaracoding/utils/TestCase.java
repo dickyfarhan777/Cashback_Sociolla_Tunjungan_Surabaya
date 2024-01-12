@@ -2,9 +2,10 @@ package com.juaracoding.utils;
 
 public enum TestCase {
 
-    T1("Admin Login Valid");
+    T1("Admin Login Valid"),
 
-    //T2("Admin Add Data Register");
+    T2("Click menu admin privilage"),
+    T3("Admin input data register valid");
 
     private String testCaseName;
     TestCase(String value){

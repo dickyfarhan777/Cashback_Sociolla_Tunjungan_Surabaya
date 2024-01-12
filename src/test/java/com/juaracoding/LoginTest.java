@@ -51,7 +51,7 @@ public class LoginTest {
     @Then("Tampilan halaman home")
     public void tampilan_halaman_home(){
         loginPage.getTxtHome();
-        Assert.assertEquals(loginPage.getTxtLogin(),"Selamat datang, admintiara2");
+        Assert.assertEquals(loginPage.getTxtHome(),"Selamat datang, admintiara2");
         extentTest.log(LogStatus.PASS,"Tampilan halaman home");
     }
 

@@ -13,16 +13,18 @@ public class RegisterPage {
         this.driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver,this);
     }
-    @FindBy(xpath = "//i[@class='nav-icon fas fa-check-square']")
+    @FindBy(xpath = "//i[@class='nav-icon fas fa-registered']")
     private WebElement clickMenuRegister;
     @FindBy(xpath ="//h1[normalize-space()='List Data Register By User']")
     private WebElement txtRegister;
-    @FindBy(xpath ="//a[contains(@class, 'btn btn-primary btn-block']")
+    @FindBy(xpath ="//a[@class='btn btn-primary btn-block']")
     private WebElement addNewData;
     @FindBy(xpath ="//h3[contains(@class, 'card-title')]")
     private WebElement txtFormInputRegister;
     @FindBy(xpath ="//input[@id='SOCO']")
     private WebElement inputSocoId;
+    @FindBy(xpath ="//div[@id='SOCO_error']")
+    private WebElement inputSocoIdError;
     @FindBy(xpath ="//label[@for='SOCO']")
     private WebElement txtSocoId;
     @FindBy(xpath ="//input[@id='Customer_Name']")
@@ -31,17 +33,17 @@ public class RegisterPage {
     private WebElement txtCustomerName;
     @FindBy(xpath ="//input[@placeholder='Masukan nomor handphone']")
     private WebElement inputNoHandphone;
-    @FindBy(xpath ="label[for='Phone Number']")
+    @FindBy(xpath ="//label[(text() = 'Nomor Handphone yang terdaftar di BCA *' or . = 'Nomor Handphone yang terdaftar di BCA *')]")
     private WebElement txtPhoneNumber;
-    @FindBy(xpath ="//input[@placeholder='Masukan nomor rekening BCA']")
+    @FindBy(xpath ="//input[@placeholder='Masukan nomor rekening bca']")
     private WebElement inputNoRekening;
-    @FindBy(xpath ="//div[5]//label[1]")
+    @FindBy(xpath ="//label[(text() = 'Nomor Rekening BCA *' or . = 'Nomor Rekening BCA *')]")
     private WebElement txtNoRekening;
     @FindBy(xpath ="//select[@id='Qris_Pay']")
     private WebElement pembayaranQris;
     @FindBy(xpath ="//label[@for='Qris_Pay']")
     private WebElement txtPembayaranQris;
-    @FindBy(xpath ="//input[@placeholder='Masukan Amount'")
+    @FindBy(xpath ="//input[@placeholder='Masukan Amount']")
     private WebElement inputNominalTransaksi;
     @FindBy(xpath ="//label[@for='Amount']")
     private WebElement txtNominalTransaksi;
@@ -52,12 +54,12 @@ public class RegisterPage {
     @FindBy(xpath ="//label[@for='Transaction_Date']")
     private WebElement txtTanggalTransaksi;
     @FindBy(xpath ="//select[@name='Merchant_Name']")
-    private WebElement inputNamaMerchant;
+    public WebElement inputNamaMerchant;
     @FindBy(xpath ="//label[@for='Merchant_Name']")
     private WebElement txtNamaMerchant;
     @FindBy(xpath ="//input[@placeholder='Masukan RRN']")
     private WebElement inputAngkaRRN;
-    @FindBy(xpath ="label[@for='RRN']" )
+    @FindBy(xpath ="//label[@for='RRN']" )
     private WebElement txtAngkaRRN;
     @FindBy(xpath ="//input[@id='Foto_Struk_EDC']")
     private WebElement inputFotoBuktiTransaksi1;
@@ -71,7 +73,7 @@ public class RegisterPage {
     private WebElement inputFotoBuktiTransaksi3;
     @FindBy(xpath = "//label[@for='Foto_Transaksi_3']")
     private WebElement txtFotoBuktiTransaksi3;
-    @FindBy(xpath ="//input[type='submit']")
+    @FindBy(xpath ="//input[@id='btnsubmit']")
     private WebElement btnSubmitRegister;
 
 
@@ -95,6 +97,7 @@ public class RegisterPage {
         this.inputNoRekening.sendKeys(noRekening);
     }
     public void setPembayaranQris(){
+        pembayaranQris.sendKeys("MyBca");
 
     }
     public void setNominalTransaksi(String nominalTransaksi){
@@ -110,13 +113,13 @@ public class RegisterPage {
 this.inputAngkaRRN.sendKeys(angkaRRN);
     }
     public void setFotoBuktiTransaksi1(){
-
+        inputFotoBuktiTransaksi1.sendKeys("C:\\MyTools\\Bukti TF 1.jpg");
     }
     public void setFotoBuktiTransaksi2(){
-
+inputFotoBuktiTransaksi2.sendKeys("C:\\MyTools\\Bukti TF 2.jpg");
     }
     public void setFotoBuktiTransaksi3(){
-
+inputFotoBuktiTransaksi3.sendKeys("C:\\MyTools\\Bukti TF 3.jpg");
     }
     public void clickBtnSubmitRegister(){
         btnSubmitRegister.click();
@@ -160,5 +163,17 @@ this.inputAngkaRRN.sendKeys(angkaRRN);
     public String getTxtRRN(){
         return txtAngkaRRN.getText();
     }
+    public String getTxtFotoTransaksi1(){
+        return txtFotoBuktiTransaksi1.getText();
+    }
+    public String getTxtFotoTransaksi2(){
+        return txtFotoBuktiTransaksi2.getText();
+    }
+    public String getTxtFotoTransaksi3(){
+        return txtFotoBuktiTransaksi3.getText();
+    }
+//    public String getValueBtnSubmit(){
+        //return btnSubmitRegister.getAttribute();
+//    }
 
 }

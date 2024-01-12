@@ -9,35 +9,35 @@ import org.openqa.selenium.support.PageFactory;
 public class ReportDataPage {
     private WebDriver driver;
 
-    public RegisterPage(){
+    public ReportDataPage(){
         this.driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
-    @FindBy(xpath = "")
-    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
+//    @FindBy(xpath = "")
+//    private WebElement ;
 
     public void click_menu_report_data(){
 

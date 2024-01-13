@@ -16,3 +16,5 @@ Feature: Register
     And Upload Foto Bukti Transaksi 3
     And Klik submit data
     Then Menampilkan alert sukses
+
+    Scenario:

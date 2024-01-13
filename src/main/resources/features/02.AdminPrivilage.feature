@@ -6,4 +6,4 @@
       And Click menu register
       And Click menu report data
       Then Click menu logout
-      ##Then menampilkan halaman logout
+      ##Then menam0pilkan halaman logout

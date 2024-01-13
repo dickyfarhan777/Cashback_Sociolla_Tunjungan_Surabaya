@@ -1,8 +1,9 @@
 Feature: Register Admin
   #2
   Scenario:
-   Given Klik Menu Register
-   And Klik Add New Data
+   Given Admin akses link web cashback
+   When Klik menu Register
+   And Klik add new data
    And Klik submit data
    Then Menampilkan alert please fill out this field
 #3
@@ -400,7 +401,7 @@ Feature: Register Admin
                                               And Upload Foto Bukti Transaksi 2
                                               And Upload Foto Bukti Transaksi 3
                                               And Klik submit data
-                                              Then Menampilkan alert "RRN sudah ada."
+                                              Then Menampilkan alert RRN sudah ada
 #25
                                               Scenario:
                                                 Given Klik menu Register

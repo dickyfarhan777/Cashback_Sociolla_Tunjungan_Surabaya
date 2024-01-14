@@ -1,5 +1,6 @@
 package com.juaracoding;
 
+import com.github.javafaker.Faker;
 import com.juaracoding.pages.LoginPage;
 import com.juaracoding.utils.Constant;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -16,6 +17,7 @@ public class LoginTest {
     private static WebDriver driver;
     private static ExtentTest extentTest;
     public static LoginPage loginPage = new LoginPage();
+
 
 
     public LoginTest(){

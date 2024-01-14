@@ -15,6 +15,4 @@ public class LoginTest {
         extentTest = Hooks.extentTest;
     }
 
-    public void
-
 }

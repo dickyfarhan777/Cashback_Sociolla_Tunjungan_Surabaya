@@ -113,7 +113,7 @@ Feature: Register Admin
               And Upload Foto Bukti Transaksi 2
               And Upload Foto Bukti Transaksi 3
               And Klik submit data
-              Then Menampilkan alert sukses
+              Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
 #9
               Scenario:
                 Given Klik menu Register
@@ -131,7 +131,7 @@ Feature: Register Admin
                 And Upload Foto Bukti Transaksi 2
                 And Upload Foto Bukti Transaksi 3
                 And Klik submit data
-                Then Menampilkan alert sukses
+                Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
 #10
                 Scenario:
                   Given Klik menu Register
@@ -149,7 +149,7 @@ Feature: Register Admin
                   And Upload Foto Bukti Transaksi 2
                   And Upload Foto Bukti Transaksi 3
                   And Klik submit data
-                  Then Menampilkan alert sukses
+                  Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
 #11
                   Scenario:
                     Given Klik menu Register
@@ -167,7 +167,7 @@ Feature: Register Admin
                     And Upload Foto Bukti Transaksi 2
                     And Upload Foto Bukti Transaksi 3
                     And Klik submit data
-                    Then Menampilkan alert sukses
+                    Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
 #12
                     Scenario:
                       Given Klik menu Register
@@ -203,7 +203,7 @@ Feature: Register Admin
                         And Upload Foto Bukti Transaksi 2
                         And Upload Foto Bukti Transaksi 3
                         And Klik submit data
-                        Then Menampilkan alert sukses
+                        Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #14
                         Scenario:
                           Given Klik menu Register
@@ -221,7 +221,7 @@ Feature: Register Admin
                           And Upload Foto Bukti Transaksi 2
                           And Upload Foto Bukti Transaksi 3
                           And Klik submit data
-                          Then Menampilkan alert sukses
+                          Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #15
                           Scenario:
                             Given Klik menu Register
@@ -239,7 +239,7 @@ Feature: Register Admin
                             And Upload Foto Bukti Transaksi 2
                             And Upload Foto Bukti Transaksi 3
                             And Klik submit data
-                            Then Menampilkan alert sukses
+                            Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #16
                             Scenario:
                               Given Klik menu Register
@@ -257,7 +257,7 @@ Feature: Register Admin
                               And Upload Foto Bukti Transaksi 2
                               And Upload Foto Bukti Transaksi 3
                               And Klik submit data
-                              Then Menampilkan alert sukses
+                              Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #17
                               Scenario:
                                 Given Klik menu Register
@@ -347,7 +347,7 @@ Feature: Register Admin
                                         And Upload Foto Bukti Transaksi 2
                                         And Upload Foto Bukti Transaksi 3
                                         And Klik submit data
-                                        Then Menampilkan alert sukses
+                                        Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #22
                                         Scenario:
                                           Given Klik menu Register

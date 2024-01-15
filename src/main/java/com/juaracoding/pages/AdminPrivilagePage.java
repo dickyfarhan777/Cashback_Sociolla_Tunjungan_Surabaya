@@ -62,32 +62,8 @@ public class AdminPrivilagePage {
     }
 
 
-    public String getTxtMenuRegister1(){
-        return txtMenuRegister1.getText();
-    }
-    public String getTxtMenuRegister2(){
-        return txtMenuRegister2.getText();
-    }
-    public String getTxtHome(){
-        return txtMenuHome.getText();
-    }
     public String getTxtLogout (){
         return txtLogout.getText();
-    }
-    public String getTxtReportData1(){
-        return txtMenuReportData1.getText();
-    }
-    public String getTxtReportData2(){
-        return txtMenuReportData2.getText();
-    }
-    public String getTxtMenuDashboard1(){
-        return txtMenuDashboard1.getText();
-    }
-    public String getTxtMenuDashboard2(){
-        return txtMenuDashboard2.getText();
-    }
-    public String getTxtMenuDashboard3(){
-        return txtMenuDashboard3.getText();
     }
 
 }

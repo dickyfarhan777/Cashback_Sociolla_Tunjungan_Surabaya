@@ -107,6 +107,11 @@ public class RegisterTest {
         registerPage.setTanggalTransaksi("01/12/2024");
         extentTest.log(LogStatus.PASS, "Input Tanggal Transaksi Dengan Benar");
     }
+    @And("Input tanggal transaksi melebihi tanggal hari ini")
+    public void input_tanggal_transaksi_melebihi_tanggal_hari_ini(){
+        registerPage.setTanggalTransaksi("01/13/2024");
+        extentTest.log(LogStatus.PASS,"Input tanggal transaksi melebihi tanggal hari ini");
+    }
 
     @And("Pilih Nama Merchant")
     public void pilih_nama_merchant() {
@@ -257,29 +262,55 @@ public class RegisterTest {
     }
     @And("Input Nama Lengkap Nasabah menggunakan Karakter at")
     public void input_nama_nasabah_dengan_menambahkan_at(){
-        registerPage.setInputCustomerName(faker.("?????????@"));
+        registerPage.setInputCustomerName(faker.bothify("?????????@"));
         extentTest.log(LogStatus.PASS,"Input Nama Lengkap Nasabah menggunakan Karakter at");
+    }
+    @And("Input Nama Lengkap Nasabah menambahkan < > kutip satu kutip dua")
+    public void input_nama_nasabah_dengan_lbh_kecil_lbh_bsr_kutop1_kutip2(){
+        registerPage.setInputCustomerName("diky<>'\"");
+        extentTest.log(LogStatus.PASS,"Input Nama Lengkap Nasabah menambahkan < > kutip satu kutip dua");
+    }
+    @And("Input Nama Lengkap Nasabah karakter #")
+    public void input_nama_nasabah_dengan_tandapagar(){
+        registerPage.setInputCustomerName("diky#");
+        extentTest.log(LogStatus.PASS,"Input Nama Lengkap Nasabah karakter #");
+    }
+    @And("Input Nama Lengkap Nasabah Dengan karakter -")
+    public void input_nama_nasabah_dengan_minus(){
+        registerPage.setInputCustomerName("diky-");
+        extentTest.log(LogStatus.PASS,"Input Nama Lengkap Nasabah Dengan karakter -");
     }
 
     @Then("Menampilkan alert RRN sudah ada")
     public void menampilkan_alert_rrn_sudah_ada() {
-
+Assert.assertEquals(registerPage.getTxtErrorRrn(),"RRN sudah ada.");
         extentTest.log(LogStatus.PASS,"Menampilkan alert RRN sudah ada");
+
     }
     @Then("Menampilkan Alert Data Sudah digunakan Hari Ini")
     public void menampilkan_alert_data_sudah_digunakan_hari_ini(){
-
+Assert.assertEquals(registerPage.getTxtSocoIdError(),"Data Sudah digunakan Hari Ini.");
         extentTest.log(LogStatus.PASS,"Menampilkan Alert Data Sudah digunakan Hari Ini");
     }
     @Then("Menampilkan alert transaksi sudah ada untuk hari ini")
-    public void menampilkan_alert_transaksu_sudah_ada_untuk_hari_ini(){
-
+    public void menampilkan_alert_transaksi_sudah_ada_untuk_hari_ini(){
+Assert.assertEquals(registerPage.getTxtErrorNoHandphone(),"Transaksi sudah ada untuk hari ini.");
         extentTest.log(LogStatus.PASS,"Menampilkan alert transaksi sudah ada untuk hari ini");
     }
 
     @Then("Menampilkan alert please fill out this field")
     public void menampilkan_alert_please_fill_out_this_field() {
-        Assert.assertEquals(registerPage.);
+        Assert.assertEquals(registerPage.getTxtRequired(),"please fill out this field");
         extentTest.log(LogStatus.PASS,"Menampilkan alert please fill out this field");
+    }
+    @Then("Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan")
+    public void alert_customer_name_karakter_lbh_kecil_lbh_besar(){
+        Assert.assertEquals(registerPage.getTxtCustomerName(),"Karakter (<|>|'|\") tidak diizinkan");
+        extentTest.log(LogStatus.PASS,"Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan");
+    }
+    @Then("Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan")
+    public void alert_soco_id_lbh_kecil_lbh_besar(){
+        Assert.assertEquals(registerPage.getTxtSocoIdError(),"Karakter (<|>|'|\") tidak diizinkan");
+        extentTest.log(LogStatus.PASS,"Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan");
     }
 }

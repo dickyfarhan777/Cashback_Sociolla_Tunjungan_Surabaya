@@ -75,6 +75,16 @@ public class RegisterPage {
     private WebElement txtFotoBuktiTransaksi3;
     @FindBy(xpath ="//input[@id='btnsubmit']")
     private WebElement btnSubmitRegister;
+    @FindBy(xpath = "//div[@id='SOCO_error']")
+    private WebElement txtSocoIdError;
+    @FindBy(xpath = "//div[@id='Customer_Name_error']")
+    private WebElement txtCustomerNameError;
+    @FindBy(xpath = "//div[@id='Phone_Number_error']")
+    private WebElement txtNoHandphoneError;
+    @FindBy(xpath = "//div[@id='No_Rek_bca_error']")
+    private WebElement txtNoRekeningError;
+    @FindBy(xpath = "//div[@id='RRN_error']")
+    private WebElement txtRrnError;
 
 
 
@@ -133,36 +143,7 @@ inputFotoBuktiTransaksi3.sendKeys("C:\\MyTools\\Bukti TF 3.jpg");
     public String getTxtFormInputRegister(){
         return txtFormInputRegister.getText();
     }
-    public String getTxtNominalCashback(){
-        return txtNominalCashback.getText();
-    }
-    public String getTxtSocoId(){
-        return txtSocoId.getText();
-    }
-    public String getTxtCustomerName(){
-        return txtCustomerName.getText();
-    }
-    public String getTxtNomorHandphone(){
-        return txtPhoneNumber.getText();
-    }
-    public String getTxtNoRekening(){
-        return txtNoRekening.getText();
-    }
-    public String getTxtPembayaranQris(){
-        return txtPembayaranQris.getText();
-    }
-    public String getTxtNominalTransaksi(){
-        return txtNominalTransaksi.getText();
-    }
-    public String getTxtTanggalTransaksi(){
-        return txtTanggalTransaksi.getText();
-    }
-    public String getTxtNamaMerchant(){
-        return txtNamaMerchant.getText();
-    }
-    public String getTxtRRN(){
-        return txtAngkaRRN.getText();
-    }
+
     public String getTxtFotoTransaksi1(){
         return txtFotoBuktiTransaksi1.getText();
     }
@@ -175,5 +156,23 @@ inputFotoBuktiTransaksi3.sendKeys("C:\\MyTools\\Bukti TF 3.jpg");
 //    public String getValueBtnSubmit(){
         //return btnSubmitRegister.getAttribute();
 //    }
+    public String getTxtErrorRrn(){
+        return txtRrnError.getText();
+    }
+    public String getTxtErrorNoHandphone(){
+        return txtNoHandphoneError.getText();
+    }
+    public String getTxtNoRekening(){
+        return txtNoRekeningError.getText();
+    }
+    public String getTxtSocoIdError(){
+        return txtSocoIdError.getText();
+    }
+    public String getTxtCustomerName(){
+        return txtCustomerNameError.getText();
+    }
 
+    public String getTxtRequired(){
+        return txtSocoId.getAttribute("required")
+    }
 }

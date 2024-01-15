@@ -14,7 +14,7 @@ public class FinancePage {
     private WebElement btnFinance;
 
     @FindBy(xpath = "//a[contains(text(),'Dashboard')]") // field text untuk kembali ke menu Dashboard
-    private WebElement txtDashboard;
+    private WebElement clickDashboard;
 
     @FindBy(xpath = "//h3[@class='card-title']") // menampilkan data yang sudah di verifikasi
     private WebElement txtDataVerifikasi;
@@ -28,14 +28,26 @@ public class FinancePage {
     @FindBy(xpath = "//a[normalize-space()='Next']") // menampilkan halaman selanjutnya di control page Next
     private WebElement btnNext;
 
-    @FindBy(xpath = "//a[normalize-space()='2']") // menampilkan halaman selanjutnya di control page Number
+    @FindBy(xpath = "//a[normalize-space()='2']") // menampilkan halaman selanjutnya di control page Number 2
     private WebElement btnPage2;
 
     @FindBy(xpath = "//li[@id='table_previous']") // menampilkan halaman sebelumnya di control page Next
     private WebElement btnPrevious;
 
     @FindBy(xpath = "//input[@class='form-control form-control-sm']") // kolom search mencari data customer dgn Nama, RRN, RefID
-    private WebElement search;
+    private WebElement inputFirstName;
+
+    @FindBy(xpath = "//input[@class='form-control form-control-sm']") // kolom search mencari data customer dgn Nama, RRN, RefID
+    private WebElement inputLastName;
+
+    @FindBy(xpath = "//input[@class='form-control form-control-sm']") // kolom search mencari data customer dgn Nama, RRN, RefID
+    private WebElement inpuMidleName;
+
+    @FindBy(xpath = "//input[@class='form-control form-control-sm']") // kolom search mencari data customer dgn Nama, RRN, RefID
+    private WebElement inputRrn;
+
+    @FindBy(xpath = "//input[@class='form-control form-control-sm']") // kolom search mencari data customer dgn Nama, RRN, RefID
+    private WebElement inputRefId;
 
     @FindBy(xpath = "//button[normalize-space()='Kembalikan ke VERIFIKATOR']") // button pilihan kembalikan ke Verifikator
     private WebElement backVerifikator;
@@ -53,7 +65,74 @@ public class FinancePage {
     private WebElement btnHide;
 
 
+    // step action
+    public void btnFinance(){
+        btnFinance.click();
+    }
 
+    public void setClickDashboard(){
+        clickDashboard.click();
+    }
+
+    public void setControlList(){
+        controlList.click();
+    }
+
+    public void setBtnAction(){
+        btnAction.click();
+    }
+
+    public void setBtnNext(){
+        btnNext.click();
+    }
+
+    public void setBtnPage2(){
+        btnPage2.click();
+    }
+
+    public void setBtnPrevious(){
+        btnPrevious.click();
+    }
+
+    public void setInputFirstName(String firstName){
+        this.inputFirstName.sendKeys(firstName);
+    }
+
+    public void setInputLastName(String lastName){
+        this.inputLastName.sendKeys(lastName);
+    }
+
+    public void setInputMidleName(String midleName){
+        this.setInputMidleName().sendKeys(midleName);
+    }
+
+    public void setInputRrn(String Rrn){
+        this.inputRrn.sendKeys(Rrn);
+    }
+
+    public void setInputRefId(String RefId){
+        this.inputRefId.sendKeys(RefId);
+    }
+
+    public void setCheckBox1(){
+        checkBox1.click();
+    }
+
+    public void setBackVerifikator(){
+        backVerifikator.click();
+    }
+
+    public void setUpdateTrf(){
+        updateTrf.click();
+    }
+
+    public void setCheckBox(){
+        checkBox.click();
+    }
+
+    public void setBtnHide(){
+        btnHide.click();
+    }
 
 
 }

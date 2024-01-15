@@ -4,7 +4,7 @@
 This project is an internship at the Juara Coding SQA-RPA Batch 12 bootcamp. The main supervisor is Koswara. In this internship, which lasted for about two weeks, Group 2 was tasked with testing the Cashback Sociolla Tunjangan Surabaya website. In carrying out this testing, we followed real world cases, which means using the SIT (System Integration Testing) document. In SIT, we conducted two tests: manual testing and automation testing.
 
 
-# 👥 Anggota Project & Jobdesk 
+# 👥 Anggota Project & Jobdeck 
 - Dicky Farhan (Team Leader)
   - Modul Dashboard (admin)
   - Modul Register (admin)

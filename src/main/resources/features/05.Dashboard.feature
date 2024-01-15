@@ -1,6 +1,6 @@
 Feature: Dashboard Admin
 
-  Scenario:
+  Scenario: Admin memfilter data tgl sebelum hari ini dan sesudah hari ini
     Given Klik menu dashboard
     And Klik periode tanggal pada filter data
     And Pilih tanggal sebelum hari ini
@@ -9,7 +9,7 @@ Feature: Dashboard Admin
     And Klik button filter
     Then Akan menampilkan data yang difilter
 
-    Scenario:
+    Scenario: Admin memfilter data tgl sebelum hari ini dan sebelum hari ini
       Given Klik menu dashboard
       And Klik periode tanggal pada filter data
       And Pilih tanggal hari ini
@@ -18,7 +18,7 @@ Feature: Dashboard Admin
       And Klik button filter
       Then Tidak akan menampilkan data yang difilter
 
-      Scenario:
+      Scenario: Admin memfilter data tgl sesudah hari ini dan sesudah hari ini
         Given Klik menu dashboard
         And Klik periode tanggal pada filter data
         And tanggal sesudah hari ini
@@ -27,7 +27,7 @@ Feature: Dashboard Admin
         And Klik button filter
         Then Tidak akan menampilkan data yang difilter
 
-        Scenario:
+        Scenario: Admin mendownload data dashboard nominal cashback berbentuk excel
           Given Klik menu dashboard
           And Klik periode tanggal pada filter data
           And Pilih tanggal sblm
@@ -37,7 +37,7 @@ Feature: Dashboard Admin
           And Klik export excel di table dashboard nominal cashback
           Then Akan mendownload data excel
 
-          Scenario:
+          Scenario: Admin mendownload data dashboard spg berbentuk excel
             Given Klik menu dashboard
             And Klik periode tanggal pada filter data
             And Pilih tanggal sblm

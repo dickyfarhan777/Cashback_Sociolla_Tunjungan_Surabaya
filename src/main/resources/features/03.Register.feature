@@ -1,6 +1,6 @@
 Feature: Register Admin
   #2
-  Scenario:
+  Scenario: Admin submit data without input data
    Given Admin akses link web cashback
    When Klik menu Register
    And Klik add new data
@@ -25,7 +25,7 @@ Feature: Register Admin
     And Klik submit data
     Then Menampilkan alert sukses
 #4
-    Scenario:
+    Scenario: Admin input soco id yang sudah terdaftar sebelumnya
       Given Klik menu Register
       When Klik add new data
       And Input Soco Id yang sudah terdaftar sebelumnya
@@ -43,7 +43,7 @@ Feature: Register Admin
       And Klik submit data
       Then Menampilkan Alert Data Sudah digunakan Hari Ini
 #5
-      Scenario:
+      Scenario: Admin input nomor hp yang sudah terdaftar sebelumnya
         Given Klik menu Register
         When Klik add new data
         And Input Soco Id dengan benar random
@@ -61,10 +61,10 @@ Feature: Register Admin
         And Klik submit data
         Then Menampilkan alert transaksi sudah ada untuk hari ini
 #6
-        Scenario:
+        Scenario: Admin input soco id menggunakan campuran huruf dan angka
           Given Klik menu Register
           When Klik add new data
-          And Soco Id menggunakan campuran huruf dan angka
+          And Input soco id menggunakan campuran huruf dan angka
           And Input Nama Lengkap Nasabah Dengan Benar
           And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
           And Input Nomor Rekening Bca Dengan Benar rekening random
@@ -79,7 +79,7 @@ Feature: Register Admin
           And Klik submit data
           Then Menampilkan alert Karakter huruf tidak diizinkan
 #7
-          Scenario:
+          Scenario: Admin input Soco Id dengan menggunakan Karakter @
             Given Klik menu Register
             When Klik add new data
             And Input Soco Id dengan menggunakan Karakter @
@@ -95,9 +95,9 @@ Feature: Register Admin
             And Upload Foto Bukti Transaksi 2
             And Upload Foto Bukti Transaksi 3
             And Klik submit data
-            Then Menampilkan alert sukses
+            Then Menampilkan alert ok
 #8
-            Scenario:
+            Scenario: Admin input soco id dengan menggunakan Karakter >
               Given Klik menu Register
               When Klik add new data
               And Input Soco Id dengan menggunakan Karakter >
@@ -115,7 +115,7 @@ Feature: Register Admin
               And Klik submit data
               Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
 #9
-              Scenario:
+              Scenario: Admin input soco id dengan menggunakan Karakter <
                 Given Klik menu Register
                 When Klik add new data
                 And Input Soco Id dengan menggunakan Karakter <
@@ -133,7 +133,7 @@ Feature: Register Admin
                 And Klik submit data
                 Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
 #10
-                Scenario:
+                Scenario: Admin input soco id dengan menggunakan Karakter '
                   Given Klik menu Register
                   When Klik add new data
                   And Input Soco Id dengan menggunakan Karakter kutip satu
@@ -151,7 +151,7 @@ Feature: Register Admin
                   And Klik submit data
                   Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
 #11
-                  Scenario:
+                  Scenario: Admin input soco id dengan menggunakan Karakter "
                     Given Klik menu Register
                     When Klik add new data
                     And Input Soco Id dengan menggunakan Karakter kutip dua
@@ -169,7 +169,7 @@ Feature: Register Admin
                     And Klik submit data
                     Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
 #12
-                    Scenario:
+                    Scenario: Admin input nama lengkap dengan full angka
                       Given Klik menu Register
                       When Klik add new data
                       And Input Soco Id dengan benar random
@@ -185,9 +185,9 @@ Feature: Register Admin
                       And Upload Foto Bukti Transaksi 2
                       And Upload Foto Bukti Transaksi 3
                       And Klik submit data
-                      Then Menampilkan alert sukses
+                      Then Menampilkan alert ok
 #13
-                      Scenario:
+                      Scenario: Admin input nama lengkap dengan menggunakan Karakter <
                         Given Klik menu Register
                         When Klik add new data
                         And Input Soco Id dengan benar random
@@ -205,7 +205,7 @@ Feature: Register Admin
                         And Klik submit data
                         Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #14
-                        Scenario:
+                        Scenario: Admin input nama lengkap dengan menggunakan Karakter "
                           Given Klik menu Register
                           When Klik add new data
                           And Input Soco Id dengan benar random
@@ -223,7 +223,7 @@ Feature: Register Admin
                           And Klik submit data
                           Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #15
-                          Scenario:
+                          Scenario: Admin input nama lengkap dengan menggunakan Karakter >
                             Given Klik menu Register
                             When Klik add new data
                             And Input Soco Id dengan benar random
@@ -241,7 +241,7 @@ Feature: Register Admin
                             And Klik submit data
                             Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #16
-                            Scenario:
+                            Scenario: Admin input nama lengkap dengan menggunakan Karakter '
                               Given Klik menu Register
                               When Klik add new data
                               And Input Soco Id dengan benar random
@@ -259,7 +259,7 @@ Feature: Register Admin
                               And Klik submit data
                               Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #17
-                              Scenario:
+                              Scenario: Admin input nama lengkap dengan menggunakan Karakter _
                                 Given Klik menu Register
                                 When Klik add new data
                                 And Input Soco Id dengan benar random
@@ -275,9 +275,9 @@ Feature: Register Admin
                                 And Upload Foto Bukti Transaksi 2
                                 And Upload Foto Bukti Transaksi 3
                                 And Klik submit data
-                                Then Menampilkan alert sukses
+                                Then Menampilkan alert ok
 #18
-                                Scenario:
+                                Scenario: Admin input nama lengkap dengan menggunakan Karakter @
                                   Given Klik menu Register
                                   When Klik add new data
                                   And Input Soco Id dengan benar random
@@ -293,9 +293,9 @@ Feature: Register Admin
                                   And Upload Foto Bukti Transaksi 2
                                   And Upload Foto Bukti Transaksi 3
                                   And Klik submit data
-                                  Then Menampilkan alert sukses
+                                  Then Menampilkan alert ok
 #19
-                                  Scenario:
+                                  Scenario: Admin input nama lengkap dengan menggunakan huruf dan angka
                                     Given Klik menu Register
                                     When Klik add new data
                                     And Input Soco Id dengan benar random
@@ -311,9 +311,9 @@ Feature: Register Admin
                                     And Upload Foto Bukti Transaksi 2
                                     And Upload Foto Bukti Transaksi 3
                                     And Klik submit data
-                                    Then Menampilkan alert sukses
+                                    Then Menampilkan alert ok
 #20
-                                    Scenario:
+                                    Scenario: Admin input nama lengkap dengan menggunakan karakter !
                                       Given Klik menu Register
                                       When Klik add new data
                                       And Input Soco Id dengan benar random
@@ -329,9 +329,9 @@ Feature: Register Admin
                                       And Upload Foto Bukti Transaksi 2
                                       And Upload Foto Bukti Transaksi 3
                                       And Klik submit data
-                                      Then Menampilkan alert sukses
+                                      Then Menampilkan alert ok
 #21
-                                      Scenario:
+                                      Scenario: Admin input nama lengkap dengan menggunakan < > kutip satu kutip dua
                                         Given Klik menu Register
                                         When Klik add new data
                                         And Input Soco Id dengan benar random
@@ -349,7 +349,7 @@ Feature: Register Admin
                                         And Klik submit data
                                         Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
 #22
-                                        Scenario:
+                                        Scenario: Admin input nama lengkap dengan menggunakan karakter #
                                           Given Klik menu Register
                                           When Klik add new data
                                           And Input Soco Id dengan benar random
@@ -365,9 +365,9 @@ Feature: Register Admin
                                           And Upload Foto Bukti Transaksi 2
                                           And Upload Foto Bukti Transaksi 3
                                           And Klik submit data
-                                          Then Menampilkan alert sukses
+                                          Then Menampilkan alert ok
 #23
-                                          Scenario:
+                                          Scenario: Admin input nama lengkap dengan menggunakan karakter -
                                             Given Klik menu Register
                                             When Klik add new data
                                             And Input Soco Id dengan benar random
@@ -383,9 +383,9 @@ Feature: Register Admin
                                             And Upload Foto Bukti Transaksi 2
                                             And Upload Foto Bukti Transaksi 3
                                             And Klik submit data
-                                            Then Menampilkan alert sukses
+                                            Then Menampilkan alert ok
 #24
-                                            Scenario:
+                                            Scenario: Admin input rrn dengan rrn yang sudah terdaftar
                                               Given Klik menu Register
                                               When Klik add new data
                                               And Input Soco Id dengan benar random
@@ -403,7 +403,7 @@ Feature: Register Admin
                                               And Klik submit data
                                               Then Menampilkan alert RRN sudah ada
 #25
-                                              Scenario:
+                                              Scenario: Admin input tanggal transaksi melebihi tanggal hari ini
                                                 Given Klik menu Register
                                                 When Klik add new data
                                                 And Input Soco Id dengan benar random
@@ -419,9 +419,9 @@ Feature: Register Admin
                                                 And Upload Foto Bukti Transaksi 2
                                                 And Upload Foto Bukti Transaksi 3
                                                 And Klik submit data
-                                                Then Menampilkan alert "Tanggal melebihi hari ini"
+                                                Then Menampilkan alert ok
 #26
-                                                Scenario:
+                                                Scenario: Admin input soco id menggunakan full huruf
                                                   Given Klik menu Register
                                                   When Klik add new data
                                                   And Input Soco ID menggunakan full huruf
@@ -437,9 +437,9 @@ Feature: Register Admin
                                                   And Upload Foto Bukti Transaksi 2
                                                   And Upload Foto Bukti Transaksi 3
                                                   And Klik submit data
-                                                  Then Menampilkan alert sukses
+                                                  Then Menampilkan alert ok
 #27
-                                                  Scenario:
+                                                  Scenario: Admin input no rekening bca yang sudah terdaftar sebelumnya
                                                     Given Klik menu Register
                                                     When Klik add new data
                                                     And Input Soco Id dengan benar random

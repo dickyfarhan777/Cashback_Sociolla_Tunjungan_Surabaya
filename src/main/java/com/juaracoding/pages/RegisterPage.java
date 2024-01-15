@@ -54,9 +54,7 @@ public class RegisterPage {
     @FindBy(xpath ="//label[@for='Transaction_Date']")
     private WebElement txtTanggalTransaksi;
     @FindBy(xpath ="//select[@name='Merchant_Name']")
-    public WebElement inputNamaMerchant;
-    @FindBy(xpath ="//label[@for='Merchant_Name']")
-    private WebElement txtNamaMerchant;
+    private WebElement inputNamaMerchant;
     @FindBy(xpath ="//input[@placeholder='Masukan RRN']")
     private WebElement inputAngkaRRN;
     @FindBy(xpath ="//label[@for='RRN']" )
@@ -85,6 +83,10 @@ public class RegisterPage {
     private WebElement txtNoRekeningError;
     @FindBy(xpath = "//div[@id='RRN_error']")
     private WebElement txtRrnError;
+    @FindBy(xpath = "//div[@id='Qris_Pay_error']")
+    private WebElement txtQrisPayError;
+    @FindBy(xpath ="//div[@id='Merchant_Name_error']")
+    private WebElement txtNamaMerchantError;
 
 
 
@@ -170,6 +172,15 @@ inputFotoBuktiTransaksi3.sendKeys("C:\\MyTools\\Bukti TF 3.jpg");
     }
     public String getTxtCustomerName(){
         return txtCustomerNameError.getText();
+    }
+    public String getTxtQrisPay(){
+        return txtQrisPayError.getText();
+    }
+    public String getTxtNamaMerchant(){
+        return txtNamaMerchantError.getText();
+    }
+    public String getTxtNamaMerchantReq(){
+        return txtNamaMerchantError.getAttribute("required");
     }
 
     public String getTxtRequired(){

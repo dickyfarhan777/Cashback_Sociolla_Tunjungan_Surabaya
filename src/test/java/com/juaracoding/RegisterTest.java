@@ -189,10 +189,10 @@ public class RegisterTest {
         registerPage.setAngkaRRN(faker.numerify("#########"));
         extentTest.log(LogStatus.PASS, "Input Rrn Dengan Benar random rrn number");
     }
-    @And("Soco Id menggunakan campuran huruf dan angka")
+    @And("Input soco id menggunakan campuran huruf dan angka")
     public void socoid_menggunakan_campuran_huruf_dan_angka(){
         registerPage.setInputSocoId(faker.bothify("Dicky####"));
-        extentTest.log(LogStatus.PASS,"Soco Id menggunakan campuran huruf dan angka");
+        extentTest.log(LogStatus.PASS,"Input soco id menggunakan campuran huruf dan angka");
     }
     @And("Input Soco Id dengan menggunakan Karakter @")
     public void socoid_menggunakan_karakter_at(){

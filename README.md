@@ -1,20 +1,19 @@
 
 # 👋Tentang Project
 
-Project ini adalah kerja praktek di bootcamp Juara Coding SQA-RPA Batch 12. Dengan utama yaitu ka Koswara. Pada praktek magang ini memiliki rentang waktu sekitar 2 minggu, kelompok 2 ditugaskan untuk melakukan testing sebuah website Cashback Sociolla Tunjangan Surabaya. Dalam mengerjakan testing ini, kami mengikuti real world cases yang berarti menggunakan dokumen SIT(System Integration Testing), dalam SIT kami melakukan dua testing yaitu manual testing dan automation testing. 
+This project is an internship at the Juara Coding SQA-RPA Batch 12 bootcamp. The main supervisor is Koswara. In this internship, which lasted for about two weeks, Group 2 was tasked with testing the Cashback Sociolla Tunjangan Surabaya website. In carrying out this testing, we followed real world cases, which means using the SIT (System Integration Testing) document. In SIT, we conducted two tests: manual testing and automation testing.
+
 
 # 👥 Anggota Project
 - Dicky Farhan (Leader)
 - Salma Nida Khofiyya (Member)
 - Trisna Hidayati (Member)
-- Ihza (Member)
-
+- Ihza Razan Alghifari (Member)
 
 
 ## 🔗 Links
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dicky-farhan7/) 
-
 
 
 ## ⚒️ Tech Stack
@@ -24,4 +23,7 @@ Project ini adalah kerja praktek di bootcamp Juara Coding SQA-RPA Batch 12. Deng
 **Framework:** Selenium
 
 **Tools:** Cucumber, TestNG, JavaFaker
+
+# SIT Project Cashback Sociolla
+<a href="https://docs.google.com/spreadsheets/d/171_pKXw3x35mjFOGQB9AEN7P2_FCjE66dgbBDvaakkk/edit?usp=sharing" target="_blank">SIT Cashback Sociolla Tunjungan Surabaya SQA </a>
 

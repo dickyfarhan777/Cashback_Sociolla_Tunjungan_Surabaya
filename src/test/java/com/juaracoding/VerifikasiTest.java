@@ -1,5 +1,6 @@
 package com.juaracoding;
 import com.juaracoding.pages.LoginPage;
+import com.juaracoding.pages.VerifikasiPage;
 import com.juaracoding.utils.Constant;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -15,7 +16,8 @@ import org.testng.annotations.Test;
 public class VerifikasiTest {
     private static WebDriver driver;
     private static ExtentTest extentTest;
-
+    private static LoginPage loginPage = new LoginPage();
+    private static VerifikasiPage verifikasiPage = new VerifikasiPage();
     public VerifikasiTest(){
         driver = Hooks.driver;
         extentTest = Hooks.extentTest;
@@ -25,15 +27,18 @@ public class VerifikasiTest {
     //verifikasi valid penukaran voucher : positif
     @Given("verifikator menuju ke menu verifikasi")
     public void verifikator_menuju_ke_menu_verifikasi(){
+    verifikasiPage.clickMenuVerifikasi();
     }
     @When("pilih data customer")
     public void pilih_data_customer(){
     }
     @And("klik tombol mata di bagian kolom aksi")
     public void klik_tombol_mata_di_bagian_kolom_aksi(){
+        verifikasiPage.clickBtnAksi();
     }
     @And("klik tombol verifikasi")
     public void klik_tombol_verifikasi(){
+        verifikasiPage.clickBtnVerifikasi();
     }
     @And("klik ok pada popup konfirmasi 1")
     public void klik_ok_pada_popup_konfirmasi_1(){
@@ -173,7 +178,7 @@ public class VerifikasiTest {
     }
 
     //foto bukti transaksi kosong tidak bisa dirotasi sesuai dengan tombol : negatif
-    @And("klik tombol 180 di bawah foto bukti transaksi")
+    @And("klik tombol 180 di bawah foto bukti transaksi yang kosong")
     public void klik_tombol_180_di_bawah_foto_bukti_transaksi (){
 
     }
@@ -214,8 +219,8 @@ public class VerifikasiTest {
     public void menghapus_isi_di_bagian_field_nama_lengkap_nasabah(){
 
     }
-    @And("Muncul alert \"The Customer Name field is required.\"")
-    public void muncul_alert_the_cust_name_field_is_required (){
+    @And("Muncul error \"The Customer Name field is required.\"")
+    public void muncul_error_the_cust_name_field_is_required (){
 
     }
     @Then("verifikator tidak berhasil mengosongkan field nama lengkap nasabah")
@@ -252,8 +257,8 @@ public class VerifikasiTest {
     public void menghapus_isi_field_nominal_transaksi(){
 
     }
-    @And("muncul alert \"Nominal belanja minimal Rp. 250.000\"")
-    public void muncul_alert_nominal_belanja_minimal(){
+    @And("muncul error \"The Nominal Transaksi field is required.\"")
+    public void muncul_error_the_nominal_transaksi_field_is_required(){
 
     }
     @Then("field nominal transaksi tidak bisa kosong")
@@ -329,8 +334,8 @@ public class VerifikasiTest {
 
     //search ===========================================
     //mencari nama depan customer : positif
-    @When("menginput nama depan customer ke dalam field search")
-    public void menginput_nama_depan_customer_ke_dalam_field_search(){
+    @When("menginput nama Septia ke dalam field search")
+    public void menginput_nama_septia_ke_dalam_field_search(){
 
     }
     @And("klik enter")
@@ -347,8 +352,8 @@ public class VerifikasiTest {
     }
 
     //mencari berdasarkan nama sales : positif
-    @When("menginput nama sales ke dalam field search")
-    public void menginput_nama_sales_ke_dalam_field_search(){
+    @When("menginput nama Rinzana ke dalam field search")
+    public void menginput_nama_rinzana_ke_dalam_field_search(){
 
     }
     @Then("isi tabel muncul sesuai dengan nama sales yang diinputkan")
@@ -357,14 +362,15 @@ public class VerifikasiTest {
     }
 
     //mencari tanpa menginputkan apapun : negatif
-    @And("klik Silang atau hapus input search tersebut")
-    public void klik_silang_atau_hapus_input_search_tersebut(){
+    @And("hapus input search tersebut")
+    public void hapus_input_search_tersebut(){
 
     }
     @And("klik enter untuk mencari search tanpa inputan")
     public void klik_enter_untuk_mencari_search_tanpa_inputan(){
 
     }
+
     @Then("isi tabel kembali seperti semula")
     public void isi_tabel_kembali_seperti_semula(){
 

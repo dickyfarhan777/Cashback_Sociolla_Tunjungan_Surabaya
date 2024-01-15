@@ -8,11 +8,11 @@ Scenario: Melihat isi tabel di page 2
   #positif
 Scenario: Melihat isi tabel pada page sebelumnya
   Given Verifikator menuju ke menu Upload Bukti Transfer
-  When Klik tombol Previous di bagian pagination page
+  When Klik tombol Previous
   Then Tabel menampilkan data dari page sebelumnya
 
 #positif
 Scenario: Melihat isi tabel pada page setelahnya
   Given Verifikator menuju ke menu Upload Bukti Transfer
-  When Klik tombol Next di bagian pagination page
-  Then Tabel menampilkan data dari page sebelumnya
+  When Klik tombol Next
+  Then Tabel menampilkan data dari page setelahnya

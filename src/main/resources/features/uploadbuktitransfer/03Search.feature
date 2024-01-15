@@ -21,8 +21,8 @@ Scenario: Mencari tanpa input apapun
   When Input nama pada field search
   And Klik enter
   And Tabel muncul berdasarkan hasil search
-  And Klik silang atau hapus inputan pada field search
+  And Hapus inputan pada field search
   And Klik enter
   And Tabel berisi data semula
-  Then isi tabel kembali seperti semula atau menampilkan seluruh isi tabel
+  Then isi tabel menampilkan seluruh isi tabel
 

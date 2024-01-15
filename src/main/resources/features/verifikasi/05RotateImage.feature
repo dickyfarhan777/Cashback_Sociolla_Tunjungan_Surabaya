@@ -12,6 +12,6 @@ Feature: Rotate image
     Given verifikator menuju ke menu verifikasi
     When pilih data customer
     And klik tombol mata di bagian kolom aksi
-    And klik tombol 180 di bawah foto bukti transaksi
+    And klik tombol 180 di bawah foto bukti transaksi yang kosong
     And muncul popup alert Error "Error rotate file"
     Then verifikator tidak berhasil merotasi foto bukti transaksi yang kosong

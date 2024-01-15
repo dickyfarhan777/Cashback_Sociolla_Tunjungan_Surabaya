@@ -18,7 +18,7 @@ Feature: Edit form verifikasi
     And klik tombol edit
     And menghapus isi di bagian field nama lengkap nasabah
     And klik tombol simpan
-    And Muncul alert "The Customer Name field is required."
+    And Muncul error "The Customer Name field is required."
     Then verifikator tidak berhasil mengosongkan field nama lengkap nasabah
 
   #positif
@@ -51,7 +51,8 @@ Feature: Edit form verifikasi
     And klik tombol mata di bagian kolom aksi
     And klik tombol edit
     And menghapus isi field nominal transaksi
-    And muncul alert "Nominal belanja minimal Rp. 250.000"
+    And klik tombol simpan
+    And muncul error "The Nominal Transaksi field is required."
     Then field nominal transaksi tidak bisa kosong
 
   #Positif

@@ -142,6 +142,172 @@ public class VerifikasiPage {
     public void clickBtnVerifikasi(){
         btnVerifikasi.click();
     }
+    public void clickOkConfirm1(){
+        okModalKonfirmasiVerifikasi.click();
+    }
+    public void clickOkAlertConfirm(){
+
+    }
+    public void setTxtValidVerifikasi(){
+        txtValidVerifikasi.getText();
+    }
+    public void disabledForm(){
+        disabledNamaLengkapNasabah.click();
+        disabledNoHp.click();
+        disabledNoRekBCA.click();
+        disabledPembayaranQRIS.click();
+        disabledNominalTransaksi.click();
+        disabledNominalCashback.click();
+        disabledNamaMerchant.click();
+        disabledRRN.click();
+    }
+    public void clickFotoBukti1(){
+        fotoBuktiTransaksi1.click();
+    }
+    public void clickChooseFile1(){
+        btnChooseFile1.click();
+    }
+    public void clickGantiFoto1(){
+        btnGantiFoto1.click();
+    }
+    public void clickFotoBukti2(){
+        fotoBuktiTransaksi2.click();
+    }
+    public void clickChooseFile2(){
+        btnChooseFile2.click();
+    }
+    public void clickFotoBukti3(){
+        fotoBuktiTransaksi3.click();
+    }
+    public void txtErrorFoto(){
+        txtTidakValidMenggantiFoto.getText();
+    }
+    public void clickShowEntries(){
+        dropdownShowEntries.click();
+    }
+    public void opsi25(){
+
+    }
+    public void setTxtTabelMaks25(){
+        txtTabelMaks25.getText();
+    }
+    public void inputFieldNote(){
+        fieldNote.sendKeys("isi note disini");
+    }
+    public void clickSaveNote(){
+        btnSaveNote.click();
+    }
+    public void deleteIsiNote(){
+
+    }
+    public void clickRotate90Bukti1(){
+        btn90Rotate1.click();
+    }
+    public void clickRotate180Bukti(){
+        btn180Rotate2.click();
+    }
+    public void errorRotate(){
+        alertErrorRotate2.getText();
+    }
+    public void clickEdit(){
+        btnEditFormVerifikasi.click();
+    }
+    public void changeNamaCust(){
+        inputNamaLengkapNasabah.sendKeys("salma123@#$");
+    }
+    public void clickSimpan(){
+        btnSimpanEditForm.click();
+    }
+    public void suksesMengubahData(){
+
+    }
+    public void deleteNamaCust(){
+        inputNamaLengkapNasabah.sendKeys();
+    }
+    public void errorFieldNama(){
+        errorNameRequired.getText();
+    }
+    public void changeNominalTransaksi(){
+        inputNominalTransaksi.sendKeys("00000");
+    }
+    public void suksesUpdateTransaksi(){
+
+    }
+    public void changeTransaksi300Up(){
+        inputNominalTransaksi.sendKeys("300001");
+    }
+    public void setTxtNominalCashback(){
+        txtNominalCashback.getText();
+    }
+    public void txtValidCashback(){
+        txtNominalCashback.getText();
+    }
+    public void deleteNominalTransaksi(){
+        inputNominalTransaksi.sendKeys("");
+    }
+    public void setErrorNominalTransaksiRequired(){
+        errorNominalTransaksiRequired.getText();
+    }
+    public void clickTanggalTransaksi(){
+        inputTanggalTransaksi.click();
+    }
+    public void pilihTanggalTransaksi(){
+
+    }
+    public void clickPembayaranQRIS(){
+        dropdownPembayaranQRIS.click();
+    }
+    public void setErrorPembayaranQRISRequired(){
+        errorPembayaranQRISRequired.getText();
+    }
+    public void clickNamaMerchant(){
+        dropdownNamaMerchant.click();
+    }
+    public void inputFieldSearch(){
+        fieldSearch.sendKeys("Septia");
+    }
+    public void clickEnter(){
+
+    }
+    public void setTxtNamaCust(){
+        txtSeptia.getText();
+    }
+    public void inputNamaSales(){
+        fieldSearch.sendKeys("rinzana");
+    }
+    public void txtNamaSales(){
+        txtRinzana.getText();
+    }
+    public void deleteFieldSearch(){
+        fieldSearch.sendKeys();
+    }
+    public void setTxtIsiTabel(){
+        txtIsiTabel.getText();
+    }
+    public void clickPage3(){
+        paginationPage3.click();
+    }
+    public void setTxtPage3(){
+        txtPage3.getText();
+    }
+    public void clickPrevious(){
+        btnPrevious.click();
+    }
+    public void setTxtPrevious(){
+        txtPrevious.getText();
+    }
+    public void clickNext(){
+        btnNext.click();
+    }
+    public void setTxtNext(){
+        txtNext.getText();
+    }
+
+
+
+
+
+
 
 
 }

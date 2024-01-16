@@ -14,6 +14,9 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
+
+    @FindBy(xpath = "//span[@class='login100-form-title p-b-41']") // tampilan halaman login
+    private WebElement txtLogin;
     @FindBy(xpath = "//input[@placeholder='Username']")
     private WebElement username;
 
@@ -23,27 +26,59 @@ public class LoginPage {
     @FindBy(xpath = "//button[@class='login100-form-btn']")
     private WebElement buttonLogin;
 
-    @FindBy(xpath = "//center[normalize-space()='Selamat datang, admintiara2']")
-    private WebElement txtWelcome;
+    @FindBy(xpath = "//b[normalize-space()='Username atau Password Salah!']")
+    private WebElement txtFailLogin;
+
+    @FindBy(xpath = "//div[@data-validate='Enter username']") // alert enter username
+    private WebElement txtAlertUsername;
+
+    @FindBy(xpath = "//div[@data-validate='Enter password']") // alert enter password
+    private WebElement txtAlertPassword;
+
+    @FindBy(xpath = "//center[(text() = ' Selamat datang, admintiara2            ' or . = ' Selamat datang, admintiara2            ')]")
+    private WebElement txtHome;
+
+    @FindBy(xpath = "//p[normalize-space()='Logout']")
+    private WebElement logout;
+
 
 
     // step action
-    public void username(String username) {
+
+    public void setUsername(String username) {
         this.username.sendKeys(username);
     }
 
-    public void password(String password){
+    public void setPassword(String password){
         this.password.sendKeys(password);
     }
 
-    public void buttonLogin() {
+    public void setButtonLogin() {
         buttonLogin.click();
     }
 
+    public void setLogout(){
+        logout.click();
+    }
+
+
     // validation
 
-    public String getTxtWelcome(){
-        return txtWelcome.getText();
+    public String getTxtLogin(){
+        return txtLogin.getText();
     }
+
+    public String getTxtFailLogin(){
+        return txtFailLogin.getText();
+    }
+
+    public String getTxtAlertUsername(){
+        return txtAlertUsername.getText();
+    }
+    public String getTxtHome(){
+        return txtHome.getText();
+    }
+
+
 
 }

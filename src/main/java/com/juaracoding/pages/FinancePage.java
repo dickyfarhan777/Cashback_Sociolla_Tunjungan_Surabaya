@@ -1,12 +1,7 @@
 package com.juaracoding.pages;
 
-import com.juaracoding.drivers.DriverSingleton;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import javax.imageio.plugins.jpeg.JPEGImageReadParam;
 
 public class FinancePage {
 
@@ -22,6 +17,9 @@ public class FinancePage {
     @FindBy(xpath = "//select[@name='table_length']") // memilih show entries list
     private WebElement controlList;
 
+    @FindBy(xpath = "//div[@id='table_info']")
+    private WebElement txtShowingEntries;
+
     @FindBy(xpath = "//tbody/tr[1]/td[12]/a[1]/i[1]") // aksi untuk menampilkan data transaksi customer
     private WebElement btnAction;
 
@@ -31,8 +29,17 @@ public class FinancePage {
     @FindBy(xpath = "//a[normalize-space()='2']") // menampilkan halaman selanjutnya di control page Number 2
     private WebElement btnPage2;
 
-    @FindBy(xpath = "//li[@id='table_previous']") // menampilkan halaman sebelumnya di control page Next
+    @FindBy(xpath = "//a[contains(text(),'3')]") // klik page 3
+    private WebElement btnPage3;
+
+    @FindBy(xpath = "//div[@id='table_info']") // tampilan page 3
+    private WebElement txtDataPage3;
+
+    @FindBy(xpath = "//li[@id='table_previous']") // klik previous
     private WebElement btnPrevious;
+
+    @FindBy(xpath = "//div[@id='table_info']") // menampilkan halaman sebelumnya di control page Previous
+    private WebElement txtDataPagePrevious;
 
     @FindBy(xpath = "//input[@class='form-control form-control-sm']") // kolom search mencari data customer dgn Nama, RRN, RefID
     private WebElement inputFirstName;
@@ -64,9 +71,12 @@ public class FinancePage {
     @FindBy(xpath = "//i[@class='fas fa-bars']")
     private WebElement btnHide;
 
+    @FindBy(xpath = "//a[contains(text(),'Dashboard')]")
+    private WebElement txtDashboard;
+
 
     // step action
-    public void btnFinance(){
+    public void setBtnFinance(){
         btnFinance.click();
     }
 
@@ -76,6 +86,14 @@ public class FinancePage {
 
     public void setControlList(){
         controlList.click();
+    }
+
+    public String getTxtShowingEntries(){
+        return txtShowingEntries.getText();
+    }
+
+    public String getTxtDataVerifikasi(){
+        return txtDataVerifikasi.getText();
     }
 
     public void setBtnAction(){
@@ -90,8 +108,20 @@ public class FinancePage {
         btnPage2.click();
     }
 
+    public void setBtnPage3(){
+        btnPage3.click();
+    }
+
+    public String getTxtDataPage3(){
+        return txtDataPage3.getText();
+    }
+
     public void setBtnPrevious(){
         btnPrevious.click();
+    }
+
+    public String getTxtDataPagePrevious(){
+        return txtDataPagePrevious.getText();
     }
 
     public void setInputFirstName(String firstName){
@@ -103,7 +133,7 @@ public class FinancePage {
     }
 
     public void setInputMidleName(String midleName){
-        this.setInputMidleName().sendKeys(midleName);
+        this.inpuMidleName.sendKeys(midleName);
     }
 
     public void setInputRrn(String Rrn){
@@ -132,6 +162,10 @@ public class FinancePage {
 
     public void setBtnHide(){
         btnHide.click();
+    }
+
+    public String getTxtDashboard(){
+       return txtDashboard.getText();
     }
 
 

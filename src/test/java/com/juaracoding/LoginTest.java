@@ -1,12 +1,13 @@
 package com.juaracoding;
 
 import com.juaracoding.pages.LoginPage;
+import com.juaracoding.utils.Constant;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.en_scouse.An;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -21,56 +22,133 @@ public class LoginTest {
         extentTest = Hooks.extentTest;
     }
 
-    @Given("User access the link cashback sociolla")
-    public void User_access_the_link_cashback_sociolla (){
-        String url = "https://staging.ptkta.com/xcashback_sociolla/login\n";
-        driver.get(url);
-        Assert.assertEquals(driver.getCurrentUrl(),url);
+    @Given("User akses link web cashback")
+    public void user_akses_link_web_cashback(){
+        driver.get(Constant.URL);
+        extentTest.log(LogStatus.PASS,"User akses link web cashback");
+    }
+    @When("Tampilan halaman login")
+    public void tampilan_halaman_login(){
+        loginPage.getTxtLogin();
+        Assert.assertTrue(loginPage.getTxtLogin().contains("SOCIOLLA TUNJUNGAN SURABAYA"));
+        extentTest.log(LogStatus.PASS,"Tampilan halaman login");
     }
 
-    @When("Display the login page")
-    public void display_the_login_page(){
+    @And("Input username admintiara2")
+    public void input_username_admintiara2(){
+        loginPage.setUsername("admintiara2");
+        extentTest.log(LogStatus.PASS,"Input username admintiara2");
+    }
+    @And("Input password a")
+    public void input_password_a(){
+        loginPage.setPassword("a");
+        extentTest.log(LogStatus.PASS,"Input password a");
+    }
+    @And("Klik button login")
+    public void klik_button_login(){
+        loginPage.setButtonLogin();
+        extentTest.log(LogStatus.PASS,"Klik button login");
+    }
+    @Then("Tampilan halaman home")
+    public void tampilan_halaman_home(){
+        loginPage.getTxtHome();
+        Assert.assertEquals(loginPage.getTxtHome(),"Selamat datang, admintiara2");
+        extentTest.log(LogStatus.PASS,"Tampilan halaman home");
     }
 
-    @And("Enter username admintiara2")
-    public void Enter_username_admintiara2_and_password_a(){
-        loginPage.username("admintiara2");
+    @And("Input unvalidated username")
+    public void Input_unvalidated_username(){
+        loginPage.setLogout();
+        loginPage.setUsername("admintiara123");
+        extentTest.log(LogStatus.PASS,"Input unvalidated username");
     }
 
-    @And("Enter password a")
-    public void Enter_password_a(){
-        loginPage.password("a");
+    @Then("Menampilkan alert username atau password salah")
+    public void Menampilkan_alert_username_atau_password_salah(){
+        loginPage.getTxtFailLogin();
+        Assert.assertEquals(loginPage.getTxtFailLogin(),"Username atau Password Salah!");
+        extentTest.log(LogStatus.PASS,"Menampilkan alert username atau password salah");
     }
 
-    @And("Click the login button")
-    public void Click_the_login_button(){
-        loginPage.buttonLogin();
+    @Then("Menampilkan icon alert")
+    public void Menampilkan_icon_alert(){
+        loginPage.getTxtAlertUsername();
+        Assert.assertEquals(loginPage.getTxtAlertUsername(),"Enter Username");
+        extentTest.log(LogStatus.PASS,"Menampilkan icon alert");
     }
 
-    @Then("Home page display")
-    public void Home_page_display(){
-        Assert.assertEquals(loginPage.getTxtWelcome(),"Selamat datang, admintiara2");
+    @And("Input username Admintiara2")
+    public void Input_username_Admintiara2(){
+        loginPage.setUsername("Admintiara2");
+        extentTest.log(LogStatus.PASS,"Input username Admintiara2");
     }
 
-    @And("Input unvalidated username and valid password")
-    public void Input_unvalidated_username_and_valid_password(){
+    @And("Input username ADMINTIARA2")
+    public void Input_username_ADMINTIARA2(){
+        loginPage.setUsername("ADMINTIARA2");
+        extentTest.log(LogStatus.PASS,"Input username ADMINTIARA2");
     }
 
-    @And("Enter username Admintiara2")
-    public void Enter_username_Admintiara2(){
+
+    // LOGIN VERIFIKATOR //
+    @And("Input username feriansyah2")
+    public void Input_username_feriansyah2(){
+        loginPage.setLogout();
+        loginPage.setUsername("feriansyah2");
+        extentTest.log(LogStatus.PASS,"Input username feriansyah2");
     }
 
-    @And("Enter username ADMINTIARA2")
-    public void Enter_username_ADMINTIARA2(){
+    @And("Input password aa")
+    public void Input_password_aa(){
+        loginPage.setPassword("aa");
+        extentTest.log(LogStatus.PASS,"Input password aa");
     }
 
-    @Then("Displays the message or alert Incorrect Username or Password")
-    public void Displays_the_message_or_alert_Incorrect_Username_or_Password(){
+    @And("Input username Feriansyah2")
+    public void Input_username_Feriansyah2(){
+        loginPage.setLogout();
+        loginPage.setUsername("Feriansyah2");
+        extentTest.log(LogStatus.PASS,"Input username Feriansyah2");
     }
 
-    @Then("Displays the alert icon or Enter Username Enter Password")
-    public void Displays_the_alert_icon_or_Enter_Username_Enter_Password(){
+    @And("Input username FERIANSYAH2")
+    public void Input_username_FERIANSYAH2(){
+        loginPage.setUsername("FERIANSYAH2");
+        extentTest.log(LogStatus.PASS,"Input username FERIANSYAH2");
     }
 
+
+    // LOGIN FINANCE //
+    @And("Input username feriansyah")
+    public void Input_username_feriansyah(){
+        loginPage.setUsername("feriansyah");
+        extentTest.log(LogStatus.PASS,"Input username feriansyah");
+    }
+
+    @And("Input username tidak terdaftar")
+    public void Input_username_tidak_terdaftar(){
+        loginPage.setLogout();
+        loginPage.setUsername("trisna");
+        extentTest.log(LogStatus.PASS,"Input username tidak terdaftar");
+    }
+
+    @And("Input password tidak terdaftar")
+    public void Input_password_tidak_terdaftar(){
+        loginPage.setPassword("123");
+        extentTest.log(LogStatus.PASS,"Input password tidak terdaftar");
+    }
+
+    @And("Input username Feriansyah")
+    public void Input_username_Feriansyah(){
+        loginPage.setLogout();
+        loginPage.setUsername("Feriansyah");
+        extentTest.log(LogStatus.PASS,"Input username Feriansyah");
+    }
+
+    @And("Input username FERIANSYAH")
+    public void Input_username_FERIANSYAH(){
+        loginPage.setUsername("FERIANSYAH");
+        extentTest.log(LogStatus.PASS,"Input username FERIANSYAH");
+    }
 
 }

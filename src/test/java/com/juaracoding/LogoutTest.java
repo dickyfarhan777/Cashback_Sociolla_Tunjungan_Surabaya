@@ -1,7 +1,10 @@
 package com.juaracoding;
 
 import com.juaracoding.pages.LoginPage;
+import com.juaracoding.pages.LogoutPage;
+import com.juaracoding.utils.Constant;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,12 +12,11 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import java.security.PublicKey;
-
 public class LogoutTest {
     private static WebDriver driver;
     private static ExtentTest extentTest;
     public static LoginPage loginPage = new LoginPage();
+    public static LogoutPage logoutPage = new LogoutPage();
 
 
     public LogoutTest(){
@@ -22,44 +24,60 @@ public class LogoutTest {
         extentTest = Hooks.extentTest;
     }
 
-    @Given("User access the link cashback sociolla")
-    public void User_access_the_link_cashback_sociolla (){
-        String url = "https://staging.ptkta.com/xcashback_sociolla/login\n";
-        driver.get(url);
-        Assert.assertEquals(driver.getCurrentUrl(),url);
+    @Given("User akses link web cashback")
+    public void user_akses_link_web_cashback(){
+        driver.get(Constant.URL);
+        extentTest.log(LogStatus.PASS,"User akses link web cashback");
     }
 
-    @When("User admin has successfully logged in")
-    public void User_admin_has_successfully_logged_in(){
+    @When("User Admin berhasil login ke web cashback")
+    public void User_Admin_berhasil_login_ke_web_cashback(){
     }
 
-    @And("Dashboard display")
-    public void Dashboard_display(){
+    @And("Tampilan Home")
+    public void Tampilan_Home(){
+        logoutPage.getTxtHomeAdmin();
+        Assert.assertTrue(logoutPage.getTxtHomeAdmin().contains("Selamat datang, admintiara2"));
+        extentTest.log(LogStatus.PASS,"Tampilan Home");
     }
 
-    @And("Click the logout menu button")
-    public void Click_the_logout_menu_button(){
+    @And("Klik button menu logout")
+    public void Klik_button_menu_logout(){
+        logoutPage.setBtnLogout();
     }
 
-    @Then("Display the initial login page")
-    public void Display_the_initial_login_page(){
+    @Then("Tampilan halaman awal login")
+    public void Tampilan_halaman_awal_login(){
+        logoutPage.getTxtPageLogin();
+        Assert.assertTrue(logoutPage.getTxtPageLogin().contains("SOCIOLLA TUNJUNGAN SURABAYA"));
+        extentTest.log(LogStatus.PASS,"Tampilan halaman awal login");
     }
 
-    @When("User verifier has successfully logged in")
-    public void User_verifier_has_successfully_logged_in(){
+    @And("Putuskan device dengan jaringan internet")
+    public void Putuskan_device_dengan_jaringan_internet(){
     }
 
-    @When("User finance has successfully logged in")
-    public void User_finance_has_successfully_logged_in(){
+    @Then("Menampilkan pesan No internet")
+    public void Menampilkan_pesan_No_internet(){
+        logoutPage.getTxtNoInternet();
+        Assert.assertEquals(logoutPage.getTxtNoInternet(),"No Intenet");
+        extentTest.log(LogStatus.PASS,"Putuskan device dengan jaringan internet");
     }
 
-    @And("Disconnect the device from the internet network")
-    public void Disconnect_the_device_from_the_internet_network(){
+    @When("User Verifikator berhasil login ke web cashback")
+    public void User_Verifikator_berhasil_login_ke_web_cashback(){
+        logoutPage.getTxtHomeVerif();
+        Assert.assertEquals(logoutPage.getTxtHomeVerif(),"Selamat datang, Feri Nugraha 2");
+        extentTest.log(LogStatus.PASS,"User Verifikator berhasil login ke web cashback");
     }
 
-    @Then("Displays a notification the device is not connected to internet network no internet")
-    public void Displays_a_notification_the_device_is_not_connected_to_internet_network_no_internet(){
+    @When("User Finance berhasil login ke web cashback")
+    public void User_Finance_berhasil_login_ke_web_cashback(){
+        logoutPage.getTxtHomeFinance();
+        Assert.assertEquals(logoutPage.getTxtHomeFinance(),"Selamat datang, Feri Nugraha");
+        extentTest.log(LogStatus.PASS,"User Finance berhasil login ke web cashback");
     }
+
 
 }
 

@@ -1,4 +1,5 @@
 package com.juaracoding;
+import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.pages.LoginPage;
 import com.juaracoding.pages.VerifikasiPage;
 import com.juaracoding.utils.Constant;
@@ -10,9 +11,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en_au.ButattheendofthedayIreckon;
 import io.cucumber.java.en_scouse.An;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.Set;
+
 public class VerifikasiTest {
     private static WebDriver driver;
     private static ExtentTest extentTest;
@@ -22,15 +27,17 @@ public class VerifikasiTest {
         driver = Hooks.driver;
         extentTest = Hooks.extentTest;
     }
-
     //verifikasi =============================================
     //verifikasi valid penukaran voucher : positif
-    @Given("verifikator menuju ke menu verifikasi")
-    public void verifikator_menuju_ke_menu_verifikasi(){
-    verifikasiPage.clickMenuVerifikasi();
+    @Given("Verifikator login web sociolla cashback")
+    public void verifikator_login_web_sociolla_cashback() {
+        loginPage.loginAdmin("nadia.verif", "a");
+        extentTest.log(LogStatus.PASS,"sukses login");
     }
-    @When("pilih data customer")
-    public void pilih_data_customer(){
+    @When("klik menu verifikasi")
+    public void klik_menu_verifikasi(){
+        verifikasiPage.clickMenuVerifikasi();
+        extentTest.log(LogStatus.PASS, "sukses klik menu verif");
     }
     @And("klik tombol mata di bagian kolom aksi")
     public void klik_tombol_mata_di_bagian_kolom_aksi(){
@@ -46,14 +53,24 @@ public class VerifikasiTest {
     }
     @And("klik ok pada popup konfirmasi 2")
     public void klik_ok_pada_popup_konfirmasi_2(){
-    verifikasiPage.clickOkAlertConfirm();
+//    verifikasiPage.clickOkAlertConfirm();
+        DriverSingleton.delay(2);
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        driver.switchTo().alert().accept();
+        extentTest.log(LogStatus.PASS, "Sukses verifikasi data!");
     }
     @Then("verifikator berhasil verifikasi penukaran voucher")
     public void verifikator_berhasil_verifikasi_penukaran_voucher(){
-    verifikasiPage.setTxtValidVerifikasi();
+//    verifikasiPage.setTxtValidVerifikasi();
+    Assert.assertEquals(verifikasiPage.setTxtValidVerifikasi(), "List Data Register");
     }
 
     //field form tidak bisa diklik : negatif
+    @Given("verifikator menuju ke menu verifikasi")
+    public void verifikator_menuju_ke_menu_verifikasi(){
+        verifikasiPage.clickMenuVerifikasi();
+    }
     @And("klik tiap field form")
     public void klik_tiap_field_form(){
     verifikasiPage.disabledForm();

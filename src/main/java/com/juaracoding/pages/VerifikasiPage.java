@@ -145,11 +145,11 @@ public class VerifikasiPage {
     public void clickOkConfirm1(){
         okModalKonfirmasiVerifikasi.click();
     }
-    public void clickOkAlertConfirm(){
-
-    }
-    public void setTxtValidVerifikasi(){
-        txtValidVerifikasi.getText();
+//    public void clickOkAlertConfirm(){
+//
+//    }
+    public String setTxtValidVerifikasi(){
+        return txtValidVerifikasi.getText();
     }
     public void disabledForm(){
         disabledNamaLengkapNasabah.click();
@@ -179,8 +179,8 @@ public class VerifikasiPage {
     public void clickFotoBukti3(){
         fotoBuktiTransaksi3.click();
     }
-    public void txtErrorFoto(){
-        txtTidakValidMenggantiFoto.getText();
+    public String txtErrorFoto(){
+        return txtTidakValidMenggantiFoto.getText();
     }
     public void clickShowEntries(){
         dropdownShowEntries.click();
@@ -188,8 +188,8 @@ public class VerifikasiPage {
     public void opsi25(){
 
     }
-    public void setTxtTabelMaks25(){
-        txtTabelMaks25.getText();
+    public String setTxtTabelMaks25(){
+        return txtTabelMaks25.getText();
     }
     public void inputFieldNote(){
         fieldNote.sendKeys("isi note disini");
@@ -206,8 +206,8 @@ public class VerifikasiPage {
     public void clickRotate180Bukti(){
         btn180Rotate2.click();
     }
-    public void errorRotate(){
-        alertErrorRotate2.getText();
+    public String errorRotate(){
+        return alertErrorRotate2.getText();
     }
     public void clickEdit(){
         btnEditFormVerifikasi.click();
@@ -224,8 +224,8 @@ public class VerifikasiPage {
     public void deleteNamaCust(){
         inputNamaLengkapNasabah.sendKeys();
     }
-    public void errorFieldNama(){
-        errorNameRequired.getText();
+    public String errorFieldNama(){
+        return errorNameRequired.getText();
     }
     public void changeNominalTransaksi(){
         inputNominalTransaksi.sendKeys("00000");
@@ -236,17 +236,17 @@ public class VerifikasiPage {
     public void changeTransaksi300Up(){
         inputNominalTransaksi.sendKeys("300001");
     }
-    public void setTxtNominalCashback(){
-        txtNominalCashback.getText();
+    public String setTxtNominalCashback(){
+        return txtNominalCashback.getText();
     }
-    public void txtValidCashback(){
-        txtNominalCashback.getText();
+    public String txtValidCashback(){
+        return txtNominalCashback.getText();
     }
     public void deleteNominalTransaksi(){
         inputNominalTransaksi.sendKeys("");
     }
-    public void setErrorNominalTransaksiRequired(){
-        errorNominalTransaksiRequired.getText();
+    public String setErrorNominalTransaksiRequired(){
+        return errorNominalTransaksiRequired.getText();
     }
     public void clickTanggalTransaksi(){
         inputTanggalTransaksi.click();
@@ -257,8 +257,8 @@ public class VerifikasiPage {
     public void clickPembayaranQRIS(){
         dropdownPembayaranQRIS.click();
     }
-    public void setErrorPembayaranQRISRequired(){
-        errorPembayaranQRISRequired.getText();
+    public String setErrorPembayaranQRISRequired(){
+        return errorPembayaranQRISRequired.getText();
     }
     public void clickNamaMerchant(){
         dropdownNamaMerchant.click();
@@ -269,38 +269,38 @@ public class VerifikasiPage {
     public void clickEnter(){
 
     }
-    public void setTxtNamaCust(){
-        txtSeptia.getText();
+    public String setTxtNamaCust(){
+        return txtSeptia.getText();
     }
     public void inputNamaSales(){
         fieldSearch.sendKeys("rinzana");
     }
-    public void txtNamaSales(){
-        txtRinzana.getText();
+    public String txtNamaSales(){
+        return txtRinzana.getText();
     }
     public void deleteFieldSearch(){
         fieldSearch.sendKeys();
     }
-    public void setTxtIsiTabel(){
-        txtIsiTabel.getText();
+    public String setTxtIsiTabel(){
+        return txtIsiTabel.getText();
     }
     public void clickPage3(){
         paginationPage3.click();
     }
-    public void setTxtPage3(){
-        txtPage3.getText();
+    public String setTxtPage3(){
+        return txtPage3.getText();
     }
     public void clickPrevious(){
         btnPrevious.click();
     }
-    public void setTxtPrevious(){
-        txtPrevious.getText();
+    public String setTxtPrevious(){
+        return txtPrevious.getText();
     }
     public void clickNext(){
         btnNext.click();
     }
-    public void setTxtNext(){
-        txtNext.getText();
+    public String setTxtNext(){
+        return txtNext.getText();
     }
 
 

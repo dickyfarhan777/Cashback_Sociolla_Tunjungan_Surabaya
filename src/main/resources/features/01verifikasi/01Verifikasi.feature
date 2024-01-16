@@ -1,9 +1,8 @@
-Feature Verifikasi
-
+Feature: Verifikasi
   #test case positif
   Scenario: verifikasi valid penukaran voucher
-    Given verifikator menuju ke menu verifikasi
-    When pilih data customer
+    Given Verifikator login web sociolla cashback
+    When klik menu verifikasi
     And klik tombol mata di bagian kolom aksi
     And klik tombol verifikasi
     And klik ok pada popup konfirmasi 1

@@ -108,9 +108,12 @@ public class RegisterPage {
     public void setInputNoRekening(String noRekening){
         this.inputNoRekening.sendKeys(noRekening);
     }
-    public void setPembayaranQris(){
-        pembayaranQris.sendKeys("MyBca");
+    public void setQrisPilih(String qris){
+        this.pembayaranQris.sendKeys(qris);
 
+    }
+    public void setPembayaranQris(String pembayaran){
+        this.pembayaranQris.sendKeys(pembayaran);
     }
     public void setNominalTransaksi(String nominalTransaksi){
         this.inputNominalTransaksi.sendKeys(nominalTransaksi);
@@ -120,6 +123,8 @@ public class RegisterPage {
     }
     public void setNamaMerchant(String namaMerchant){
         this.inputNamaMerchant.sendKeys(namaMerchant);
+    }public void setMerchantPilih(String pilih){
+        this.inputNamaMerchant.sendKeys(pilih);
     }
     public void setAngkaRRN(String angkaRRN){
 this.inputAngkaRRN.sendKeys(angkaRRN);
@@ -183,7 +188,13 @@ inputFotoBuktiTransaksi3.sendKeys("C:\\MyTools\\Bukti TF 3.jpg");
         return txtNamaMerchantError.getAttribute("required");
     }
 
-    public String getTxtRequired(){
-        return txtSocoId.getAttribute("required")
+    public String getTxtRequiredSocoId(){
+        return txtSocoId.getAttribute("required");
+    }
+    public String getTxtRequiredNamaMerchant(){
+        return inputNamaMerchant.getAttribute("required");
+    }
+    public String getTxtRequiredPembayaranQris(){
+        return pembayaranQris.getAttribute("required");
     }
 }

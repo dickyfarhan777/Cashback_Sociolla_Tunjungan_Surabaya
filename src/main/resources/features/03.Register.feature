@@ -77,7 +77,7 @@ Feature: Register Admin
           And Upload Foto Bukti Transaksi 2
           And Upload Foto Bukti Transaksi 3
           And Klik submit data
-          Then Menampilkan alert Karakter huruf tidak diizinkan
+          Then Menampilkan alert ok
 #7
           Scenario: Admin input Soco Id dengan menggunakan Karakter @
             Given Klik menu Register
@@ -455,184 +455,184 @@ Feature: Register Admin
                                                     And Upload Foto Bukti Transaksi 2
                                                     And Upload Foto Bukti Transaksi 3
                                                     And Klik submit data
-                                                    Then Menampilkan alert sukses
-
-                                                    Scenario:
+                                                    Then Menampilkan alert
+#28
+                                                    Scenario: Admin tidak memilih pembayaran qris
                                                       Given Klik menu Register
                                                       When Klik add new data
-                                                      And Input Soco Id dengan benar
+                                                      And Input Soco Id dengan benar random
                                                       And Input Nama Lengkap Nasabah Dengan Benar
                                                       And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
                                                       And Input Nomor Rekening Bca Dengan Benar
-                                                      And Pilih Pembayaran Qris
+                                                      And Tidak memilih pembayaran Qris
                                                       And Input Nominal Transaksi Dengan Benar
                                                       And Input Tanggal Transaksi Dengan Benar
                                                       And Pilih Nama Merchant
-                                                      And Input Rrn Dengan Benar
+                                                      And Input Rrn Dengan Benar random rrn number
                                                       And Upload Foto Bukti Transaksi 1
                                                       And Upload Foto Bukti Transaksi 2
                                                       And Upload Foto Bukti Transaksi 3
                                                       And Klik submit data
-                                                      Then Menampilkan alert sukses
-
+                                                      Then Menampilkan alert please fill out this field pembayaran qris
+#29
                                                       Scenario:
                                                         Given Klik menu Register
                                                         When Klik add new data
-                                                        And Input Soco Id dengan benar
+                                                        And Input Soco Id dengan benar random
                                                         And Input Nama Lengkap Nasabah Dengan Benar
-                                                        And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
-                                                        And Input Nomor Rekening Bca Dengan Benar
+                                                        And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                        And Input Nomor Rekening Bca Dengan Benar rekening random
                                                         And Pilih Pembayaran Qris
                                                         And Input Nominal Transaksi Dengan Benar
                                                         And Input Tanggal Transaksi Dengan Benar
-                                                        And Pilih Nama Merchant
-                                                        And Input Rrn Dengan Benar
+                                                        And Tidak memilih nama merchant
+                                                        And Input Rrn Dengan Benar random rrn number
                                                         And Upload Foto Bukti Transaksi 1
                                                         And Upload Foto Bukti Transaksi 2
                                                         And Upload Foto Bukti Transaksi 3
                                                         And Klik submit data
-                                                        Then Menampilkan alert sukses
-
+                                                        Then Menampilkan alert please fill out this field nama merchant
+#30
                                                         Scenario:
                                                           Given Klik menu Register
                                                           When Klik add new data
-                                                          And Input Soco Id dengan benar
+                                                          And Input Soco Id dengan emoticon
                                                           And Input Nama Lengkap Nasabah Dengan Benar
-                                                          And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
-                                                          And Input Nomor Rekening Bca Dengan Benar
+                                                          And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                          And Input Nomor Rekening Bca Dengan Benar rekening random
                                                           And Pilih Pembayaran Qris
                                                           And Input Nominal Transaksi Dengan Benar
                                                           And Input Tanggal Transaksi Dengan Benar
                                                           And Pilih Nama Merchant
-                                                          And Input Rrn Dengan Benar
+                                                          And Input Rrn Dengan Benar random rrn number
                                                           And Upload Foto Bukti Transaksi 1
                                                           And Upload Foto Bukti Transaksi 2
                                                           And Upload Foto Bukti Transaksi 3
                                                           And Klik submit data
-                                                          Then Menampilkan alert sukses
-
+                                                          Then Menampilkan alert ok
+#31
                                                           Scenario:
                                                             Given Klik menu Register
                                                             When Klik add new data
-                                                            And Input Soco Id dengan benar
-                                                            And Input Nama Lengkap Nasabah Dengan Benar
-                                                            And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
-                                                            And Input Nomor Rekening Bca Dengan Benar
+                                                            And Input Soco Id dengan benar random
+                                                            And Input Nama Lengkap Nasabah Dengan emoticon
+                                                            And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                            And Input Nomor Rekening Bca Dengan Benar rekening random
                                                             And Pilih Pembayaran Qris
                                                             And Input Nominal Transaksi Dengan Benar
                                                             And Input Tanggal Transaksi Dengan Benar
                                                             And Pilih Nama Merchant
-                                                            And Input Rrn Dengan Benar
+                                                            And Input Rrn Dengan Benar random rrn number
                                                             And Upload Foto Bukti Transaksi 1
                                                             And Upload Foto Bukti Transaksi 2
                                                             And Upload Foto Bukti Transaksi 3
                                                             And Klik submit data
-                                                            Then Menampilkan alert sukses
+                                                            Then Menampilkan alert ok
 
                                                             Scenario:
                                                               Given Klik menu Register
                                                               When Klik add new data
-                                                              And Input Soco Id dengan benar
+                                                              And Input Soco Id dengan menggunakan Karakter #
                                                               And Input Nama Lengkap Nasabah Dengan Benar
-                                                              And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
-                                                              And Input Nomor Rekening Bca Dengan Benar
+                                                              And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                              And Input Nomor Rekening Bca Dengan Benar rekening random
                                                               And Pilih Pembayaran Qris
                                                               And Input Nominal Transaksi Dengan Benar
                                                               And Input Tanggal Transaksi Dengan Benar
                                                               And Pilih Nama Merchant
-                                                              And Input Rrn Dengan Benar
+                                                              And Input Rrn Dengan Benar random rrn number
                                                               And Upload Foto Bukti Transaksi 1
                                                               And Upload Foto Bukti Transaksi 2
                                                               And Upload Foto Bukti Transaksi 3
                                                               And Klik submit data
-                                                              Then Menampilkan alert sukses
+                                                              Then Menampilkan alert ok
 
-                                                              Scenario:
+                                                              Scenario: Admin input soco id dengan menggunakan karakter -
                                                                 Given Klik menu Register
                                                                 When Klik add new data
-                                                                And Input Soco Id dengan benar
-                                                                And Input Nama Lengkap Nasabah Dengan Benar
-                                                                And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
+                                                                And Input Soco Id dengan menggunakan Karakter -
+                                                                And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                                And Input Nomor Rekening Bca Dengan Benar rekening random
                                                                 And Input Nomor Rekening Bca Dengan Benar
                                                                 And Pilih Pembayaran Qris
                                                                 And Input Nominal Transaksi Dengan Benar
                                                                 And Input Tanggal Transaksi Dengan Benar
                                                                 And Pilih Nama Merchant
-                                                                And Input Rrn Dengan Benar
+                                                                And Input Rrn Dengan Benar random rrn number
                                                                 And Upload Foto Bukti Transaksi 1
                                                                 And Upload Foto Bukti Transaksi 2
                                                                 And Upload Foto Bukti Transaksi 3
                                                                 And Klik submit data
-                                                                Then Menampilkan alert sukses
+                                                                Then Menampilkan alert ok
 
-                                                                Scenario:
+                                                                Scenario: Admin input soco id dengan menggunakan karakter #
                                                                   Given Klik menu Register
                                                                   When Klik add new data
-                                                                  And Input Soco Id dengan benar
+                                                                  And Input Soco Id dengan menggunakan Karakter #
                                                                   And Input Nama Lengkap Nasabah Dengan Benar
-                                                                  And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
-                                                                  And Input Nomor Rekening Bca Dengan Benar
+                                                                  And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                                  And Input Nomor Rekening Bca Dengan Benar rekening random
                                                                   And Pilih Pembayaran Qris
                                                                   And Input Nominal Transaksi Dengan Benar
                                                                   And Input Tanggal Transaksi Dengan Benar
                                                                   And Pilih Nama Merchant
-                                                                  And Input Rrn Dengan Benar
+                                                                  And Input Rrn Dengan Benar random rrn number
                                                                   And Upload Foto Bukti Transaksi 1
                                                                   And Upload Foto Bukti Transaksi 2
                                                                   And Upload Foto Bukti Transaksi 3
                                                                   And Klik submit data
-                                                                  Then Menampilkan alert sukses
+                                                                  Then Menampilkan alert ok
 
-                                                                  Scenario:
+                                                                  Scenario: Admin input soco id dengan menggunakan karakter ^
                                                                     Given Klik menu Register
                                                                     When Klik add new data
-                                                                    And Input Soco Id dengan benar
+                                                                    And Input Soco Id dengan menggunakan Karakter ^
                                                                     And Input Nama Lengkap Nasabah Dengan Benar
-                                                                    And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
-                                                                    And Input Nomor Rekening Bca Dengan Benar
+                                                                    And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                                    And Input Nomor Rekening Bca Dengan Benar rekening random
                                                                     And Pilih Pembayaran Qris
                                                                     And Input Nominal Transaksi Dengan Benar
                                                                     And Input Tanggal Transaksi Dengan Benar
                                                                     And Pilih Nama Merchant
-                                                                    And Input Rrn Dengan Benar
+                                                                    And Input Rrn Dengan Benar random rrn number
                                                                     And Upload Foto Bukti Transaksi 1
                                                                     And Upload Foto Bukti Transaksi 2
                                                                     And Upload Foto Bukti Transaksi 3
                                                                     And Klik submit data
-                                                                    Then Menampilkan alert sukses
+                                                                    Then Menampilkan alert ok
 
-                                                                    Scenario:
+                                                                    Scenario: Admin input dengan benar dan menampilkan error saving data
                                                                       Given Klik menu Register
                                                                       When Klik add new data
                                                                       And Input Soco Id dengan benar
                                                                       And Input Nama Lengkap Nasabah Dengan Benar
-                                                                      And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
-                                                                      And Input Nomor Rekening Bca Dengan Benar
+                                                                      And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                                      And Input Nomor Rekening Bca Dengan Benar rekening random
                                                                       And Pilih Pembayaran Qris
                                                                       And Input Nominal Transaksi Dengan Benar
                                                                       And Input Tanggal Transaksi Dengan Benar
                                                                       And Pilih Nama Merchant
-                                                                      And Input Rrn Dengan Benar
+                                                                      And Input Rrn Dengan Benar random rrn number
                                                                       And Upload Foto Bukti Transaksi 1
                                                                       And Upload Foto Bukti Transaksi 2
                                                                       And Upload Foto Bukti Transaksi 3
                                                                       And Klik submit data
-                                                                      Then Menampilkan alert sukses
+                                                                      Then Menampilkan alert error saving data
 
                                                                       Scenario:
                                                                         Given Klik menu Register
                                                                         When Klik add new data
-                                                                        And Input Soco Id dengan benar
+                                                                        And Input Soco Id dengan menggunakan Karakter *
                                                                         And Input Nama Lengkap Nasabah Dengan Benar
-                                                                        And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
-                                                                        And Input Nomor Rekening Bca Dengan Benar
+                                                                        And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                                        And Input Nomor Rekening Bca Dengan Benar rekening random
                                                                         And Pilih Pembayaran Qris
                                                                         And Input Nominal Transaksi Dengan Benar
                                                                         And Input Tanggal Transaksi Dengan Benar
                                                                         And Pilih Nama Merchant
-                                                                        And Input Rrn Dengan Benar
+                                                                        And Input Rrn Dengan Benar random rrn number
                                                                         And Upload Foto Bukti Transaksi 1
                                                                         And Upload Foto Bukti Transaksi 2
                                                                         And Upload Foto Bukti Transaksi 3
                                                                         And Klik submit data
-                                                                        Then Menampilkan alert sukses
+                                                                        Then Menampilkan alert ok

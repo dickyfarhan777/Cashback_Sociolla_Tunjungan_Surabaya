@@ -42,7 +42,7 @@ Feature: Report Data Admin
 
               Scenario: Admin melakukan pencarian menggunakan search yang tidak terdata
                 Given Klik menu report data
-                When Klik field search
+                When Klik field search dan Ketik data yang sudah terdaftar
                 And Ketik data yang tidak terdaftar
                 And Klik icon search
                 Then Tidak menampilkan data

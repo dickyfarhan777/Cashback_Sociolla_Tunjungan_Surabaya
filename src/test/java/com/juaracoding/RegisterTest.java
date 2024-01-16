@@ -92,9 +92,15 @@ public class RegisterTest {
 
     @And("Pilih Pembayaran Qris")
     public void pilih_pembayaran_qris() {
-        registerPage.setPembayaranQris();
+        registerPage.setPembayaranQris("MyBca");
         extentTest.log(LogStatus.PASS, "Pilih Pembayaran Qris");
     }
+    @And("Tidak memilih pembayaran Qris")
+    public void tidak_memilih_pembayaran_qris() {
+        registerPage.setPembayaranQris("Pilih");
+        extentTest.log(LogStatus.PASS, "Tidak memilih pembayaran Qris");
+    }
+
 
     @And("Input Nominal Transaksi Dengan Benar")
     public void input_nominal_transaksi_dengan_benar() {
@@ -117,6 +123,11 @@ public class RegisterTest {
     public void pilih_nama_merchant() {
         registerPage.setNamaMerchant("SOCIOLLA");
         extentTest.log(LogStatus.PASS, "Pilih Nama Merchant");
+    }
+    @And("Tidak memilih nama merchant")
+    public void tidak_memilih_nama_merchant() {
+        registerPage.setNamaMerchant("Pilih");
+        extentTest.log(LogStatus.PASS, "Tidak memilih nama merchant");
     }
 //Setting Ulang Lagi
     @And("Input Rrn Dengan Benar")
@@ -193,6 +204,16 @@ public class RegisterTest {
     public void socoid_menggunakan_campuran_huruf_dan_angka(){
         registerPage.setInputSocoId(faker.bothify("Dicky####"));
         extentTest.log(LogStatus.PASS,"Input soco id menggunakan campuran huruf dan angka");
+    }
+    @And("Input Soco Id dengan emoticon")
+    public void socoid_menggunakan_emoticon(){
+        registerPage.setInputSocoId(faker.bothify("######### ⚒️"));
+        extentTest.log(LogStatus.PASS,"Input Soco Id dengan emoticon");
+    }
+    @And("Input Nama Lengkap Nasabah Dengan emoticon")
+    public void nama_lengkap_menggunakan_emoticon(){
+        registerPage.setInputCustomerName(faker.bothify("?????????? ⚒️"));
+        extentTest.log(LogStatus.PASS,"Input Nama Lengkap Nasabah Dengan emoticon");
     }
     @And("Input Soco Id dengan menggunakan Karakter @")
     public void socoid_menggunakan_karakter_at(){
@@ -280,6 +301,16 @@ public class RegisterTest {
         registerPage.setInputCustomerName("diky-");
         extentTest.log(LogStatus.PASS,"Input Nama Lengkap Nasabah Dengan karakter -");
     }
+    @And("Input Soco Id dengan menggunakan Karakter #")
+    public void input_socoid_dengan_tanda_pagar(){
+        registerPage.setInputSocoId(faker.bothify("########-"));
+        extentTest.log(LogStatus.PASS,"Input Soco Id dengan menggunakan Karakter #");
+    }
+    @And("Input Soco Id dengan menggunakan Karakter -")
+    public void input_socoid_dengan_tanda_minus(){
+        registerPage.setInputSocoId(faker.bothify("########-"));
+        extentTest.log(LogStatus.PASS,"Input Soco Id dengan menggunakan Karakter #");
+    }
 
     @Then("Menampilkan alert RRN sudah ada")
     public void menampilkan_alert_rrn_sudah_ada() {
@@ -300,8 +331,17 @@ Assert.assertEquals(registerPage.getTxtErrorNoHandphone(),"Transaksi sudah ada u
 
     @Then("Menampilkan alert please fill out this field")
     public void menampilkan_alert_please_fill_out_this_field() {
-        Assert.assertEquals(registerPage.getTxtRequired(),"please fill out this field");
+        Assert.assertEquals(registerPage.getTxtRequiredSocoId(),"required");
         extentTest.log(LogStatus.PASS,"Menampilkan alert please fill out this field");
+    }
+    @Then("Menampilkan alert please fill out this field nama merchant")
+    public void menampilkan_nama_merchant_alert_please_fill_out_this_field() {
+        Assert.assertEquals(registerPage.getTxtRequiredNamaMerchant(),"required");
+        extentTest.log(LogStatus.PASS,"Menampilkan alert please fill out this field nama merchant");
+    }    @Then("Menampilkan alert please fill out this field pembayaran qris")
+    public void menampilkan_pembayaran_qris_alert_please_fill_out_this_field() {
+        Assert.assertEquals(registerPage.getTxtRequiredPembayaranQris(),"required");
+        extentTest.log(LogStatus.PASS,"Menampilkan alert please fill out this field pembayaran qris");
     }
     @Then("Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan")
     public void alert_customer_name_karakter_lbh_kecil_lbh_besar(){
@@ -312,5 +352,13 @@ Assert.assertEquals(registerPage.getTxtErrorNoHandphone(),"Transaksi sudah ada u
     public void alert_soco_id_lbh_kecil_lbh_besar(){
         Assert.assertEquals(registerPage.getTxtSocoIdError(),"Karakter (<|>|'|\") tidak diizinkan");
         extentTest.log(LogStatus.PASS,"Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan");
+    }
+    @Then("Menampilkan alert ok")
+    public void alert_ok(){
+        DriverSingleton.delay(2);
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        driver.switchTo().alert().accept();
+        extentTest.log(LogStatus.PASS, "Menampilkan alert ok");
     }
 }

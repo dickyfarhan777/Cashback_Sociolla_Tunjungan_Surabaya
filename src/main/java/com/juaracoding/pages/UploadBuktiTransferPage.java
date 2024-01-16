@@ -71,6 +71,83 @@ public class UploadBuktiTransferPage {
     @FindBy(xpath = "//div[@id='table_info']")
     private WebElement txtNext;
 
+    public void clickMenuUploadBuktiTransfer(){
+        menuUploadBuktiTransfer.click();
+    }
+    public void clickBtnAksi(){
+        btnAksi.click();
+    }
+    public void disabledFormGambar(){
+        disabledNamaCust.click();
+        disabledNoHpCust.click();
+        disabledNoRekBCA.click();
+        disabledPembayaranQRIS.click();
+        disabledNominalTransaksi.click();
+        disabledNominalCashback.click();
+        disabledNamaMerchant.click();
+        disabledNamaRRN.click();
+        disabledFotoBukti1.click();
+        disabledFotoBukti2.click();
+        disabledFotoBukti3.click();
+    }
+    public void clickShowEntries(){
+        btnShowEntries.click();
+    }
+    public void setTxtTabelMaks25(){
+        txtTabelMaks25.getText();
+    }
+    public void inputFieldSearch(){
+        fieldSearch.sendKeys("karina");
+    }
+    public void clickEnter(){
+
+    }
+    public void setTxtNamaCustKarina(){
+        txtNamaCustKarina.getText();
+    }
+    public void inputSearchVerifikator(){
+        fieldSearch.sendKeys("Feri");
+    }
+    public void setTxtNamaVerifFeri(){
+        txtNamaVerifFeri.getText();
+    }
+    public void deleteInputSearch(){
+        fieldSearch.sendKeys("");
+    }
+    public void setTxtDataSemula(){
+        txtDataSemula.getText();
+    }
+    public void clickBtnChooseFile(){
+        btnChooseFile.click();
+    }
+    public void clickUploadBuktiTransfer(){
+        btnUploadBuktiTransfer.click();
+    }
+    public void setTxtAlertBerhasilUpload(){
+
+    }
+    public void setTxtErrorDidntSelectFile(){
+        txtErrorDidntSelectFile.getText();
+    }
+    public void clickPage2(){
+        btnPaginationPage2.click();
+    }
+    public void setTxtPage2(){
+        txtPage2.getText();
+    }
+    public void clickPrevious(){
+        btnPrevious.click();
+    }
+    public void setTxtPrevious(){
+        txtPrevious.getText();
+    }
+    public void clickNext(){
+        btnNext.click();
+    }
+    public void setTxtNext(){
+        txtNext.getText();
+    }
+
 
 
 

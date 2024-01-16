@@ -64,7 +64,7 @@ public class UploadBuktiTransferTest {
 
     //search ======================================
     //Mencari nama customer : positif
-    @When("Input nama pada field search")
+    @When("Input nama karina pada field search")
     public void input_nama_pada_field_search(){
 
     }
@@ -115,8 +115,8 @@ public class UploadBuktiTransferTest {
     public void klik_choose_file(){
 
     }
-    @And("Klik tombol 'Upload Bukti File'")
-    public void klik_tombol_upload_bukti_file(){
+    @And("Klik tombol 'Upload Bukti Transfer'")
+    public void klik_tombol_upload_bukti_transfer(){
 
     }
     @And("Muncul popup \"Bukti Transfer Berhasil diupload\"")

@@ -8,7 +8,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class ReportDataTest {
     private static WebDriver driver;
@@ -74,7 +76,8 @@ public class ReportDataTest {
     }
     @Then("Akan menampilkan semua data status")
     public void akan_menampilkan_semua_data_status(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of 124 entries");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan semua data status");
 
     }
     @And("Klik combo box show")
@@ -121,32 +124,57 @@ public class ReportDataTest {
         reportDataPage.clickBtnSeach();
         extentTest.log(LogStatus.PASS,"Klik icon search");
     }
-    @And("Ketik data yang tidak terdaftar")
+    @And("Klik field search dan Ketik data yang tidak terdaftar")
+    public void ketik_data_yang_tidak_terdaftar(){
+        reportDataPage.clickSearch("Lebron James");
+        extentTest.log(LogStatus.PASS,"Klik field search dan Ketik data yang tidak terdaftar");
+    }
+    @And("Klik Button Previous")
+    public void klik_button_previous(){
+        reportDataPage.clickPreviousHal();
+        extentTest.log(LogStatus.PASS,"Klik Button Previous");
+
+    }
+    @And("Klik Button next")
+    public void klik_button_next(){
+        reportDataPage.clickNextHal();
+        extentTest.log(LogStatus.PASS,"Klik Button next");
+    }
+    @And("Scroll kebawah")
+    public void scroll_kebawah(){
+        scrollByPixels(driver,0,100);
+    }
 
     @Then("Akan menampilkan semua data berstatus new data")
     public void akan_menampilkan_semua_data_berstatus_new_data(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus new data");
     }
     @Then("Akan menampilkan semua data berstatus validated")
     public void akan_menampilkan_semua_data_berstatus_validated(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus validated");
     }
     @Then("Akan menampilkan semua data berstatus transfered")
     public void akan_menampilkan_semua_data_berstatus_transfered(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus transfered");
     }
     @Then("Akan menampilkan semua data berstatus uploaded")
     public void akan_menampilkan_semua_data_berstatus_uploaded(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus uploaded");
     }
     @Then("Akan menampilkan data yang terdaftar")
     public void akan_menampilkan_data_yang_terdaftar(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 ");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus uploaded");
     }
 
     @Then("Tidak menampilkan data")
     public void tidak_menampilkan_data(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of 0 entries");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan semua data status");
     }
 
     @Then("Akan tampil detail data report customer")
@@ -157,26 +185,44 @@ public class ReportDataTest {
 
     @Then("Akan menampilkan maximal 10 data perhamalam")
     public void menampilkan_maximal_10_data_perhamalam(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan maximal 10 data perhamalam");
     }
 
     @Then("Akan menampilkan maximal 25 data perhamalam")
     public void menampilkan_maximal_25_data_perhamalam(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 25");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan maximal 10 data perhamalam");
     }
 
     @Then("Akan menampilkan maximal 50 data perhamalam")
     public void menampilkan_maximal_50_data_perhamalam(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 50");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan maximal 10 data perhamalam");
     }
 
     @Then("Akan menampilkan maximal 100 data perhamalam")
     public void menampilkan_maximal_100_data_perhamalam(){
-
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 100");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan maximal 10 data perhamalam");
+    }
+    @Then("Akan menampilkan halaman selanjutnya")
+    public void menampilkan_hal_next(){
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 11 to 20 ");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan halaman selanjutnya");
+    }
+    @Then("Akan menampilkan halaman previous")
+    public void menampilkan_hal_previous(){
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 ");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan halaman previous");
     }
 
 
 
-
+    public static void scrollByPixels(WebDriver driver, int x, int y) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollBy({ top: " + y + ", behavior: 'smooth' });");
+        System.out.println("Scrolling smooth To Target with Pixels");
+    }
 
 }

@@ -35,6 +35,8 @@ public class ReportDataPage {
     private WebElement clickHalThirteen;
     @FindBy(xpath = "//a[@class='page-link'][normalize-space()='3']")
     private WebElement clickHalThree;
+    @FindBy(xpath = "//div[@id='table_info']")
+    private WebElement txtShowing;
     @FindBy(xpath = "//input[type='search']")
     private WebElement inputSearch;
     @FindBy(xpath = "//span[@id='btnSearch']")
@@ -47,6 +49,14 @@ public class ReportDataPage {
     private WebElement txtHalamanAksi;
     @FindBy(xpath = "//tbody/tr[1]/td[12]")
     private WebElement txtStatus;
+    @FindBy(xpath = "//tr[@class='odd']//td[contains(text(),'Validated')]")
+    private WebElement txtStatusValidated;
+    @FindBy(xpath = "")
+    private WebElement txtStatusNewData;
+    @FindBy(xpath = "")
+    private WebElement txtStatusTransfered;
+    @FindBy(xpath = "")
+    private WebElement txtStatusUploaded;
 
     public void clickMenuReportData(){
     clickMenuReportData.click();
@@ -69,12 +79,6 @@ public class ReportDataPage {
     public void clickNextHal(){
         clickNext.click();
     }
-    public void setClickHalThirteen(){
-        clickHalThirteen.click();
-    }
-    public void setClickHalThree(){
-        clickHalThree.click();
-    }
     public void clickSearch(String search){
         inputSearch.sendKeys(search);
     }
@@ -89,6 +93,7 @@ public class ReportDataPage {
     }
 
 
+
     public String getHalamanAksi(){
         txtHalamanAksi.getText();
     }
@@ -96,8 +101,11 @@ public class ReportDataPage {
     public String getTxtMenuReportData(){
         return txtMenuReportData1.getText();
     }
-    public void getTxtStatus(){
+    public String getTxtStatus(){
         return txtStatus.getText();
+    }
+    public String getTxtHalaman(){
+        return txtShowing.getText();
     }
     public static void scrollByPixels(WebDriver driver, int x, int y) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;

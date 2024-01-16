@@ -475,7 +475,7 @@ Feature: Register Admin
                                                       And Klik submit data
                                                       Then Menampilkan alert please fill out this field pembayaran qris
 #29
-                                                      Scenario:
+                                                      Scenario: Admin tidak memilih nama merchant
                                                         Given Klik menu Register
                                                         When Klik add new data
                                                         And Input Soco Id dengan benar random
@@ -493,7 +493,7 @@ Feature: Register Admin
                                                         And Klik submit data
                                                         Then Menampilkan alert please fill out this field nama merchant
 #30
-                                                        Scenario:
+                                                        Scenario: Admin menginput soco id dengan angka dan emoticon
                                                           Given Klik menu Register
                                                           When Klik add new data
                                                           And Input Soco Id dengan emoticon
@@ -511,7 +511,7 @@ Feature: Register Admin
                                                           And Klik submit data
                                                           Then Menampilkan alert ok
 #31
-                                                          Scenario:
+                                                          Scenario: Admin menginput nama lengkap dengan huruf dan emoticon
                                                             Given Klik menu Register
                                                             When Klik add new data
                                                             And Input Soco Id dengan benar random
@@ -529,7 +529,7 @@ Feature: Register Admin
                                                             And Klik submit data
                                                             Then Menampilkan alert ok
 
-                                                            Scenario:
+                                                            Scenario: Admin input soco id dengan menggunakan karakter #
                                                               Given Klik menu Register
                                                               When Klik add new data
                                                               And Input Soco Id dengan menggunakan Karakter #
@@ -604,7 +604,7 @@ Feature: Register Admin
                                                                     Scenario: Admin input dengan benar dan menampilkan error saving data
                                                                       Given Klik menu Register
                                                                       When Klik add new data
-                                                                      And Input Soco Id dengan benar
+                                                                      And Input Soco Id dengan benar random
                                                                       And Input Nama Lengkap Nasabah Dengan Benar
                                                                       And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
                                                                       And Input Nomor Rekening Bca Dengan Benar rekening random
@@ -619,7 +619,7 @@ Feature: Register Admin
                                                                       And Klik submit data
                                                                       Then Menampilkan alert error saving data
 
-                                                                      Scenario:
+                                                                      Scenario: Admin input soco id dengan menggunakan karakter *
                                                                         Given Klik menu Register
                                                                         When Klik add new data
                                                                         And Input Soco Id dengan menggunakan Karakter *

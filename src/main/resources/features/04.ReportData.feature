@@ -43,7 +43,7 @@ Feature: Report Data Admin
               Scenario: Admin melakukan pencarian menggunakan search yang tidak terdata
                 Given Klik menu report data
                 When Klik field search dan Ketik data yang sudah terdaftar
-                And Ketik data yang tidak terdaftar
+                And Klik field search dan Ketik data yang tidak terdaftar
                 And Klik icon search
                 Then Tidak menampilkan data
 
@@ -82,15 +82,9 @@ Feature: Report Data Admin
                           And Klik Button next
                           Then Akan menampilkan halaman selanjutnya
 
-                          Scenario: Admin menampilkan halaman terakhir
-                            Given Klik menu report data
-                            When Scroll kebawah
-                            And Klik langsung halaman terakhir
-                            Then Akan menampilkan halaman terakhir
-
-                            Scenario: Admin menampilkan halaman pertama
+                            Scenario: Admin menampilkan halaman previous
                               Given Klik menu report data
                               When Scroll kebawah
-                              And Klik langsung halaman terakhir
-                              And Klik halaman paling awal atau halaman pertama
-                              Then Akan menampilkan halaman pertama
+                              And Klik Button next
+                              And Klik Button Previous
+                              Then Akan menampilkan halaman previous

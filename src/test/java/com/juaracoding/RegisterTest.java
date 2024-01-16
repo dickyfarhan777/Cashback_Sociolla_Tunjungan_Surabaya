@@ -303,15 +303,24 @@ public class RegisterTest {
     }
     @And("Input Soco Id dengan menggunakan Karakter #")
     public void input_socoid_dengan_tanda_pagar(){
-        registerPage.setInputSocoId(faker.bothify("########-"));
+        registerPage.setInputSocoId("55555555555#");
         extentTest.log(LogStatus.PASS,"Input Soco Id dengan menggunakan Karakter #");
     }
     @And("Input Soco Id dengan menggunakan Karakter -")
     public void input_socoid_dengan_tanda_minus(){
         registerPage.setInputSocoId(faker.bothify("########-"));
-        extentTest.log(LogStatus.PASS,"Input Soco Id dengan menggunakan Karakter #");
+        extentTest.log(LogStatus.PASS,"Input Soco Id dengan menggunakan Karakter -");
     }
-
+    @And("Input Soco Id dengan menggunakan Karakter *")
+    public void input_socoid_dengan_tanda_bintang(){
+        registerPage.setInputSocoId(faker.bothify("########*"));
+        extentTest.log(LogStatus.PASS,"Input Soco Id dengan menggunakan Karakter *");
+    }
+    @And("Input Soco Id dengan menggunakan Karakter ^")
+    public void input_socoid_dengan_tanda_pangkat(){
+        registerPage.setInputSocoId(faker.bothify("########^"));
+        extentTest.log(LogStatus.PASS,"Input Soco Id dengan menggunakan Karakter ^");
+    }
     @Then("Menampilkan alert RRN sudah ada")
     public void menampilkan_alert_rrn_sudah_ada() {
 Assert.assertEquals(registerPage.getTxtErrorRrn(),"RRN sudah ada.");
@@ -360,5 +369,13 @@ Assert.assertEquals(registerPage.getTxtErrorNoHandphone(),"Transaksi sudah ada u
         String alertMessage= driver.switchTo().alert().getText();
         driver.switchTo().alert().accept();
         extentTest.log(LogStatus.PASS, "Menampilkan alert ok");
+    }
+    @Then("Menampilkan alert error saving data")
+    public void alert_error_saving_data(){
+        DriverSingleton.delay(2);
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        driver.switchTo().alert().accept();
+        extentTest.log(LogStatus.PASS, "Menampilkan alert error saving data");
     }
 }

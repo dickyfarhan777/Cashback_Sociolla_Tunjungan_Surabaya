@@ -25,11 +25,11 @@ public class ReportDataPage {
     private WebElement selectStatus;
     @FindBy(xpath = "//select[@name='table_length']")
     private WebElement selectShow;
-    @FindBy(xpath = "//li[@id='table_previous']")
+    @FindBy(xpath = "//*[@id='table_previous']/a")
     private WebElement clickPrevious;
     @FindBy(xpath = "//a[@class='page-link'][normalize-space()='1']")
     private WebElement clickHalOne;
-    @FindBy(xpath = "//li[@id='table_next']")
+    @FindBy(xpath = "//*[@id='table_next']/a")
     private WebElement clickNext;
     @FindBy(xpath = "//a[@class='page-link'][normalize-space()='13']")
     private WebElement clickHalThirteen;
@@ -37,26 +37,26 @@ public class ReportDataPage {
     private WebElement clickHalThree;
     @FindBy(xpath = "//div[@id='table_info']")
     private WebElement txtShowing;
-    @FindBy(xpath = "//input[type='search']")
+    @FindBy(xpath = "//input[@class='form-control form-control-sm']")
     private WebElement inputSearch;
-    @FindBy(xpath = "//span[@id='btnSearch']")
+    @FindBy(xpath = "//i[@class='fa fa-search']")
     private WebElement btnSearch;
     @FindBy(xpath = "//button[@type='button']")
     private WebElement btnFilter;
-    @FindBy(xpath = "//i[@class='fa fa-eye']")
+    @FindBy(xpath = "//*[@id='table']/tbody/tr[1]/td[13]/a")
     private WebElement btnAksi;
     @FindBy(xpath = "////h3[normalize-space()='Form Verifikasi Penukaran Voucher']")
     private WebElement txtHalamanAksi;
-    @FindBy(xpath = "//tbody/tr[1]/td[12]")
-    private WebElement txtStatus;
-    @FindBy(xpath = "//tr[@class='odd']//td[contains(text(),'Validated')]")
-    private WebElement txtStatusValidated;
-    @FindBy(xpath = "")
-    private WebElement txtStatusNewData;
-    @FindBy(xpath = "")
-    private WebElement txtStatusTransfered;
-    @FindBy(xpath = "")
-    private WebElement txtStatusUploaded;
+    @FindBy(xpath = "//*[@id='table']/tbody/tr[1]/td[12]")
+    private WebElement txtStatusData;
+    @FindBy(xpath = "//li[@class='breadcrumb-item']")
+    private WebElement linkMenuDashboard;
+    @FindBy(xpath = "//center[(text() = ' Selamat datang, admintiara2            ' or . = ' Selamat datang, admintiara2            ')]")
+    private WebElement txtLinkMenuDashboard;
+    @FindBy(xpath = "//li[@class='breadcrumb-item']")
+    private WebElement llinkMenuDashboard;
+    @FindBy(xpath = "//center[(text() = ' Selamat datang, admintiara2            ' or . = ' Selamat datang, admintiara2            ')]")
+    private WebElement ttxtLinkMenuDashboard;
 
     public void clickMenuReportData(){
     clickMenuReportData.click();
@@ -74,10 +74,12 @@ public class ReportDataPage {
         this.selectShow.sendKeys(angka);
     }
     public void clickPreviousHal(){
-        clickPrevious.click();
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("document.getElementById('table_previous').click();");
     }
     public void clickNextHal(){
-        clickNext.click();
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("document.getElementById('table_next').click();");
     }
     public void clickSearch(String search){
         inputSearch.sendKeys(search);
@@ -93,16 +95,23 @@ public class ReportDataPage {
     }
 
 
+    public String getTxtLinkDashboard(){
+        return txtLinkMenuDashboard.getText();
+    }
+    public void setLinkMenuDashboard(){
+        this.llinkMenuDashboard.click();
+    }
+
 
     public String getHalamanAksi(){
-        txtHalamanAksi.getText();
+        return txtHalamanAksi.getText();
     }
 
     public String getTxtMenuReportData(){
         return txtMenuReportData1.getText();
     }
     public String getTxtStatus(){
-        return txtStatus.getText();
+        return txtStatusData.getText();
     }
     public String getTxtHalaman(){
         return txtShowing.getText();

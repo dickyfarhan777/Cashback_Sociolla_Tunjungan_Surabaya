@@ -1,5 +1,6 @@
 package com.juaracoding;
 
+import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.pages.LoginPage;
 import com.juaracoding.pages.ReportDataPage;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -87,7 +88,9 @@ public class ReportDataTest {
     }
     @And("Pilih 10")
     public void pilih_10(){
-        reportDataPage.sendShowData("10");
+        reportDataPage.sendShowData("1");
+        DriverSingleton.delay(1);
+        reportDataPage.sendShowData("1");
         extentTest.log(LogStatus.PASS,"Pilih 10");
 
     }
@@ -135,6 +138,11 @@ public class ReportDataTest {
         extentTest.log(LogStatus.PASS,"Klik Button Previous");
 
     }
+    @And("scroll kebawah max")
+    public void scroll_kebawah_max(){
+        scrollByPixels(driver,0,900);
+        extentTest.log(LogStatus.PASS,"And scroll kebawah max");
+    }
     @And("Klik Button next")
     public void klik_button_next(){
         reportDataPage.clickNextHal();
@@ -142,83 +150,92 @@ public class ReportDataTest {
     }
     @And("Scroll kebawah")
     public void scroll_kebawah(){
-        scrollByPixels(driver,0,100);
+        scrollByPixels(driver,0,300);
+        extentTest.log(LogStatus.PASS,"Scroll kebawah");
     }
 
     @Then("Akan menampilkan semua data berstatus new data")
     public void akan_menampilkan_semua_data_berstatus_new_data(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtStatus(),"New Data");
         extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus new data");
     }
     @Then("Akan menampilkan semua data berstatus validated")
     public void akan_menampilkan_semua_data_berstatus_validated(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtStatus(),"Validated");
         extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus validated");
     }
     @Then("Akan menampilkan semua data berstatus transfered")
     public void akan_menampilkan_semua_data_berstatus_transfered(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtStatus(),"Transfered");
         extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus transfered");
     }
     @Then("Akan menampilkan semua data berstatus uploaded")
     public void akan_menampilkan_semua_data_berstatus_uploaded(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtStatus(),"Uploaded");
         extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus uploaded");
     }
     @Then("Akan menampilkan data yang terdaftar")
     public void akan_menampilkan_data_yang_terdaftar(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 ");
-        extentTest.log(LogStatus.PASS,"Akan menampilkan semua data berstatus uploaded");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of 22 entries");
+        extentTest.log(LogStatus.PASS,"Akan menampilkan data yang terdaftar");
     }
 
     @Then("Tidak menampilkan data")
     public void tidak_menampilkan_data(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of 0 entries");
-        extentTest.log(LogStatus.PASS,"Akan menampilkan semua data status");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 0 to 0 of 0 entries");
+        extentTest.log(LogStatus.PASS,"Tidak menampilkan data");
     }
 
     @Then("Akan tampil detail data report customer")
     public void tampil_detail_data_report_customer(){
+        DriverSingleton.delay(5);
         reportDataPage.getHalamanAksi();
         extentTest.log(LogStatus.PASS,"Akan tampil detail data report customer");
     }
 
     @Then("Akan menampilkan maximal 10 data perhamalam")
     public void menampilkan_maximal_10_data_perhamalam(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of 124 entries");
         extentTest.log(LogStatus.PASS,"Akan menampilkan maximal 10 data perhamalam");
     }
 
     @Then("Akan menampilkan maximal 25 data perhamalam")
     public void menampilkan_maximal_25_data_perhamalam(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 25");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 25 of 124 entries");
         extentTest.log(LogStatus.PASS,"Akan menampilkan maximal 10 data perhamalam");
     }
 
     @Then("Akan menampilkan maximal 50 data perhamalam")
     public void menampilkan_maximal_50_data_perhamalam(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 50");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 50 of 124 entries");
         extentTest.log(LogStatus.PASS,"Akan menampilkan maximal 10 data perhamalam");
     }
 
     @Then("Akan menampilkan maximal 100 data perhamalam")
     public void menampilkan_maximal_100_data_perhamalam(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 100");
+        DriverSingleton.delay(3);
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 100 of 124 entries");
         extentTest.log(LogStatus.PASS,"Akan menampilkan maximal 10 data perhamalam");
     }
     @Then("Akan menampilkan halaman selanjutnya")
     public void menampilkan_hal_next(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 11 to 20 ");
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 11 to 20 of 124 entries");
         extentTest.log(LogStatus.PASS,"Akan menampilkan halaman selanjutnya");
     }
     @Then("Akan menampilkan halaman previous")
     public void menampilkan_hal_previous(){
-        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 ");
+        Assert.assertEquals(reportDataPage.getTxtHalaman(),"Showing 1 to 10 of 124 entries");
         extentTest.log(LogStatus.PASS,"Akan menampilkan halaman previous");
     }
-
-
-
     public static void scrollByPixels(WebDriver driver, int x, int y) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("window.scrollBy({ top: " + y + ", behavior: 'smooth' });");

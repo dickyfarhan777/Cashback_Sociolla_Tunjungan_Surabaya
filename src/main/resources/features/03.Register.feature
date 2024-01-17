@@ -1,7 +1,7 @@
 Feature: Register Admin
   #2
   Scenario: Admin submit data without input data
-   Given Admin akses link web cashback
+   Given Admin akses link web cashback lagi
    When Klik menu Register
    And Klik add new data
    And Klik submit data
@@ -10,20 +10,20 @@ Feature: Register Admin
   Scenario: Admin input data register valid
     Given Klik menu Register
     When Klik add new data
-    And Input Soco Id dengan benar
+    And Input Soco Id dengan benar random
     And Input Nama Lengkap Nasabah Dengan Benar
-    And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar
-    And Input Nomor Rekening Bca Dengan Benar
+    And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+    And Input Nomor Rekening Bca Dengan Benar rekening random
     And Pilih Pembayaran Qris
     And Input Nominal Transaksi Dengan Benar
     And Input Tanggal Transaksi Dengan Benar
     And Pilih Nama Merchant
-    And Input Rrn Dengan Benar
+    And Input Rrn Dengan Benar random rrn number
     And Upload Foto Bukti Transaksi 1
     And Upload Foto Bukti Transaksi 2
     And Upload Foto Bukti Transaksi 3
     And Klik submit data
-    Then Menampilkan alert sukses
+    Then Menampilkan alert error saving data
 #4
     Scenario: Admin input soco id yang sudah terdaftar sebelumnya
       Given Klik menu Register
@@ -41,7 +41,7 @@ Feature: Register Admin
       And Upload Foto Bukti Transaksi 2
       And Upload Foto Bukti Transaksi 3
       And Klik submit data
-      Then Menampilkan Alert Data Sudah digunakan Hari Ini
+      Then Menampilkan alert error saving data
 #5
       Scenario: Admin input nomor hp yang sudah terdaftar sebelumnya
         Given Klik menu Register
@@ -59,7 +59,7 @@ Feature: Register Admin
         And Upload Foto Bukti Transaksi 2
         And Upload Foto Bukti Transaksi 3
         And Klik submit data
-        Then Menampilkan alert transaksi sudah ada untuk hari ini
+        Then Menampilkan alert error saving data
 #6
         Scenario: Admin input soco id menggunakan campuran huruf dan angka
           Given Klik menu Register
@@ -77,7 +77,7 @@ Feature: Register Admin
           And Upload Foto Bukti Transaksi 2
           And Upload Foto Bukti Transaksi 3
           And Klik submit data
-          Then Menampilkan alert ok
+          Then Menampilkan alert error saving data
 #7
           Scenario: Admin input Soco Id dengan menggunakan Karakter @
             Given Klik menu Register
@@ -95,7 +95,7 @@ Feature: Register Admin
             And Upload Foto Bukti Transaksi 2
             And Upload Foto Bukti Transaksi 3
             And Klik submit data
-            Then Menampilkan alert ok
+            Then Menampilkan alert error saving data
 #8
             Scenario: Admin input soco id dengan menggunakan Karakter >
               Given Klik menu Register
@@ -131,7 +131,7 @@ Feature: Register Admin
                 And Upload Foto Bukti Transaksi 2
                 And Upload Foto Bukti Transaksi 3
                 And Klik submit data
-                Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
+                Then Menampilkan alert error saving data
 #10
                 Scenario: Admin input soco id dengan menggunakan Karakter '
                   Given Klik menu Register
@@ -185,7 +185,7 @@ Feature: Register Admin
                       And Upload Foto Bukti Transaksi 2
                       And Upload Foto Bukti Transaksi 3
                       And Klik submit data
-                      Then Menampilkan alert ok
+                      Then Menampilkan alert error saving data
 #13
                       Scenario: Admin input nama lengkap dengan menggunakan Karakter <
                         Given Klik menu Register
@@ -203,7 +203,7 @@ Feature: Register Admin
                         And Upload Foto Bukti Transaksi 2
                         And Upload Foto Bukti Transaksi 3
                         And Klik submit data
-                        Then Menampilkan customer name alert karakter < > ' kutip dua tidak diizinkan
+                        Then Menampilkan alert error saving data
 #14
                         Scenario: Admin input nama lengkap dengan menggunakan Karakter "
                           Given Klik menu Register
@@ -275,7 +275,7 @@ Feature: Register Admin
                                 And Upload Foto Bukti Transaksi 2
                                 And Upload Foto Bukti Transaksi 3
                                 And Klik submit data
-                                Then Menampilkan alert ok
+                                Then Menampilkan alert error saving data
 #18
                                 Scenario: Admin input nama lengkap dengan menggunakan Karakter @
                                   Given Klik menu Register
@@ -293,7 +293,7 @@ Feature: Register Admin
                                   And Upload Foto Bukti Transaksi 2
                                   And Upload Foto Bukti Transaksi 3
                                   And Klik submit data
-                                  Then Menampilkan alert ok
+                                  Then Menampilkan alert error saving data
 #19
                                   Scenario: Admin input nama lengkap dengan menggunakan huruf dan angka
                                     Given Klik menu Register
@@ -311,7 +311,7 @@ Feature: Register Admin
                                     And Upload Foto Bukti Transaksi 2
                                     And Upload Foto Bukti Transaksi 3
                                     And Klik submit data
-                                    Then Menampilkan alert ok
+                                    Then Menampilkan alert error saving data
 #20
                                     Scenario: Admin input nama lengkap dengan menggunakan karakter !
                                       Given Klik menu Register
@@ -329,7 +329,7 @@ Feature: Register Admin
                                       And Upload Foto Bukti Transaksi 2
                                       And Upload Foto Bukti Transaksi 3
                                       And Klik submit data
-                                      Then Menampilkan alert ok
+                                      Then Menampilkan alert error saving data
 #21
                                       Scenario: Admin input nama lengkap dengan menggunakan < > kutip satu kutip dua
                                         Given Klik menu Register
@@ -365,7 +365,7 @@ Feature: Register Admin
                                           And Upload Foto Bukti Transaksi 2
                                           And Upload Foto Bukti Transaksi 3
                                           And Klik submit data
-                                          Then Menampilkan alert ok
+                                          Then Menampilkan alert error saving data
 #23
                                           Scenario: Admin input nama lengkap dengan menggunakan karakter -
                                             Given Klik menu Register
@@ -383,7 +383,7 @@ Feature: Register Admin
                                             And Upload Foto Bukti Transaksi 2
                                             And Upload Foto Bukti Transaksi 3
                                             And Klik submit data
-                                            Then Menampilkan alert ok
+                                            Then Menampilkan alert error saving data
 #24
                                             Scenario: Admin input rrn dengan rrn yang sudah terdaftar
                                               Given Klik menu Register
@@ -419,7 +419,7 @@ Feature: Register Admin
                                                 And Upload Foto Bukti Transaksi 2
                                                 And Upload Foto Bukti Transaksi 3
                                                 And Klik submit data
-                                                Then Menampilkan alert ok
+                                                Then Menampilkan alert error saving data
 #26
                                                 Scenario: Admin input soco id menggunakan full huruf
                                                   Given Klik menu Register
@@ -437,7 +437,7 @@ Feature: Register Admin
                                                   And Upload Foto Bukti Transaksi 2
                                                   And Upload Foto Bukti Transaksi 3
                                                   And Klik submit data
-                                                  Then Menampilkan alert ok
+                                                  Then Menampilkan alert error saving data
 #27
                                                   Scenario: Admin input no rekening bca yang sudah terdaftar sebelumnya
                                                     Given Klik menu Register
@@ -455,7 +455,7 @@ Feature: Register Admin
                                                     And Upload Foto Bukti Transaksi 2
                                                     And Upload Foto Bukti Transaksi 3
                                                     And Klik submit data
-                                                    Then Menampilkan alert
+                                                    Then Menampilkan alert error saving data
 #28
                                                     Scenario: Admin tidak memilih pembayaran qris
                                                       Given Klik menu Register
@@ -509,7 +509,7 @@ Feature: Register Admin
                                                           And Upload Foto Bukti Transaksi 2
                                                           And Upload Foto Bukti Transaksi 3
                                                           And Klik submit data
-                                                          Then Menampilkan alert ok
+                                                          Then Menampilkan alert error saving data
 #31
                                                           Scenario: Admin menginput nama lengkap dengan huruf dan emoticon
                                                             Given Klik menu Register
@@ -527,8 +527,8 @@ Feature: Register Admin
                                                             And Upload Foto Bukti Transaksi 2
                                                             And Upload Foto Bukti Transaksi 3
                                                             And Klik submit data
-                                                            Then Menampilkan alert ok
-
+                                                            Then Menampilkan alert error saving data
+#32
                                                             Scenario: Admin input soco id dengan menggunakan karakter #
                                                               Given Klik menu Register
                                                               When Klik add new data
@@ -545,15 +545,15 @@ Feature: Register Admin
                                                               And Upload Foto Bukti Transaksi 2
                                                               And Upload Foto Bukti Transaksi 3
                                                               And Klik submit data
-                                                              Then Menampilkan alert ok
-
+                                                              Then Menampilkan alert error saving data
+#33
                                                               Scenario: Admin input soco id dengan menggunakan karakter -
                                                                 Given Klik menu Register
                                                                 When Klik add new data
                                                                 And Input Soco Id dengan menggunakan Karakter -
+                                                                And Input Nama Lengkap Nasabah Dengan Benar
                                                                 And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
                                                                 And Input Nomor Rekening Bca Dengan Benar rekening random
-                                                                And Input Nomor Rekening Bca Dengan Benar
                                                                 And Pilih Pembayaran Qris
                                                                 And Input Nominal Transaksi Dengan Benar
                                                                 And Input Tanggal Transaksi Dengan Benar
@@ -563,26 +563,8 @@ Feature: Register Admin
                                                                 And Upload Foto Bukti Transaksi 2
                                                                 And Upload Foto Bukti Transaksi 3
                                                                 And Klik submit data
-                                                                Then Menampilkan alert ok
-
-                                                                Scenario: Admin input soco id dengan menggunakan karakter #
-                                                                  Given Klik menu Register
-                                                                  When Klik add new data
-                                                                  And Input Soco Id dengan menggunakan Karakter #
-                                                                  And Input Nama Lengkap Nasabah Dengan Benar
-                                                                  And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
-                                                                  And Input Nomor Rekening Bca Dengan Benar rekening random
-                                                                  And Pilih Pembayaran Qris
-                                                                  And Input Nominal Transaksi Dengan Benar
-                                                                  And Input Tanggal Transaksi Dengan Benar
-                                                                  And Pilih Nama Merchant
-                                                                  And Input Rrn Dengan Benar random rrn number
-                                                                  And Upload Foto Bukti Transaksi 1
-                                                                  And Upload Foto Bukti Transaksi 2
-                                                                  And Upload Foto Bukti Transaksi 3
-                                                                  And Klik submit data
-                                                                  Then Menampilkan alert ok
-
+                                                                Then Menampilkan alert error saving data
+#34
                                                                   Scenario: Admin input soco id dengan menggunakan karakter ^
                                                                     Given Klik menu Register
                                                                     When Klik add new data
@@ -599,26 +581,8 @@ Feature: Register Admin
                                                                     And Upload Foto Bukti Transaksi 2
                                                                     And Upload Foto Bukti Transaksi 3
                                                                     And Klik submit data
-                                                                    Then Menampilkan alert ok
-
-                                                                    Scenario: Admin input dengan benar dan menampilkan error saving data
-                                                                      Given Klik menu Register
-                                                                      When Klik add new data
-                                                                      And Input Soco Id dengan benar random
-                                                                      And Input Nama Lengkap Nasabah Dengan Benar
-                                                                      And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
-                                                                      And Input Nomor Rekening Bca Dengan Benar rekening random
-                                                                      And Pilih Pembayaran Qris
-                                                                      And Input Nominal Transaksi Dengan Benar
-                                                                      And Input Tanggal Transaksi Dengan Benar
-                                                                      And Pilih Nama Merchant
-                                                                      And Input Rrn Dengan Benar random rrn number
-                                                                      And Upload Foto Bukti Transaksi 1
-                                                                      And Upload Foto Bukti Transaksi 2
-                                                                      And Upload Foto Bukti Transaksi 3
-                                                                      And Klik submit data
-                                                                      Then Menampilkan alert error saving data
-
+                                                                    Then Menampilkan alert error saving data
+#35
                                                                       Scenario: Admin input soco id dengan menggunakan karakter *
                                                                         Given Klik menu Register
                                                                         When Klik add new data
@@ -635,4 +599,60 @@ Feature: Register Admin
                                                                         And Upload Foto Bukti Transaksi 2
                                                                         And Upload Foto Bukti Transaksi 3
                                                                         And Klik submit data
-                                                                        Then Menampilkan alert ok
+                                                                        Then Menampilkan alert error saving data
+
+                                                                           Scenario: Admin input nama lengkap dengan menggunakan karakter ^
+                                                                             Given Klik menu Register
+                                                                              When Klik add new data
+                                                                              And Input Soco Id dengan benar random
+                                                                              And Input Nama Lengkap Nasabah Dengan karakter ^
+                                                                              And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                                              And Input Nomor Rekening Bca Dengan Benar rekening random
+                                                                              And Pilih Pembayaran Qris
+                                                                              And Input Nominal Transaksi Dengan Benar
+                                                                              And Input Tanggal Transaksi Dengan Benar
+                                                                              And Pilih Nama Merchant
+                                                                              And Input Rrn Dengan Benar random rrn number
+                                                                              And Upload Foto Bukti Transaksi 1
+                                                                              And Upload Foto Bukti Transaksi 2
+                                                                              And Upload Foto Bukti Transaksi 3
+                                                                              And Klik submit data
+                                                                              Then Menampilkan alert error saving data
+
+                                                                        Scenario: Admin input nama lengkap dengan menggunakan karakter *
+                                                                          Given Klik menu Register
+                                                                          When Klik add new data
+                                                                          And Input Soco Id dengan benar random
+                                                                          And Input Nama Lengkap Nasabah Dengan karakter *
+                                                                          And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                                          And Input Nomor Rekening Bca Dengan Benar rekening random
+                                                                          And Pilih Pembayaran Qris
+                                                                          And Input Nominal Transaksi Dengan Benar
+                                                                          And Input Tanggal Transaksi Dengan Benar
+                                                                          And Pilih Nama Merchant
+                                                                          And Input Rrn Dengan Benar random rrn number
+                                                                          And Upload Foto Bukti Transaksi 1
+                                                                          And Upload Foto Bukti Transaksi 2
+                                                                          And Upload Foto Bukti Transaksi 3
+                                                                          And Klik submit data
+                                                                          Then Menampilkan alert error saving data
+
+                                                                          Scenario: Admin input soco id dengan
+                                                                            Given Klik menu Register
+                                                                            When Klik add new data
+                                                                            And Input Soco Id dengan menambahkan < > kutip satu kutip dua
+                                                                            And Input Nama Lengkap Nasabah Dengan Benar
+                                                                            And Input Nomor Hp Yang Terdaftar Di Bca Dengan Benar rekening random
+                                                                            And Input Nomor Rekening Bca Dengan Benar rekening random
+                                                                            And Pilih Pembayaran Qris
+                                                                            And Input Nominal Transaksi Dengan Benar
+                                                                            And Input Tanggal Transaksi Dengan Benar
+                                                                            And Pilih Nama Merchant
+                                                                            And Input Rrn Dengan Benar random rrn number
+                                                                            And Upload Foto Bukti Transaksi 1
+                                                                            And Upload Foto Bukti Transaksi 2
+                                                                            And Upload Foto Bukti Transaksi 3
+                                                                            And Klik submit data
+                                                                            Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
+
+

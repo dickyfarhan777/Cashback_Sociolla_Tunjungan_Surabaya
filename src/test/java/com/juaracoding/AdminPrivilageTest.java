@@ -15,15 +15,15 @@ public class AdminPrivilageTest {
     private static ExtentTest extentTest;
     private static AdminPrivilagePage adminPrivilagePage = new AdminPrivilagePage();
 
-    public void AdminPrivilageTest() {
+    public AdminPrivilageTest() {
         driver = Hooks.driver;
         extentTest = Hooks.extentTest;
     }
 
-    @Given("Click menu dashboard")
+    @Given("Admin Click menu dashboard")
     public void click_menu_dashboard() {
         adminPrivilagePage.setClickMenuDashboard();
-        extentTest.log(LogStatus.PASS, "Click menu dashboard");
+        extentTest.log(LogStatus.PASS,"Admin Click menu dashboard");
     }
 
     @When("Click menu home")

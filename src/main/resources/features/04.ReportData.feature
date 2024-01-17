@@ -56,24 +56,28 @@ Feature: Report Data Admin
                   Given Klik menu report data
                   When Klik combo box show
                   And Pilih 10
+                  And Klik button filter
                   Then Akan menampilkan maximal 10 data perhamalam
 
                   Scenario: Admin menampilkan maximal 25 data perhamalam
                     Given Klik menu report data
                     When Klik combo box show
                     And Pilih 25
+                    And Klik button filter
                     Then Akan menampilkan maximal 25 data perhamalam
 
                     Scenario: Admin menampilkan maximal 50 data perhamalam
                       Given Klik menu report data
                       When Klik combo box show
                       And Pilih 50
+                      And Klik button filter
                       Then Akan menampilkan maximal 50 data perhamalam
 
                       Scenario: Admin menampilkan maximal 100 data perhamalam
                         Given Klik menu report data
                         When Klik combo box show
                         And Pilih 100
+                        And Klik button filter
                         Then Akan menampilkan maximal 100 data perhamalam
 
                         Scenario: Admin menampilkan halaman selanjutnya

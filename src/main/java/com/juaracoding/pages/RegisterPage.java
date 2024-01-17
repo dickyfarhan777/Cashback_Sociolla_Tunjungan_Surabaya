@@ -87,8 +87,17 @@ public class RegisterPage {
     private WebElement txtQrisPayError;
     @FindBy(xpath ="//div[@id='Merchant_Name_error']")
     private WebElement txtNamaMerchantError;
+    @FindBy(xpath = "//li[@class='breadcrumb-item']")
+    private WebElement linkMenuDashboard;
+    @FindBy(xpath = "//center[(text() = ' Selamat datang, admintiara2            ' or . = ' Selamat datang, admintiara2            ')]")
+    private WebElement txtLinkMenuDashboard;
 
-
+    public String getTxtLinkDashboard(){
+        return txtLinkMenuDashboard.getText();
+    }
+    public void setLinkMenuDashboard(){
+        this.linkMenuDashboard.click();
+    }
 
     public void clickMenuRegister(){
         clickMenuRegister.click();
@@ -108,10 +117,7 @@ public class RegisterPage {
     public void setInputNoRekening(String noRekening){
         this.inputNoRekening.sendKeys(noRekening);
     }
-    public void setQrisPilih(String qris){
-        this.pembayaranQris.sendKeys(qris);
 
-    }
     public void setPembayaranQris(String pembayaran){
         this.pembayaranQris.sendKeys(pembayaran);
     }
@@ -123,8 +129,6 @@ public class RegisterPage {
     }
     public void setNamaMerchant(String namaMerchant){
         this.inputNamaMerchant.sendKeys(namaMerchant);
-    }public void setMerchantPilih(String pilih){
-        this.inputNamaMerchant.sendKeys(pilih);
     }
     public void setAngkaRRN(String angkaRRN){
 this.inputAngkaRRN.sendKeys(angkaRRN);
@@ -160,9 +164,6 @@ inputFotoBuktiTransaksi3.sendKeys("C:\\MyTools\\Bukti TF 3.jpg");
     public String getTxtFotoTransaksi3(){
         return txtFotoBuktiTransaksi3.getText();
     }
-//    public String getValueBtnSubmit(){
-        //return btnSubmitRegister.getAttribute();
-//    }
     public String getTxtErrorRrn(){
         return txtRrnError.getText();
     }
@@ -177,15 +178,6 @@ inputFotoBuktiTransaksi3.sendKeys("C:\\MyTools\\Bukti TF 3.jpg");
     }
     public String getTxtCustomerName(){
         return txtCustomerNameError.getText();
-    }
-    public String getTxtQrisPay(){
-        return txtQrisPayError.getText();
-    }
-    public String getTxtNamaMerchant(){
-        return txtNamaMerchantError.getText();
-    }
-    public String getTxtNamaMerchantReq(){
-        return txtNamaMerchantError.getAttribute("required");
     }
 
     public String getTxtRequiredSocoId(){

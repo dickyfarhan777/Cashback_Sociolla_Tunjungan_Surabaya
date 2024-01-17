@@ -3,13 +3,13 @@ package com.juaracoding.utils;
 public enum TestCase {
 
     //verifikasi
-    T1("verifikasi valid penukaran voucher");
+    T1("verifikasi valid penukaran voucher"),
 //    T2("field form tidak bisa diklik"),
 //    T4("mengganti foto bukti transaksi 1 dengan foto format png"),
 //    T5("mengganti foto bukti transaksi 2 dengan foto format jpeg"),
 //    T6("mengganti foto bukti transaksi 3 dengan foto format png"),
 //    T7("tidak mengganti foto apapun"),
-//    T8(""),
+    T2("Tabel menampilkan maksimal 25 entries");
 //    T9(""),
 //    T10(""),
 //    T11(""),

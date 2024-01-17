@@ -93,8 +93,8 @@ public class UploadBuktiTransferPage {
     public void clickShowEntries(){
         btnShowEntries.click();
     }
-    public void setTxtTabelMaks25(){
-        txtTabelMaks25.getText();
+    public String setTxtTabelMaks25(){
+        return txtTabelMaks25.getText();
     }
     public void inputFieldSearch(){
         fieldSearch.sendKeys("karina");
@@ -102,20 +102,20 @@ public class UploadBuktiTransferPage {
     public void clickEnter(){
 
     }
-    public void setTxtNamaCustKarina(){
-        txtNamaCustKarina.getText();
+    public String setTxtNamaCustKarina(){
+        return txtNamaCustKarina.getText();
     }
     public void inputSearchVerifikator(){
         fieldSearch.sendKeys("Feri");
     }
-    public void setTxtNamaVerifFeri(){
-        txtNamaVerifFeri.getText();
+    public String setTxtNamaVerifFeri(){
+        return txtNamaVerifFeri.getText();
     }
     public void deleteInputSearch(){
         fieldSearch.sendKeys("");
     }
-    public void setTxtDataSemula(){
-        txtDataSemula.getText();
+    public String setTxtDataSemula(){
+        return txtDataSemula.getText();
     }
     public void clickBtnChooseFile(){
         btnChooseFile.click();
@@ -126,26 +126,26 @@ public class UploadBuktiTransferPage {
     public void setTxtAlertBerhasilUpload(){
 
     }
-    public void setTxtErrorDidntSelectFile(){
-        txtErrorDidntSelectFile.getText();
+    public String setTxtErrorDidntSelectFile(){
+        return txtErrorDidntSelectFile.getText();
     }
     public void clickPage2(){
         btnPaginationPage2.click();
     }
-    public void setTxtPage2(){
-        txtPage2.getText();
+    public String setTxtPage2(){
+        return txtPage2.getText();
     }
     public void clickPrevious(){
         btnPrevious.click();
     }
-    public void setTxtPrevious(){
-        txtPrevious.getText();
+    public String setTxtPrevious(){
+        return txtPrevious.getText();
     }
     public void clickNext(){
         btnNext.click();
     }
-    public void setTxtNext(){
-        txtNext.getText();
+    public String setTxtNext(){
+        return txtNext.getText();
     }
 
 

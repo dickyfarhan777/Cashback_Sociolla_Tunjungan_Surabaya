@@ -1,6 +1,7 @@
 package com.juaracoding.pages;
 
 import com.juaracoding.drivers.DriverSingleton;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,11 +13,11 @@ public class VerifikasiPage {
         this.driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver,this);
     }
-    @FindBy(xpath = "//a[@class='nav-link active']")
+    @FindBy(xpath = "//p[normalize-space()='Verifikasi']")
     private WebElement menuVerifikasi;
     @FindBy(xpath = "//tbody/tr[1]/td[11]/a[1]/i[1]")
     private WebElement btnAksi;
-    @FindBy(xpath = "//button[@id='btnVerifikasi']")
+    @FindBy(xpath = "//button[@class='btn-primary confirm']")
     private WebElement btnVerifikasi;
     @FindBy(xpath = "//button[@id='btnVerifikasi']")
     private WebElement okModalKonfirmasiVerifikasi;
@@ -67,7 +68,7 @@ public class VerifikasiPage {
     @FindBy(xpath = "")
     private WebElement txtTidakValidMenggantiFoto;
     @FindBy(xpath = "//select[@name='table_length']")
-    private WebElement dropdownShowEntries;
+    public WebElement dropdownShowEntries;
     @FindBy(xpath = "//div[@id='table_info']")
     private WebElement txtTabelMaks25;
     @FindBy(xpath = "//textarea[@id='Note']")

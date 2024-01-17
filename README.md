@@ -36,4 +36,4 @@ This project is an internship at the Juara Coding SQA-RPA Batch 12 bootcamp. The
 <a href="https://docs.google.com/spreadsheets/d/171_pKXw3x35mjFOGQB9AEN7P2_FCjE66dgbBDvaakkk/edit?usp=sharing" target="_blank">SIT Cashback Sociolla Tunjungan Surabaya SQA </a>
 
 # 📽️Power Point
-<a href="" target="_blank">Power Point Cashback Sociolla Tunjungan Surabaya SQA </a>
+<a href="https://www.canva.com/design/DAF6I6ByWK0/Y5DyaTfqcbng1F_3v0v9zA/edit?utm_content=DAF6I6ByWK0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Power Point Cashback Sociolla Tunjungan Surabaya SQA </a>

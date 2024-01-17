@@ -600,7 +600,7 @@ Feature: Register Admin
                                                                         And Upload Foto Bukti Transaksi 3
                                                                         And Klik submit data
                                                                         Then Menampilkan alert error saving data
-
+#36
                                                                            Scenario: Admin input nama lengkap dengan menggunakan karakter ^
                                                                              Given Klik menu Register
                                                                               When Klik add new data
@@ -618,7 +618,7 @@ Feature: Register Admin
                                                                               And Upload Foto Bukti Transaksi 3
                                                                               And Klik submit data
                                                                               Then Menampilkan alert error saving data
-
+#37
                                                                         Scenario: Admin input nama lengkap dengan menggunakan karakter *
                                                                           Given Klik menu Register
                                                                           When Klik add new data

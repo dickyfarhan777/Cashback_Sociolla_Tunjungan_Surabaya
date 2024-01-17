@@ -1,6 +1,5 @@
 package com.juaracoding;
 
-import com.juaracoding.pages.LoginPage;
 import com.juaracoding.pages.RegisterPage;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;

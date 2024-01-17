@@ -3,6 +3,7 @@ package com.juaracoding;
 import com.juaracoding.pages.FinancePage;
 import com.juaracoding.pages.LoginPage;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -30,6 +31,9 @@ public class FinanceTest {
 
     @When("User Finance telah berhasil login web cashback")
     public void User_Finance_telah_berhasil_login_web_cashback() {
+        financePage.getTxtHome();
+        Assert.assertEquals(financePage.getTxtHome(),"Selamat datang, Feri Nugraha");
+        extentTest.log(LogStatus.PASS,"User Finance telah berhasil login web cashback");
     }
 
     @And("Klik button menu Finance")
@@ -39,7 +43,10 @@ public class FinanceTest {
 
     @Then("Tampilan list data yang sudah di verifikasi")
     public void Tampilan_list_data_yang_sudah_di_verifikasi() {
+        financePage.getTxtDataVerifikasi();
+        extentTest.log(LogStatus.PASS,"Tampilan list data yang sudah di verifikasi");
     }
+
 
     @And("Klik table control show entries")
     public void Klik_table_control_show_entries() {
@@ -53,11 +60,15 @@ public class FinanceTest {
     @Then("Menampilkan 25 Data Customer")
     public void Menampilkan_25_Data_Customer() {
         financePage.getTxtShowingEntries();
+        Assert.assertEquals(financePage.getTxtShowingEntries(),"Showing 1 to 25 of 57 entries");
+        extentTest.log(LogStatus.PASS,"Menampilkan 25 Data Customer");
     }
 
     @When("Tampilan halaman List Data Verifikasi")
     public void Tampilan_halaman_List_Data_Verifikasi() {
         financePage.getTxtDataVerifikasi();
+        Assert.assertEquals(financePage.getTxtDataVerifikasi(),"List Data Yang Sudah DiVerifikasi");
+        extentTest.log(LogStatus.PASS,"Tampilan halaman List Data Verifikasi");
     }
 
     @And("Klik field Dashboard pada pojok kanan atas")
@@ -98,7 +109,9 @@ public class FinanceTest {
 
     @Then("Menampilkan List Data Verifikasi di halaman selanjutnya")
     public void Menampilkan_List_Data_Verifikasi_di_halaman_selanjutnya() {
+        financePage.getTxtShow11();
     }
+
 
     @And("Klik table control Previous")
     public void Klik_table_control_Previous() {

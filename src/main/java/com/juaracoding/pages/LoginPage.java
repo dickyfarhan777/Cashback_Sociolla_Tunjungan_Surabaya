@@ -36,7 +36,15 @@ public class LoginPage {
     private WebElement txtAlertPassword;
 
     @FindBy(xpath = "//center[(text() = ' Selamat datang, admintiara2            ' or . = ' Selamat datang, admintiara2            ')]")
-    private WebElement txtHome;
+    private WebElement txtHomeAdmin;
+
+    @FindBy(xpath = "//b[normalize-space()='SOCIOLLA 2023']") // home verifikator
+    private WebElement txtHomeVerif;
+    //b[normalize-space()='SOCIOLLA 2023']
+    //a[@class='d-block']
+
+    @FindBy(xpath = "//a[@class='d-block']") // home finance
+    private WebElement txtHomeFinance;
 
     @FindBy(xpath = "//p[normalize-space()='Logout']")
     private WebElement logout;
@@ -75,8 +83,16 @@ public class LoginPage {
     public String getTxtAlertUsername(){
         return txtAlertUsername.getText();
     }
-    public String getTxtHome(){
-        return txtHome.getText();
+    public String getTxtHomeAdmin(){
+        return txtHomeAdmin.getText();
+    }
+
+    public String getTxtHomeVerif(){
+        return txtHomeVerif.getText();
+    }
+
+    public String getTxtHomeFinance(){
+        return txtHomeFinance.getText();
     }
 
 

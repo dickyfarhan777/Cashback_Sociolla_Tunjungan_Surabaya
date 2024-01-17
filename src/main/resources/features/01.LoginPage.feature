@@ -5,13 +5,13 @@ Feature: User (Admin) Login
     And Input username admintiara2
     And  Input password a
     And Klik button login
-    Then Tampilan halaman home
+    Then Tampilan halaman home admin
 
   Scenario: User (Admin) input unvalidated username dan valid password
-    Given User akses link web cashback
+    Given Admin logout web cashback
     When Tampilan halaman login
     And Input unvalidated username
-    And  Input password a
+    And  Input unvalidated password
     And Klik button login
     Then Menampilkan alert username atau password salah
 
@@ -37,7 +37,7 @@ Feature: User (Admin) Login
     And Klik button login
     Then Menampilkan alert username atau password salah
 
-    // VERIFIKATOR //
+    ## VERIFIKATOR ##
 
   Scenario: User (Verifikator) menginput username dan password yang valid
     Given User akses link web cashback
@@ -45,10 +45,10 @@ Feature: User (Admin) Login
     And Input username feriansyah2
     And  Input password aa
     And Klik button login
-    Then Tampilan halaman home
+    Then Tampilan halaman home verifikator
 
   Scenario: User (Verifikator) menginput valid username dengan huruf awal kapital dan valid password
-    Given User akses link web cashback
+    Given Admin logout web cashback
     When Tampilan halaman login
     And Input username Feriansyah2
     And Input password aa
@@ -63,14 +63,15 @@ Feature: User (Admin) Login
     And Klik button login
     Then Menampilkan alert username atau password salah
 
-    // FINANCE //
+
+    ## FINANCE ##
   Scenario: User (Finance) menginput username dan password yang valid
     Given User akses link web cashback
     When Tampilan halaman login
     And Input username feriansyah
     And  Input password a
     And Klik button login
-    Then Tampilan halaman home
+    Then Tampilan halaman home finance
 
   Scenario: User (Finance) menginput unvalidated username dan password
     Given User akses link web cashback
@@ -78,7 +79,7 @@ Feature: User (Admin) Login
     And Input username tidak terdaftar
     And  Input password tidak terdaftar
     And Klik button login
-    Then Tampilan halaman home
+    Then Menampilkan alert username atau password salah
 
   Scenario: User (Finance) menginput valid username dengan huruf awal kapital dan valid password
     Given User akses link web cashback

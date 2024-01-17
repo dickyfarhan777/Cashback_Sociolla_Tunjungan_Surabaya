@@ -49,18 +49,29 @@ public class LoginTest {
         loginPage.setButtonLogin();
         extentTest.log(LogStatus.PASS,"Klik button login");
     }
-    @Then("Tampilan halaman home")
-    public void tampilan_halaman_home(){
-        loginPage.getTxtHome();
-        Assert.assertEquals(loginPage.getTxtHome(),"Selamat datang, admintiara2");
-        extentTest.log(LogStatus.PASS,"Tampilan halaman home");
+    @Then("Tampilan halaman home admin")
+    public void tampilan_halaman_home_admin(){
+        loginPage.getTxtHomeAdmin();
+        Assert.assertEquals(loginPage.getTxtHomeAdmin(),"Selamat datang, admintiara2");
+        extentTest.log(LogStatus.PASS,"Tampilan halaman home admin");
+    }
+
+    @Given("Admin logout web cashback")
+    public void Admin_logout_web_cashback(){
+        loginPage.setLogout();
+        extentTest.log(LogStatus.PASS,"Admin logout web cashback");
     }
 
     @And("Input unvalidated username")
     public void Input_unvalidated_username(){
-        loginPage.setLogout();
         loginPage.setUsername("admintiara123");
         extentTest.log(LogStatus.PASS,"Input unvalidated username");
+    }
+
+    @And("Input unvalidated password")
+    public void Input_unvalidated_password(){
+        loginPage.setPassword("abc");
+        extentTest.log(LogStatus.PASS,"Input unvalidated password");
     }
 
     @Then("Menampilkan alert username atau password salah")
@@ -73,7 +84,7 @@ public class LoginTest {
     @Then("Menampilkan icon alert")
     public void Menampilkan_icon_alert(){
         loginPage.getTxtAlertUsername();
-        Assert.assertEquals(loginPage.getTxtAlertUsername(),"Enter Username");
+        Assert.assertEquals(loginPage.getTxtAlertUsername(),"div.wrap-input100.validate-input.alert-validate::after");
         extentTest.log(LogStatus.PASS,"Menampilkan icon alert");
     }
 
@@ -93,7 +104,6 @@ public class LoginTest {
     // LOGIN VERIFIKATOR //
     @And("Input username feriansyah2")
     public void Input_username_feriansyah2(){
-        loginPage.setLogout();
         loginPage.setUsername("feriansyah2");
         extentTest.log(LogStatus.PASS,"Input username feriansyah2");
     }
@@ -104,9 +114,15 @@ public class LoginTest {
         extentTest.log(LogStatus.PASS,"Input password aa");
     }
 
+    @Then("Tampilan halaman home verifikator")
+    public void tampilan_halaman_home_verifikator(){
+        loginPage.getTxtHomeVerif();
+        Assert.assertEquals(loginPage.getTxtHomeVerif(),"SOCIOLLA 2023");
+        extentTest.log(LogStatus.PASS,"Tampilan halaman home verifikator");
+    }
+
     @And("Input username Feriansyah2")
     public void Input_username_Feriansyah2(){
-        loginPage.setLogout();
         loginPage.setUsername("Feriansyah2");
         extentTest.log(LogStatus.PASS,"Input username Feriansyah2");
     }
@@ -125,9 +141,15 @@ public class LoginTest {
         extentTest.log(LogStatus.PASS,"Input username feriansyah");
     }
 
+    @Then("Tampilan halaman home finance")
+    public void tampilan_halaman_home_finance(){
+        loginPage.getTxtHomeFinance();
+        Assert.assertEquals(loginPage.getTxtHomeFinance(),"Feri Nugraha");
+        extentTest.log(LogStatus.PASS,"Tampilan halaman home finance");
+    }
+
     @And("Input username tidak terdaftar")
     public void Input_username_tidak_terdaftar(){
-        loginPage.setLogout();
         loginPage.setUsername("trisna");
         extentTest.log(LogStatus.PASS,"Input username tidak terdaftar");
     }
@@ -140,7 +162,6 @@ public class LoginTest {
 
     @And("Input username Feriansyah")
     public void Input_username_Feriansyah(){
-        loginPage.setLogout();
         loginPage.setUsername("Feriansyah");
         extentTest.log(LogStatus.PASS,"Input username Feriansyah");
     }

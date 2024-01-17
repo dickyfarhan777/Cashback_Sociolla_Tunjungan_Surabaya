@@ -24,10 +24,10 @@ public class LogoutTest {
         extentTest = Hooks.extentTest;
     }
 
-    @Given("User akses link web cashback")
-    public void user_akses_link_web_cashback(){
+    @Given("User akses link web cashbackk")
+    public void user_akses_link_web_cashbackk(){
         driver.get(Constant.URL);
-        extentTest.log(LogStatus.PASS,"User akses link web cashback");
+        extentTest.log(LogStatus.PASS,"User akses link web cashbackk");
     }
 
     @When("User Admin berhasil login ke web cashback")

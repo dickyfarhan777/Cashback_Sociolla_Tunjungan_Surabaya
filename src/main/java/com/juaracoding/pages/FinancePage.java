@@ -1,12 +1,30 @@
 package com.juaracoding.pages;
 
+import com.juaracoding.drivers.DriverSingleton;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class FinancePage {
+    private WebDriver driver;
+
+    public LoginPage() {
+        this.driver = DriverSingleton.getDriver();
+        PageFactory.initElements(driver, this);
+    }
+
+    @FindBy(xpath = "//center[normalize-space()='Selamat datang, Feri Nugraha']")
+    private WebElement txtHome;
+
+    @FindBy(xpath = "//p[normalize-space()='Dashboard']")
+    private WebElement btnDashboard;
 
     @FindBy(xpath = "//p[normalize-space()='Finance']")
     private WebElement btnFinance;
+
+    @FindBy(xpath = "//a[normalize-space()='']")
+    private WebElement btnCekRrn;
 
     @FindBy(xpath = "//a[contains(text(),'Dashboard')]") // field text untuk kembali ke menu Dashboard
     private WebElement clickDashboard;
@@ -23,8 +41,11 @@ public class FinancePage {
     @FindBy(xpath = "//tbody/tr[1]/td[12]/a[1]/i[1]") // aksi untuk menampilkan data transaksi customer
     private WebElement btnAction;
 
-    @FindBy(xpath = "//a[normalize-space()='Next']") // menampilkan halaman selanjutnya di control page Next
+    @FindBy(xpath = "//a[normalize-space()='Next']") // klik next
     private WebElement btnNext;
+
+    @FindBy(xpath = "//div[@id='table_info']") // menampilkan halaman selanjutnya
+    private WebElement txtShow11;
 
     @FindBy(xpath = "//a[normalize-space()='2']") // menampilkan halaman selanjutnya di control page Number 2
     private WebElement btnPage2;
@@ -88,16 +109,21 @@ public class FinancePage {
         controlList.click();
     }
 
+    public void setBtnAction(){
+        btnAction.click();
+    }
+
+
+
+    public  String getTxtHome(){
+        return txtHome.getText();
+    }
     public String getTxtShowingEntries(){
         return txtShowingEntries.getText();
     }
 
     public String getTxtDataVerifikasi(){
         return txtDataVerifikasi.getText();
-    }
-
-    public void setBtnAction(){
-        btnAction.click();
     }
 
     public void setBtnNext(){
@@ -166,6 +192,10 @@ public class FinancePage {
 
     public String getTxtDashboard(){
        return txtDashboard.getText();
+    }
+
+    public String getTxtShow11(){
+        return txtShow11.getText();
     }
 
 

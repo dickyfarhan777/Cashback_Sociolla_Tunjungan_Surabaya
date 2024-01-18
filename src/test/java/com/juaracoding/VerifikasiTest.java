@@ -46,16 +46,21 @@ public class VerifikasiTest {
         extentTest.log(LogStatus.PASS,"klik tombol mata di bagian kolom aksi");
         //pindah tab
         ArrayList<String> allTabs = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(allTabs.get(1));
-
-        //scrolling
-        scrollByPixels(driver,0,300);
-        delay(3);
+        int currentTabIndex = allTabs.indexOf(driver.getWindowHandle());
+        int nextTabIndex = (currentTabIndex + 1) % allTabs.size();
+        driver.switchTo().window(allTabs.get(nextTabIndex));
+        delay(5);
     }
     @And("klik tombol verifikasi")
     public void klik_tombol_verifikasi(){
-        delay(3);
-        verifikasiPage.clickBtnVerifikasi();
+        //scrolling
+        scrollByPixels(driver,0,300);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(verifikasiPage.btnVerifikasi));
+//
+//        delay(5);
+//        verifikasiPage.clickBtnVerifikasi();
+        clickableElement.click();
         extentTest.log(LogStatus.PASS,"klik tombol verifikasi");
     }
     @And("klik ok pada popup konfirmasi 1")
@@ -75,7 +80,6 @@ public class VerifikasiTest {
     }
     @Then("verifikator berhasil verifikasi penukaran voucher")
     public void verifikator_berhasil_verifikasi_penukaran_voucher(){
-//    verifikasiPage.setTxtValidVerifikasi();
     Assert.assertEquals(verifikasiPage.setTxtValidVerifikasi(), "List Data Register");
         extentTest.log(LogStatus.PASS,"verifikator berhasil verifikasi penukaran voucher");
     }
@@ -86,6 +90,10 @@ public class VerifikasiTest {
         verifikasiPage.clickMenuVerifikasi();
         extentTest.log(LogStatus.PASS,"verifikator menuju ke menu verifikasi");
     }
+    @When("pilih data customer")
+    public void pilih_data_customer(){
+        extentTest.log(LogStatus.PASS,"pilih data customer");
+    }
     @And("klik tiap field form")
     public void klik_tiap_field_form(){
     verifikasiPage.disabledForm();
@@ -93,7 +101,7 @@ public class VerifikasiTest {
     }
     @Then("field form tidak bisa diklik")
     public void field_form_tidak_bisa_diklik(){
-    Assert.assertEquals("alertMessage", "Sukses verifikasi data!");
+    Assert.assertEquals("alertMessage", "dropdown pembayaran QRIS on");
         extentTest.log(LogStatus.PASS,"field form tidak bisa diklik");
 
     }
@@ -105,10 +113,15 @@ public class VerifikasiTest {
     verifikasiPage.clickFotoBukti1();
         extentTest.log(LogStatus.PASS,"klik foto pada foto bukti transaksi 1");
     }
-    @And("klik choose file untuk mengganti foto berformat png")
-    public void klik_choose_file_untuk_mengganti_foto_berformat_png(){
+    @And("klik choose file untuk mengganti foto 1 berformat png")
+    public void klik_choose_file_untuk_mengganti_foto_1_berformat_png(){
     verifikasiPage.clickChooseFile1();
-        extentTest.log(LogStatus.PASS,"klik choose file untuk mengganti foto berformat png");
+        extentTest.log(LogStatus.PASS,"klik choose file untuk mengganti foto 1 berformat png");
+    }
+    @And("memilih foto 1 png")
+    public void memilih_foto_1_png(){
+        verifikasiPage.choosePhoto1Png();
+        extentTest.log(LogStatus.PASS,"memilih foto 1 png");
     }
     @And("klik tombol ganti foto")
     public void klik_tombol_ganti_foto(){
@@ -135,6 +148,11 @@ public class VerifikasiTest {
     verifikasiPage.clickChooseFile2();
         extentTest.log(LogStatus.PASS,"klik choose file untuk mengganti foto berformat jpeg");
     }
+    @And("memilih foto jpeg")
+    public void memilih_foto_jpeg(){
+        verifikasiPage.choosePhotoJpeg();
+        extentTest.log(LogStatus.PASS,"memilih foto jpeg");
+    }
     @Then("verifikator berhasil mengganti foto bukti transaksi dengan foto berformat jpeg")
     public void verifikator_berhasil_mengganti_foto_bukti_transaksi_dengan_foto_berformat_jpeg(){
         extentTest.log(LogStatus.PASS,"verifikator berhasil mengganti foto bukti transaksi dengan foto berformat jpeg");
@@ -146,10 +164,21 @@ public class VerifikasiTest {
     verifikasiPage.clickFotoBukti3();
         extentTest.log(LogStatus.PASS,"klik foto pada foto bukti transaksi 3");
     }
+    @And("klik choose file untuk mengganti foto 3 berformat png")
+    public void klik_choose_file_untuk_mengganti_foto_3_berformat_png(){
+        verifikasiPage.clickChooseFile3();
+        extentTest.log(LogStatus.PASS,"klik choose file untuk mengganti foto 3 berformat png");
+    }
+    @And("memilih foto 3 png")
+    public void memilih_foto_3_png(){
+        verifikasiPage.choosePhoto3Png();
+        extentTest.log(LogStatus.PASS,"memilih foto 3 png");
+    }
 
     //tidak mengganti foto apapun : negatif
     @And("muncul warning error")
     public void muncul_warning_error(){
+        //alert
     verifikasiPage.txtErrorFoto();
         extentTest.log(LogStatus.PASS,"muncul warning error");
     }
@@ -201,6 +230,7 @@ public class VerifikasiTest {
     //Sukses menghapus catatan : positif
     @When("pilih data customer yang ingin dihilangkan")
     public void pilih_data_customer_yang_ingin_dihilangkan(){
+        System.out.println("cust catatan tidak kosong");
         extentTest.log(LogStatus.PASS,"pilih data customer yang ingin dihilangkan");
     }
     @And("verifikator menghapus field box note")
@@ -414,6 +444,7 @@ public class VerifikasiTest {
     }
     @And("klik enter")
     public void klik_enter(){
+        verifikasiPage.clickEnter();
         extentTest.log(LogStatus.PASS,"klik enter");
     }
     @And("data muncul sesuai dengan inputan")
@@ -442,6 +473,7 @@ public class VerifikasiTest {
     //mencari tanpa menginputkan apapun : negatif
     @And("hapus input search tersebut")
     public void hapus_input_search_tersebut(){
+        verifikasiPage.deleteFieldSearch();
         extentTest.log(LogStatus.PASS,"hapus input search tersebut");
     }
     @And("klik enter untuk mencari search tanpa inputan")

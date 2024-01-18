@@ -2,6 +2,7 @@ package com.juaracoding.pages;
 
 import com.juaracoding.drivers.DriverSingleton;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,9 +18,9 @@ public class VerifikasiPage {
     private WebElement menuVerifikasi;
     @FindBy(xpath = "//tbody/tr[1]/td[11]/a[1]/i[1]")
     private WebElement btnAksi;
-    @FindBy(xpath = "//button[@class='btn-primary confirm']")
-    private WebElement btnVerifikasi;
     @FindBy(xpath = "//button[@id='btnVerifikasi']")
+    public WebElement btnVerifikasi;
+    @FindBy(xpath = "//button[@class='confirmButton btn btn-primary btn-sm']")
     private WebElement okModalKonfirmasiVerifikasi;
     @FindBy(xpath = "")
     private WebElement alertKonfirmasi;
@@ -45,25 +46,25 @@ public class VerifikasiPage {
     private WebElement disabledRRN;
     @FindBy(xpath = "//div[@id='div-Foto_Struk_EDC']//img")
     private WebElement fotoBuktiTransaksi1;
-    @FindBy(xpath = "//div[@id='div-Foto_Struk_EDC']//img")
+    @FindBy(xpath = "//input[@id='imgInp_edc']")
     private WebElement btnChooseFile1;
-    @FindBy(xpath = "//div[@id='div-Foto_Struk_EDC']//img")
+    @FindBy(xpath = "//button[@id='btnupload']")
     private WebElement btnGantiFoto1;
     @FindBy(xpath = "")
     private WebElement alertSukses1;
     @FindBy(xpath = "//form[@id='rotate_form1']//img")
     private WebElement fotoBuktiTransaksi2;
-    @FindBy(xpath = "//form[@id='rotate_form1']//img")
+    @FindBy(xpath = "//input[@id='imgInp']")
     private WebElement btnChooseFile2;
-    @FindBy(xpath = "//form[@id='rotate_form1']//img")
+    @FindBy(xpath = "//button[@id='btnupload2']")
     private WebElement btnGantiFoto2;
     @FindBy(xpath = "")
     private WebElement alertSukses2;
     @FindBy(xpath = "//form[@id='rotate_form2']//img")
     private WebElement fotoBuktiTransaksi3;
-    @FindBy(xpath = "//form[@id='rotate_form2']//img")
+    @FindBy(xpath = "//input[@id='imgInp3']")
     private WebElement btnChooseFile3;
-    @FindBy(xpath = "//form[@id='rotate_form2']//img")
+    @FindBy(xpath = "//button[@id='btnupload3']")
     private WebElement btnGantiFoto3;
     @FindBy(xpath = "")
     private WebElement txtTidakValidMenggantiFoto;
@@ -168,6 +169,9 @@ public class VerifikasiPage {
     public void clickChooseFile1(){
         btnChooseFile1.click();
     }
+    public void choosePhoto1Png(){
+        btnChooseFile1.sendKeys("C:\\MyTools\\logo.png");
+    }
     public void clickGantiFoto1(){
         btnGantiFoto1.click();
     }
@@ -177,8 +181,18 @@ public class VerifikasiPage {
     public void clickChooseFile2(){
         btnChooseFile2.click();
     }
+    public void choosePhotoJpeg(){
+        btnChooseFile2.sendKeys("C:\\MyTools\\screenshot.jpeg");
+    }
     public void clickFotoBukti3(){
         fotoBuktiTransaksi3.click();
+    }
+    public void clickChooseFile3(){
+        btnChooseFile3.click();
+        btnChooseFile3.sendKeys("C:\\MyTools\\logo.png");
+    }
+    public void choosePhoto3Png(){
+        btnChooseFile3.sendKeys("C:\\MyTools\\logo.png");
     }
     public String txtErrorFoto(){
         return txtTidakValidMenggantiFoto.getText();
@@ -268,7 +282,7 @@ public class VerifikasiPage {
         fieldSearch.sendKeys("Septia");
     }
     public void clickEnter(){
-
+    fieldSearch.sendKeys(Keys.ENTER);
     }
     public String setTxtNamaCust(){
         return txtSeptia.getText();
@@ -280,7 +294,17 @@ public class VerifikasiPage {
         return txtRinzana.getText();
     }
     public void deleteFieldSearch(){
-        fieldSearch.sendKeys();
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+
     }
     public String setTxtIsiTabel(){
         return txtIsiTabel.getText();

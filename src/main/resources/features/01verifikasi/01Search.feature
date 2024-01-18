@@ -1,8 +1,9 @@
 Feature: Search
   #positif
   Scenario: mencari nama depan customer
-    Given verifikator menuju ke menu verifikasi
-    When menginput nama Septia ke dalam field search
+    Given Verifikator login web sociolla cashback
+    When verifikator menuju ke menu verifikasi
+    And menginput nama Septia ke dalam field search
     And klik enter
     And data muncul sesuai dengan inputan
     Then isi tabel muncul sesuai dengan nama customer yang diinputkan

@@ -1,6 +1,7 @@
 package com.juaracoding.pages;
 
 import com.juaracoding.drivers.DriverSingleton;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -100,7 +101,7 @@ public class UploadBuktiTransferPage {
         fieldSearch.sendKeys("karina");
     }
     public void clickEnter(){
-
+    fieldSearch.sendKeys(Keys.ENTER);
     }
     public String setTxtNamaCustKarina(){
         return txtNamaCustKarina.getText();
@@ -112,7 +113,15 @@ public class UploadBuktiTransferPage {
         return txtNamaVerifFeri.getText();
     }
     public void deleteInputSearch(){
-        fieldSearch.sendKeys("");
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
+        fieldSearch.sendKeys(Keys.BACK_SPACE);
     }
     public String setTxtDataSemula(){
         return txtDataSemula.getText();

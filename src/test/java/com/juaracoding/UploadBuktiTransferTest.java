@@ -9,9 +9,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+
 public class UploadBuktiTransferTest {
     private static WebDriver driver;
     private static ExtentTest extentTest;
@@ -25,7 +29,7 @@ public class UploadBuktiTransferTest {
 
     //Form sudah Ditransfer ==========================
     //field form tidak bisa diklik : positif
-    @Given("Verifikator login web sociolla cashback")
+    @Given("Verifikator login web sociolla")
     public void verifikator_login_web_sociolla_cashback() {
         driver.get(Constant.URL);
         loginPage.loginAdmin("nadia.verif", "a");
@@ -41,6 +45,12 @@ public class UploadBuktiTransferTest {
     public void klik_tombol_mata_di_bagian_kolom_aksi(){
     uploadBuktiTransferPage.clickBtnAksi();
         extentTest.log(LogStatus.PASS,"Klik tombol mata di bagian kolom Aksi");
+        //pindah tab
+        ArrayList<String> allTabs = new ArrayList<>(driver.getWindowHandles());
+        int currentTabIndex = allTabs.indexOf(driver.getWindowHandle());
+        int nextTabIndex = (currentTabIndex + 1) % allTabs.size();
+        driver.switchTo().window(allTabs.get(nextTabIndex));
+        delay(5);
     }
     @And("Klik tiap field form dan gambar")
     public void klik_tiap_field_form_dan_gambar(){
@@ -84,6 +94,7 @@ public class UploadBuktiTransferTest {
     }
     @And("Klik enter")
     public void klik_enter(){
+        uploadBuktiTransferPage.clickEnter();
         extentTest.log(LogStatus.PASS,"Klik enter");
     }
     @And("Tabel muncul berdasarkan hasil search")
@@ -112,6 +123,7 @@ public class UploadBuktiTransferTest {
     //Mencari tanpa input apapun : negatif
     @And("Hapus inputan pada field search")
     public void hapus_inputan_pada_field_search(){
+        uploadBuktiTransferPage.deleteInputSearch();
         extentTest.log(LogStatus.PASS,"Hapus inputan pada field search");
     }
     @And("Tabel berisi data semula")
@@ -211,5 +223,16 @@ public class UploadBuktiTransferTest {
         extentTest.log(LogStatus.PASS,"Tabel menampilkan data dari page setelahnya");
     }
 
-
+    public static void scrollByPixels(WebDriver driver, int x, int y) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollBy({ top: " + y + ", behavior: 'smooth' });");
+        System.out.println("Scrolling smooth To Target with Pixels");
+    }
+    static void delay(long detik) {
+        try { //jeda sebelum close
+            Thread.sleep(detik * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

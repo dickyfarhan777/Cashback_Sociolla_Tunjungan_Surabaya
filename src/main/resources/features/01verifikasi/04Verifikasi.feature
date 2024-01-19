@@ -1,8 +1,9 @@
 Feature: Verifikasi
   #test case positif
   Scenario: verifikasi valid penukaran voucher
-    Given klik menu verifikasi
+    Given verifikator menuju ke menu verifikasi
     And klik tombol mata di bagian kolom aksi
+    And scroll y max
     And klik tombol verifikasi
     And klik ok pada popup konfirmasi 1
     And klik ok pada popup konfirmasi 2
@@ -13,6 +14,7 @@ Feature: Verifikasi
     Given verifikator menuju ke menu verifikasi
     When pilih data customer
     And klik tombol mata di bagian kolom aksi
-    And klik tiap field form
+    And klik tiap field form 1
+    And klik tiap field form 2
     Then field form tidak bisa diklik
 

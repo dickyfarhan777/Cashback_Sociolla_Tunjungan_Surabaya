@@ -47,9 +47,9 @@ public class UploadBuktiTransferPage {
     private WebElement fieldSearch;
     @FindBy(xpath = "//td[normalize-space()='karina']")
     private WebElement txtNamaCustKarina;
-    @FindBy(xpath = "//tbody/tr[1]/td[10]")
+    @FindBy(xpath = "//td[normalize-space()='Feri Nugraha 2']")
     private WebElement txtNamaVerifFeri;
-    @FindBy(xpath = "//td[normalize-space()='1']")
+    @FindBy(xpath = "//div[@id='table_info']")
     private WebElement txtDataSemula;
     @FindBy(xpath = "//input[@id='Foto_Transfer']")
     private WebElement btnChooseFile;
@@ -107,7 +107,7 @@ public class UploadBuktiTransferPage {
         return txtNamaCustKarina.getText();
     }
     public void inputSearchVerifikator(){
-        fieldSearch.sendKeys("Feri");
+        fieldSearch.sendKeys("Feri Nugraha 2");
     }
     public String setTxtNamaVerifFeri(){
         return txtNamaVerifFeri.getText();

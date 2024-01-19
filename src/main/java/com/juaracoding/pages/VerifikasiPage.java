@@ -153,11 +153,13 @@ public class VerifikasiPage {
     public String setTxtValidVerifikasi(){
         return txtValidVerifikasi.getText();
     }
-    public void disabledForm(){
+    public void disabledForm1(){
         disabledNamaLengkapNasabah.click();
         disabledNoHp.click();
         disabledNoRekBCA.click();
         disabledPembayaranQRIS.click();
+    }
+    public void disabledForm2(){
         disabledNominalTransaksi.click();
         disabledNominalCashback.click();
         disabledNamaMerchant.click();

@@ -2,10 +2,12 @@ Feature: Search
   #positif
   Scenario: mencari nama depan customer
     Given Verifikator login web sociolla cashback
-    When verifikator menuju ke menu verifikasi
+    When klik menu verifikasi
     And menginput nama Septia ke dalam field search
     And klik enter
-    And data muncul sesuai dengan inputan
+    And menginput nama Septia ke dalam field search
+    And klik enter
+    And data muncul sesuai dengan inputan Septia
     Then isi tabel muncul sesuai dengan nama customer yang diinputkan
 
   #positif
@@ -13,13 +15,13 @@ Feature: Search
     Given verifikator menuju ke menu verifikasi
     When menginput nama Rinzana ke dalam field search
     And klik enter
-    And data muncul sesuai dengan inputan
+    And data muncul sesuai dengan inputan Rinzana
     Then isi tabel muncul sesuai dengan nama sales yang diinputkan
 
   #negatif
   Scenario: mencari tanpa menginputkan apapun
     Given verifikator menuju ke menu verifikasi
-    When menginput nama Septia ke dalam field search
+    When menginput nama Rinzana ke dalam field search
     And klik enter
     And hapus input search tersebut
     And klik enter untuk mencari search tanpa inputan

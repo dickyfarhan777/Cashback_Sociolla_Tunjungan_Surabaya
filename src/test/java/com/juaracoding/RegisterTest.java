@@ -123,7 +123,7 @@ public class RegisterTest {
 
     @And("Input tanggal transaksi melebihi tanggal hari ini")
     public void input_tanggal_transaksi_melebihi_tanggal_hari_ini() {
-        registerPage.setTanggalTransaksi("01/13/2024");
+        registerPage.setTanggalTransaksi("01/22/2024");
         extentTest.log(LogStatus.PASS, "Input tanggal transaksi melebihi tanggal hari ini");
     }
 
@@ -427,7 +427,7 @@ public class RegisterTest {
     @Then("Menampilkan alert please fill out this field pembayaran qris")
     public void menampilkan_pembayaran_qris_alert_please_fill_out_this_field() {
         DriverSingleton.delay(3);
-        Assert.assertEquals(registerPage.getTxtRequiredPembayaranQris(), "required");
+        Assert.assertEquals(registerPage.getTxtRequiredPembayaranQris(), "true");
         extentTest.log(LogStatus.PASS, "Menampilkan alert please fill out this field pembayaran qris");
     }
 

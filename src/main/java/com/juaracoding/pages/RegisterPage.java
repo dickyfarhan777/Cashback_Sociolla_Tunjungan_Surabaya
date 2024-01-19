@@ -181,7 +181,7 @@ inputFotoBuktiTransaksi3.sendKeys("C:\\MyTools\\Bukti TF 3.jpg");
     }
 
     public String getTxtRequiredSocoId(){
-        return txtSocoId.getAttribute("required");
+        return inputSocoId.getAttribute("required");
     }
     public String getTxtRequiredNamaMerchant(){
         return inputNamaMerchant.getAttribute("required");

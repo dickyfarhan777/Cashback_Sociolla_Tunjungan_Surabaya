@@ -43,9 +43,9 @@ public class ReportDataPage {
     private WebElement btnSearch;
     @FindBy(xpath = "//button[@type='button']")
     private WebElement btnFilter;
-    @FindBy(xpath = "//*[@id='table']/tbody/tr[1]/td[13]/a")
+    @FindBy(xpath = "//table[@id='table']/tbody/tr/td[13]/a/i")
     private WebElement btnAksi;
-    @FindBy(xpath = "////h3[normalize-space()='Form Verifikasi Penukaran Voucher']")
+    @FindBy(xpath = "//h3[normalize-space()='Form Verifikasi Penukaran Voucher']")
     private WebElement txtHalamanAksi;
     @FindBy(xpath = "//*[@id='table']/tbody/tr[1]/td[12]")
     private WebElement txtStatusData;
@@ -115,11 +115,6 @@ public class ReportDataPage {
     }
     public String getTxtHalaman(){
         return txtShowing.getText();
-    }
-    public static void scrollByPixels(WebDriver driver, int x, int y) {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("window.scrollBy({ top: " + y + ", behavior: 'smooth' });");
-        System.out.println("Scrolling smooth To Target with Pixels");
     }
 
 }

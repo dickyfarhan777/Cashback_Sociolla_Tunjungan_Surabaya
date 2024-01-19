@@ -1,12 +1,12 @@
 Feature: Register Admin
-  #2
+  #3
   Scenario: Admin submit data without input data
    Given Admin akses link web cashback lagi
    When Klik menu Register
    And Klik add new data
    And Klik submit data
    Then Menampilkan alert please fill out this field
-#3
+#4
   Scenario: Admin input data register valid
     Given Klik menu Register
     When Klik add new data
@@ -24,7 +24,7 @@ Feature: Register Admin
     And Upload Foto Bukti Transaksi 3
     And Klik submit data
     Then Menampilkan alert error saving data
-#4
+#5
     Scenario: Admin input soco id yang sudah terdaftar sebelumnya
       Given Klik menu Register
       When Klik add new data
@@ -42,7 +42,7 @@ Feature: Register Admin
       And Upload Foto Bukti Transaksi 3
       And Klik submit data
       Then Menampilkan alert error saving data
-#5
+#6
       Scenario: Admin input nomor hp yang sudah terdaftar sebelumnya
         Given Klik menu Register
         When Klik add new data
@@ -60,7 +60,7 @@ Feature: Register Admin
         And Upload Foto Bukti Transaksi 3
         And Klik submit data
         Then Menampilkan alert error saving data
-#6
+#7
         Scenario: Admin input soco id menggunakan campuran huruf dan angka
           Given Klik menu Register
           When Klik add new data
@@ -78,7 +78,7 @@ Feature: Register Admin
           And Upload Foto Bukti Transaksi 3
           And Klik submit data
           Then Menampilkan alert error saving data
-#7
+#8
           Scenario: Admin input Soco Id dengan menggunakan Karakter @
             Given Klik menu Register
             When Klik add new data
@@ -96,7 +96,7 @@ Feature: Register Admin
             And Upload Foto Bukti Transaksi 3
             And Klik submit data
             Then Menampilkan alert error saving data
-#8
+#9
             Scenario: Admin input soco id dengan menggunakan Karakter >
               Given Klik menu Register
               When Klik add new data
@@ -114,7 +114,7 @@ Feature: Register Admin
               And Upload Foto Bukti Transaksi 3
               And Klik submit data
               Then Menampilkan soco id alert karakter < > ' kutip dua tidak diizinkan
-#9
+#10
               Scenario: Admin input soco id dengan menggunakan Karakter <
                 Given Klik menu Register
                 When Klik add new data
@@ -636,8 +636,8 @@ Feature: Register Admin
                                                                           And Upload Foto Bukti Transaksi 3
                                                                           And Klik submit data
                                                                           Then Menampilkan alert error saving data
-
-                                                                          Scenario: Admin input soco id dengan
+#38
+                                                                          Scenario: Admin input soco id dengan <>'"
                                                                             Given Klik menu Register
                                                                             When Klik add new data
                                                                             And Input Soco Id dengan menambahkan < > kutip satu kutip dua

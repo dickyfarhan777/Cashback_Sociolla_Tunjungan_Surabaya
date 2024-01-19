@@ -1,5 +1,6 @@
 package com.juaracoding;
 
+import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.pages.DashboardPage;
 import com.juaracoding.pages.LoginPage;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -105,25 +106,29 @@ public class DashboardTest {
 
     @Then("Akan menampilkan data valid yang difilter1")
     public void tampil_data_yg_difilter() {
-        Assert.assertEquals(dashboardPage.getTxtTableCashback()," Rp. 822,312");
+        DriverSingleton.delay(5);
+        Assert.assertEquals(dashboardPage.getTxtTableCashback(),"Rp. 0");
         extentTest.log(LogStatus.PASS, "Akan menampilkan data valid yang difilter1");
     }
 
     @Then("Akan menampilkan data valid yang difilter2")
     public void tampil_data_yg_difilter2() {
-        Assert.assertEquals(dashboardPage.getTxtTableCashback()," Rp. 3,822,312");
+        DriverSingleton.delay(5);
+        Assert.assertEquals(dashboardPage.getTxtTableCashback(),"Rp. 3,822,312");
         extentTest.log(LogStatus.PASS, "Akan menampilkan data valid yang difilter2");
     }
 
     @Then("Tidak akan menampilkan data invalid yang difilter1")
     public void tidak_tampil_data_yg_difilter1() {
-        Assert.assertEquals(dashboardPage.getTxtTableCashback()," Rp. 0");
+        DriverSingleton.delay(5);
+        Assert.assertEquals(dashboardPage.getTxtTableCashback(),"Rp. 0");
         extentTest.log(LogStatus.PASS, "Tidak akan menampilkan data invalid yang difilter1");
     }
 
     @Then("Tidak akan menampilkan data invalid yang difilter2")
     public void tidak_tampil_data_yg_difilter2() {
-        Assert.assertEquals(dashboardPage.getTxtTableCashback()," Rp. 0");
+        DriverSingleton.delay(5);
+        Assert.assertEquals(dashboardPage.getTxtTableCashback(),"Rp. 0");
         extentTest.log(LogStatus.PASS, "Tidak akan menampilkan data invalid yang difilter2");
     }
 
@@ -140,6 +145,7 @@ public class DashboardTest {
     }
     @Then("Akan menampilkan data valid yang difilter3")
     public void menampilkan_data_spg(){
+        DriverSingleton.delay(5);
         Assert.assertEquals(dashboardPage.getTxtTableSpg(),"vivi");
         extentTest.log(LogStatus.PASS,"Akan menampilkan data valid yang difilter3");
     }

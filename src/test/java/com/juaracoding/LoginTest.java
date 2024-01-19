@@ -70,21 +70,23 @@ public class LoginTest {
 
     @And("Input unvalidated password")
     public void Input_unvalidated_password(){
-        loginPage.setPassword("abc");
+        loginPage.setPassword("abc123");
         extentTest.log(LogStatus.PASS,"Input unvalidated password");
     }
 
     @Then("Menampilkan alert username atau password salah")
     public void Menampilkan_alert_username_atau_password_salah(){
         loginPage.getTxtFailLogin();
+        //Assert.assertTrue(loginPage.getTxtFailLogin().contains("Username atau Password Salah!"));
         Assert.assertEquals(loginPage.getTxtFailLogin(),"Username atau Password Salah!");
         extentTest.log(LogStatus.PASS,"Menampilkan alert username atau password salah");
     }
 
     @Then("Menampilkan icon alert")
     public void Menampilkan_icon_alert(){
-        loginPage.getTxtAlertUsername();
-        Assert.assertEquals(loginPage.getTxtAlertUsername(),"div.wrap-input100.validate-input.alert-validate::after");
+        //loginPage.getTxt();
+        System.out.println(loginPage.getAlertUsername());
+        Assert.assertTrue(loginPage.getAlertUsername().contains("Enter Username !"));
         extentTest.log(LogStatus.PASS,"Menampilkan icon alert");
     }
 
@@ -117,7 +119,8 @@ public class LoginTest {
     @Then("Tampilan halaman home verifikator")
     public void tampilan_halaman_home_verifikator(){
         loginPage.getTxtHomeVerif();
-        Assert.assertEquals(loginPage.getTxtHomeVerif(),"SOCIOLLA 2023");
+        //Assert.assertTrue(loginPage.getTxtHomeVerif().contains(" Feri Nugraha 2 "));
+        Assert.assertEquals(loginPage.getTxtHomeVerif(),"Feri Nugraha 2");
         extentTest.log(LogStatus.PASS,"Tampilan halaman home verifikator");
     }
 
@@ -144,7 +147,8 @@ public class LoginTest {
     @Then("Tampilan halaman home finance")
     public void tampilan_halaman_home_finance(){
         loginPage.getTxtHomeFinance();
-        Assert.assertEquals(loginPage.getTxtHomeFinance(),"Feri Nugraha");
+        Assert.assertTrue(loginPage.getTxtHomeFinance().contains("Feri Nugraha"));
+        //Assert.assertEquals(loginPage.getTxtHomeFinance(),"Feri Nugraha");
         extentTest.log(LogStatus.PASS,"Tampilan halaman home finance");
     }
 

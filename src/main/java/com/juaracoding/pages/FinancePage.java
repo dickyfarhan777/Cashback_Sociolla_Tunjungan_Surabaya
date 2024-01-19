@@ -9,13 +9,24 @@ import org.openqa.selenium.support.PageFactory;
 public class FinancePage {
     private WebDriver driver;
 
-    public LoginPage() {
+    public FinancePage() {
         this.driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//center[normalize-space()='Selamat datang, Feri Nugraha']")
+    @FindBy(xpath = "/html/body/div/aside[1]/div/div/div[2]/a")
     private WebElement txtHome;
+    //center[normalize-space()='Selamat datang, Feri Nugraha']
+    //html/body/div/div[1]/section/div/div/div/center/text()
+
+    @FindBy(xpath = "//input[@placeholder='Username']")
+    private WebElement username;
+
+    @FindBy(xpath = "//input[@placeholder='Password']")
+    private WebElement password;
+
+    @FindBy(xpath = "//button[@class='login100-form-btn']")
+    private WebElement buttonLogin;
 
     @FindBy(xpath = "//p[normalize-space()='Dashboard']")
     private WebElement btnDashboard;
@@ -41,8 +52,10 @@ public class FinancePage {
     @FindBy(xpath = "//tbody/tr[1]/td[12]/a[1]/i[1]") // aksi untuk menampilkan data transaksi customer
     private WebElement btnAction;
 
-    @FindBy(xpath = "//a[normalize-space()='Next']") // klik next
+    @FindBy(xpath = "//*[@id=table_next]") // klik next
     private WebElement btnNext;
+    //aside[@class='main-sidebar sidebar-light-primary elevation-4']
+    //a[normalize-space()='Next']
 
     @FindBy(xpath = "//div[@id='table_info']") // menampilkan halaman selanjutnya
     private WebElement txtShow11;
@@ -53,13 +66,15 @@ public class FinancePage {
     @FindBy(xpath = "//a[contains(text(),'3')]") // klik page 3
     private WebElement btnPage3;
 
-    @FindBy(xpath = "//div[@id='table_info']") // tampilan page 3
+    @FindBy(xpath = "//div[@id='table_info']") // menampilkan hasil page 3
     private WebElement txtDataPage3;
 
-    @FindBy(xpath = "//li[@id='table_previous']") // klik previous
+    @FindBy(xpath = "//*[@id='table_previous']") // klik previous
     private WebElement btnPrevious;
+    //li[@id='table_previous']
+    //*[@id="table_previous"]
 
-    @FindBy(xpath = "//div[@id='table_info']") // menampilkan halaman sebelumnya di control page Previous
+    @FindBy(xpath = "//*[@id=\"table_info\"]") // menampilkan halaman sebelumnya button previous
     private WebElement txtDataPagePrevious;
 
     @FindBy(xpath = "//input[@class='form-control form-control-sm']") // kolom search mencari data customer dgn Nama, RRN, RefID
@@ -97,6 +112,12 @@ public class FinancePage {
 
 
     // step action
+
+    public void loginAdmin(String username, String password){
+        this.username.sendKeys(username);
+        this.password.sendKeys(password);
+        buttonLogin.click();
+    }
     public void setBtnFinance(){
         btnFinance.click();
     }

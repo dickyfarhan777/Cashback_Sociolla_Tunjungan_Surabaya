@@ -7,7 +7,7 @@ Feature: User (Admin) Login
     And Klik button login
     Then Tampilan halaman home admin
 
-  Scenario: User (Admin) input unvalidated username dan valid password
+  Scenario: User (Admin) input unvalidated username dan password
     Given Admin logout web cashback
     When Tampilan halaman login
     And Input unvalidated username
@@ -74,7 +74,7 @@ Feature: User (Admin) Login
     Then Tampilan halaman home finance
 
   Scenario: User (Finance) menginput unvalidated username dan password
-    Given User akses link web cashback
+    Given Admin logout web cashback
     When Tampilan halaman login
     And Input username tidak terdaftar
     And  Input password tidak terdaftar
@@ -93,7 +93,7 @@ Feature: User (Admin) Login
     Given User akses link web cashback
     When Tampilan halaman login
     And Input username FERIANSYAH
-    And Input password aa
+    And Input password a
     And Klik button login
     Then Menampilkan alert username atau password salah
 

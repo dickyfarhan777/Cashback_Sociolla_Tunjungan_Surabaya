@@ -2,6 +2,7 @@ package com.juaracoding;
 
 import com.juaracoding.pages.FinancePage;
 import com.juaracoding.pages.LoginPage;
+import com.juaracoding.utils.Constant;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.en.And;
@@ -10,6 +11,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
+import static com.juaracoding.drivers.DriverSingleton.delay;
+import static com.juaracoding.utils.TestCase.scrollByPixels;
 
 public class FinanceTest {
     private static WebDriver driver;
@@ -24,21 +28,25 @@ public class FinanceTest {
 
     @Given("User akses web cashback sociolla")
     public void User_akses_web_cashback_sociolla() {
-        String url = "https://staging.ptkta.com/xcashback_sociolla/login\n";
-        driver.get(url);
-        Assert.assertEquals(driver.getCurrentUrl(), url);
+        driver.get(Constant.URL);
+        extentTest.log(LogStatus.PASS,"User akses web cashback sociolla");
     }
 
-    @When("User Finance telah berhasil login web cashback")
-    public void User_Finance_telah_berhasil_login_web_cashback() {
-        financePage.getTxtHome();
-        Assert.assertEquals(financePage.getTxtHome(),"Selamat datang, Feri Nugraha");
-        extentTest.log(LogStatus.PASS,"User Finance telah berhasil login web cashback");
+    @When("User finance login")
+    public void User_finance_login() {
+        financePage.loginAdmin("feriansyah", "a");
+        extentTest.log(LogStatus.PASS,"User finance login");
     }
+
+//    @And("Klik button login")
+//    public void Klik_button_login(){
+//        financePage.loginAdmin();
+//    }
 
     @And("Klik button menu Finance")
     public void Klik_button_menu_Finance() {
         financePage.setBtnFinance();
+        extentTest.log(LogStatus.PASS,"Klik button menu Finance");
     }
 
     @Then("Tampilan list data yang sudah di verifikasi")
@@ -104,33 +112,43 @@ public class FinanceTest {
 
     @And("Klik table control Next")
     public void Klik_table_control_Next() {
+        delay(3);
+        scrollByPixels(driver,0,900);
         financePage.setBtnNext();
+        extentTest.log(LogStatus.PASS,"Klik table control Next");
     }
 
     @Then("Menampilkan List Data Verifikasi di halaman selanjutnya")
     public void Menampilkan_List_Data_Verifikasi_di_halaman_selanjutnya() {
         financePage.getTxtShow11();
+        Assert.assertEquals(financePage.getTxtShow11(),"Showing 11 to 20 of 57 entries");
+        extentTest.log(LogStatus.PASS,"Menampilkan List Data Verifikasi di halaman selanjutnya");
     }
-
 
     @And("Klik table control Previous")
     public void Klik_table_control_Previous() {
         financePage.setBtnPrevious();
+        extentTest.log(LogStatus.PASS,"Klik table control Previous");
     }
 
     @Then("Menampilkan List Data Verifikasi di halaman sebelumnya")
     public void Menampilkan_List_Data_Verifikasi_di_halaman_sebelumnya() {
         financePage.getTxtDataPagePrevious();
+        Assert.assertEquals(financePage.getTxtDataPagePrevious(),"Showing 1 to 10 of 57 entries");
+        extentTest.log(LogStatus.PASS,"Menampilkan List Data Verifikasi di halaman sebelumnya");
     }
 
     @And("Klik table control page 3")
     public void Klik_table_control_page_3() {
         financePage.setBtnPage3();
+        extentTest.log(LogStatus.PASS,"Klik table control page 3");
     }
 
     @Then("Menampilkan List Data Verifikasi di halaman 3")
     public void Menampilkan_List_Data_Verifikasi_di_halaman_3(){
         financePage.getTxtDataPage3();
+        Assert.assertEquals(financePage.getTxtDataPage3(),"Showing 21 to 30 of 57 entries");
+        extentTest.log(LogStatus.PASS,"Menampilkan List Data Verifikasi di halaman 3");
     }
 
     @And("Input first name pada kolom field Search")

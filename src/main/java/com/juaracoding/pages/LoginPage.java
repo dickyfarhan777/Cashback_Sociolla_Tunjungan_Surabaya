@@ -29,7 +29,8 @@ public class LoginPage {
     @FindBy(xpath = "//b[normalize-space()='Username atau Password Salah!']")
     private WebElement txtFailLogin;
 
-    @FindBy(xpath = "//div[@data-validate='Enter username']") // alert enter username
+    //@FindBy(xpath = "//div.wrap-input100.validate-inputalert-validate") // alert enter username
+    @FindBy(xpath = "/html/body/div[1]/div/div/form/div[1]")
     private WebElement txtAlertUsername;
 
     @FindBy(xpath = "//div[@data-validate='Enter password']") // alert enter password
@@ -38,17 +39,25 @@ public class LoginPage {
     @FindBy(xpath = "//center[(text() = ' Selamat datang, admintiara2            ' or . = ' Selamat datang, admintiara2            ')]")
     private WebElement txtHomeAdmin;
 
-    @FindBy(xpath = "//b[normalize-space()='SOCIOLLA 2023']") // home verifikator
+//    @FindBy(xpath = "//center[(text() = ' Selamat datang, Feri Nugraha 2            ' or . = ' Selamat datang, Feri Nugraha 2            ')]")
+//    private WebElement txtHomeVerif;
+    @FindBy(xpath = "/html/body/div/aside[1]/div/div/div[2]/a") // home verifikator
     private WebElement txtHomeVerif;
+    //html/body/div/aside[1]/div/div/div[2]/a
+    //html/body/div/div[1]/section/div/div/div
+    //p[normalize-space()='Home']
+    //html/body/div/aside[1]/a/span/b
     //b[normalize-space()='SOCIOLLA 2023']
-    //a[@class='d-block']
+    //html/body/div/div[1]/section/div/div/div/center/text()
 
-    @FindBy(xpath = "//a[@class='d-block']") // home finance
+    @FindBy(xpath = "/html/body/div/aside[1]/div/div/div[2]/a") // home finance
     private WebElement txtHomeFinance;
+    //i[@class='fa fa-bell fa-fw']
+    //html/body/div/div[1]/comment()[1]
+    //html/body/div/div[1]/section/div/div/div/center
 
     @FindBy(xpath = "//p[normalize-space()='Logout']")
     private WebElement logout;
-
 
 
     // step action
@@ -80,8 +89,13 @@ public class LoginPage {
         return txtFailLogin.getText();
     }
 
-    public String getTxtAlertUsername(){
-        return txtAlertUsername.getText();
+//    public String getHomeVerif(){
+//        return txtHomeVerif.getAttribute("data-validate");
+//    }
+    //html/body/div/div[1]/section/div/div/div/center/text()
+
+    public String getAlertUsername(){
+        return txtAlertUsername.getAttribute("data-validate");
     }
     public String getTxtHomeAdmin(){
         return txtHomeAdmin.getText();
@@ -94,7 +108,6 @@ public class LoginPage {
     public String getTxtHomeFinance(){
         return txtHomeFinance.getText();
     }
-
 
 
 }

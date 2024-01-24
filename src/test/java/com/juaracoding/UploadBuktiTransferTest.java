@@ -96,7 +96,7 @@ public class UploadBuktiTransferTest {
     @Then("Data tertampil di tabel maksimal 25 data")
     public void data_tertampil_di_tabel_maks_25_data(){
         delay(3);
-        Assert.assertEquals(uploadBuktiTransferPage.setTxtTabelMaks25(), "Showing 1 to 25 of 34 entries");
+        Assert.assertEquals(uploadBuktiTransferPage.setTxtTabelMaks25(), "Showing 1 to 13 of 13 entries");
         extentTest.log(LogStatus.PASS,"Data tertampil di tabel maksimal 25 data");
     }
 

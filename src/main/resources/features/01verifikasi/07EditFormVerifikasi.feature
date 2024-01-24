@@ -1,33 +1,37 @@
 Feature: Edit form verifikasi
   #negatif
   Scenario: mengubah nama lengkap nasabah dengan angka dan karakter spesial
-    Given verifikator menuju ke menu verifikasi
-    When pilih data customer
+    Given scroll ke atas max
+    When klik menu verifikasi
     And klik tombol mata di bagian kolom aksi
+    And scroll bawah max
+    And scroll y max
     And klik tombol edit
+    And scroll ke atas max
     And mengubah nama dengan beberapa karakter spesial dan angka di bagian field nama lengkap nasabah
+    And scroll bawah max
     And klik tombol simpan
     And muncul popup alert "sukses mengubah data!"
     Then verifikator tidak berhasil mengubah nama nasabah dengan karakter spesial dan angka
 
   #negatif
   Scenario: Nama lengkap nasabah kosong atau dihapus
-    Given verifikator menuju ke menu verifikasi
-    When pilih data customer
-    And klik tombol mata di bagian kolom aksi
-    And klik tombol edit
+    Given scroll bawah max
+    When klik tombol edit
+    And scroll ke atas max
     And menghapus isi di bagian field nama lengkap nasabah
+    And scroll bawah max
     And klik tombol simpan
     And Muncul error "The Customer Name field is required."
     Then verifikator tidak berhasil mengosongkan field nama lengkap nasabah
 
   #positif
   Scenario: Nominal transaksi ditambahkan 0 satu
-    Given verifikator menuju ke menu verifikasi
-    When pilih data customer
-    And klik tombol mata di bagian kolom aksi
-    And klik tombol edit
+    Given scroll bawah max
+    When klik tombol edit
+    And scroll ke atas max
     And menambah 0 satu di field nominal transaksi
+    And scroll bawah max
     And klik tombol simpan
     And muncul popup alert "sukses mengubah data!"
     Then verifikator berhasil mengubah nominal transaksi milik nasabah

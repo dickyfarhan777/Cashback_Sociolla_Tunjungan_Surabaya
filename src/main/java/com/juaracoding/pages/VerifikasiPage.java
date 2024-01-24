@@ -18,8 +18,10 @@ public class VerifikasiPage {
     private WebElement menuVerifikasi;
     @FindBy(xpath = "//tbody/tr[1]/td[11]/a[1]/i[1]")
     private WebElement btnAksi;
+    @FindBy(xpath = "//tbody/tr[2]/td[11]/a[1]")
+    private WebElement btnAksi2;
     @FindBy(xpath = "//button[@id='btnVerifikasi']")
-    public WebElement btnVerifikasi;
+    private WebElement btnVerifikasi;
     @FindBy(xpath = "//button[@class='confirmButton btn btn-primary btn-sm']")
     private WebElement okModalKonfirmasiVerifikasi;
     @FindBy(xpath = "")
@@ -50,26 +52,20 @@ public class VerifikasiPage {
     private WebElement btnChooseFile1;
     @FindBy(xpath = "//button[@id='btnupload']")
     private WebElement btnGantiFoto1;
-    @FindBy(xpath = "")
-    private WebElement alertSukses1;
     @FindBy(xpath = "//form[@id='rotate_form1']//img")
     private WebElement fotoBuktiTransaksi2;
     @FindBy(xpath = "//input[@id='imgInp']")
     private WebElement btnChooseFile2;
     @FindBy(xpath = "//button[@id='btnupload2']")
     private WebElement btnGantiFoto2;
-    @FindBy(xpath = "")
-    private WebElement alertSukses2;
     @FindBy(xpath = "//form[@id='rotate_form2']//img")
     private WebElement fotoBuktiTransaksi3;
     @FindBy(xpath = "//input[@id='imgInp3']")
     private WebElement btnChooseFile3;
     @FindBy(xpath = "//button[@id='btnupload3']")
     private WebElement btnGantiFoto3;
-    @FindBy(xpath = "")
-    private WebElement txtTidakValidMenggantiFoto;
     @FindBy(xpath = "//select[@name='table_length']")
-    public WebElement dropdownShowEntries;
+    private WebElement dropdownShowEntries;
     @FindBy(xpath = "//div[@id='table_info']")
     private WebElement txtTabelMaks25;
     @FindBy(xpath = "//textarea[@id='Note']")
@@ -78,8 +74,6 @@ public class VerifikasiPage {
     private WebElement btnSaveNote;
     @FindBy(xpath = "//button[@id='btnNote']")
     private WebElement okModalKonfirmasiNote;
-    @FindBy(xpath = "")
-    private WebElement alertSuksesUpdateNote;
     @FindBy(xpath = "//div[@id='div-Foto_Struk_EDC']//a[1]")
     private WebElement btn90Rotate1;
     @FindBy(xpath = "//form[@id='rotate_form1']//img")
@@ -141,6 +135,9 @@ public class VerifikasiPage {
     public void clickBtnAksi(){
         btnAksi.click();
     }
+    public void clickBtnAksi2(){
+        btnAksi2.click();
+    }
     public void clickBtnVerifikasi(){
         btnVerifikasi.click();
     }
@@ -169,9 +166,6 @@ public class VerifikasiPage {
         fotoBuktiTransaksi1.click();
     }
     public void clickChooseFile1(){
-        btnChooseFile1.click();
-    }
-    public void choosePhoto1Png(){
         btnChooseFile1.sendKeys("C:\\MyTools\\logo.png");
     }
     public void clickGantiFoto1(){
@@ -181,23 +175,19 @@ public class VerifikasiPage {
         fotoBuktiTransaksi2.click();
     }
     public void clickChooseFile2(){
-        btnChooseFile2.click();
-    }
-    public void choosePhotoJpeg(){
         btnChooseFile2.sendKeys("C:\\MyTools\\screenshot.jpeg");
+    }
+    public void clickGantiFoto2(){
+        btnGantiFoto2.click();
     }
     public void clickFotoBukti3(){
         fotoBuktiTransaksi3.click();
     }
     public void clickChooseFile3(){
-        btnChooseFile3.click();
         btnChooseFile3.sendKeys("C:\\MyTools\\logo.png");
     }
-    public void choosePhoto3Png(){
-        btnChooseFile3.sendKeys("C:\\MyTools\\logo.png");
-    }
-    public String txtErrorFoto(){
-        return txtTidakValidMenggantiFoto.getText();
+    public void clickGantiFoto3(){
+        btnGantiFoto3.click();
     }
     public void clickShowEntries(){
         dropdownShowEntries.click();
@@ -209,12 +199,24 @@ public class VerifikasiPage {
         return txtTabelMaks25.getText();
     }
     public void inputFieldNote(){
-        fieldNote.sendKeys("isi note disini");
+        fieldNote.sendKeys("note");
     }
     public void clickSaveNote(){
         btnSaveNote.click();
     }
+    public String setTxtIsiNote(){
+        return fieldNote.getText();
+    }
     public void deleteIsiNote(){
+    fieldNote.sendKeys(Keys.BACK_SPACE);
+        fieldNote.sendKeys(Keys.BACK_SPACE);
+        fieldNote.sendKeys(Keys.BACK_SPACE);
+        fieldNote.sendKeys(Keys.BACK_SPACE);
+        fieldNote.sendKeys(Keys.BACK_SPACE);
+        fieldNote.sendKeys(Keys.BACK_SPACE);
+        fieldNote.sendKeys(Keys.BACK_SPACE);
+        fieldNote.sendKeys(Keys.BACK_SPACE);
+        fieldNote.sendKeys(Keys.BACK_SPACE);
 
     }
     public void clickRotate90Bukti1(){

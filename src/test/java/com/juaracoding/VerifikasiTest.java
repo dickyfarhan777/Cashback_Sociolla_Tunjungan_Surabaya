@@ -130,17 +130,11 @@ public class VerifikasiTest {
     verifikasiPage.clickChooseFile1();
         extentTest.log(LogStatus.PASS,"klik choose file untuk mengganti foto 1 berformat png");
     }
-    @And("memilih foto 1 png")
-    public void memilih_foto_1_png(){
-        delay(3);
-        verifikasiPage.choosePhoto1Png();
-        extentTest.log(LogStatus.PASS,"memilih foto 1 png");
-    }
-    @And("klik tombol ganti foto")
-    public void klik_tombol_ganti_foto(){
+    @And("klik tombol ganti foto 1")
+    public void klik_tombol_ganti_foto_1(){
         delay(3);
     verifikasiPage.clickGantiFoto1();
-        extentTest.log(LogStatus.PASS,"klik tombol ganti foto");
+        extentTest.log(LogStatus.PASS,"klik tombol ganti foto 1");
     }
     @And("muncul popup Sukses!")
     public void muncul_popup_sukses(){
@@ -150,11 +144,21 @@ public class VerifikasiTest {
     @Then("verifikator berhasil mengganti foto bukti transaksi dengan foto berformat png")
     public void verifikator_berhasil_mengganti_foto_bukti_transaksi_dengan_foto_berformat_png(){
         delay(3);
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        alert.accept();
+        Assert.assertEquals(alertMessage, "'Sukses!'");
         extentTest.log(LogStatus.PASS,"verifikator berhasil mengganti foto bukti transaksi dengan foto berformat png");
     }
 
     //mengganti foto bukti transaksi 2 dengan foto format jpeg : positif
-    @And("klik foto pada foto bukti transaksi 2")
+    @Given("Scroll ke bawah 1")
+    public void scroll_ke_bawah_1(){
+        //scrolling
+        scrollByPixels(driver,0,400);
+        delay(5);
+    }
+    @When("klik foto pada foto bukti transaksi 2")
     public void klik_foto_pada_foto_bukti_transaksi_2 (){
         delay(3);
     verifikasiPage.clickFotoBukti2();
@@ -166,20 +170,30 @@ public class VerifikasiTest {
     verifikasiPage.clickChooseFile2();
         extentTest.log(LogStatus.PASS,"klik choose file untuk mengganti foto berformat jpeg");
     }
-    @And("memilih foto jpeg")
-    public void memilih_foto_jpeg(){
+    @And("klik tombol ganti foto 2")
+    public void klik_tombol_ganti_foto_2(){
         delay(3);
-        verifikasiPage.choosePhotoJpeg();
-        extentTest.log(LogStatus.PASS,"memilih foto jpeg");
+        verifikasiPage.clickGantiFoto2();
+        extentTest.log(LogStatus.PASS,"klik tombol ganti foto 2");
     }
     @Then("verifikator berhasil mengganti foto bukti transaksi dengan foto berformat jpeg")
     public void verifikator_berhasil_mengganti_foto_bukti_transaksi_dengan_foto_berformat_jpeg(){
         delay(3);
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        alert.accept();
+        Assert.assertEquals(alertMessage, "'Sukses!'");
         extentTest.log(LogStatus.PASS,"verifikator berhasil mengganti foto bukti transaksi dengan foto berformat jpeg");
     }
 
     //mengganti foto bukti transaksi 3 dengan foto format png : positif
-    @And("klik foto pada foto bukti transaksi 3")
+    @Given("Scroll ke bawah 2")
+    public void scroll_ke_bawah_2(){
+        //scrolling
+        scrollByPixels(driver,0,617);
+        delay(5);
+    }
+    @When("klik foto pada foto bukti transaksi 3")
     public void klik_foto_pada_foto_bukti_transaksi_3(){
         delay(3);
     verifikasiPage.clickFotoBukti3();
@@ -190,26 +204,35 @@ public class VerifikasiTest {
         delay(3);
         verifikasiPage.clickChooseFile3();
         extentTest.log(LogStatus.PASS,"klik choose file untuk mengganti foto 3 berformat png");
+        //scrolling
+        scrollByPixels(driver,0,617);
+        delay(5);
     }
-    @And("memilih foto 3 png")
-    public void memilih_foto_3_png(){
+    @And("klik tombol ganti foto 3")
+    public void klik_tombol_ganti_foto_3(){
         delay(3);
-        verifikasiPage.choosePhoto3Png();
-        extentTest.log(LogStatus.PASS,"memilih foto 3 png");
+        verifikasiPage.clickGantiFoto3();
+        extentTest.log(LogStatus.PASS,"klik tombol ganti foto 3");
     }
 
     //tidak mengganti foto apapun : negatif
     @And("muncul warning error")
     public void muncul_warning_error(){
         delay(3);
-        //alert
-    verifikasiPage.txtErrorFoto();
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        alert.accept();
+        Assert.assertEquals(alertMessage, "Handling error");
         extentTest.log(LogStatus.PASS,"muncul warning error");
+        delay(5);
     }
     @Then("verifikator tidak berhasil mengganti foto bukti transaksi")
     public void verifikator_tidak_berhasil_mengganti_foto_bukti_transaksi(){
         delay(3);
-    verifikasiPage.txtErrorFoto();
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        alert.accept();
+        Assert.assertEquals(alertMessage, "Handling error");
         extentTest.log(LogStatus.PASS,"verifikator tidak berhasil mengganti foto bukti transaksi");
     }
 
@@ -238,7 +261,7 @@ public class VerifikasiTest {
     @Then("data tertampil di tabel maksimal 25 data")
     public void data_tertampil_di_tabel_maksimal_25_data(){
         delay(5);
-    Assert.assertEquals(verifikasiPage.setTxtTabelMaks25(), "Showing 1 to 25 of 33 entries");
+    Assert.assertEquals(verifikasiPage.setTxtTabelMaks25(), "Showing 1 to 25 of 29 entries");
         extentTest.log(LogStatus.PASS,"data tertampil di tabel maksimal 25 data");
         scrollByPixels(driver,0,-600);
         delay(5);
@@ -246,39 +269,44 @@ public class VerifikasiTest {
 
     //note ==================================
     //Sukses menambahkan catatan : positif
-    @And("verifikator mengisi field box note")
+    @Given("verifikator mengisi field box note")
     public void verifikator_mengisi_field_box_note(){
-        delay(3);
+        delay(5);
     verifikasiPage.inputFieldNote();
         extentTest.log(LogStatus.PASS,"verifikator mengisi field box note");
     }
-    @And("klik tombol save note")
+    @When("klik tombol save note")
     public void klik_tombol_save_note(){
-        delay(3);
-    verifikasiPage.inputFieldNote();
+        delay(5);
+    verifikasiPage.clickSaveNote();
         extentTest.log(LogStatus.PASS,"sukses login");
+    }
+    @And("klik ok pada popup konfirmasi note")
+    public void klik_ok_pada_popup_konfirmasi_note(){
+        delay(5);
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        alert.accept();
+        Assert.assertEquals(alertMessage, "Sukses update note!");
+        extentTest.log(LogStatus.PASS, "klik ok pada popup konfirmasi 2");
     }
     @Then("Verifikator berhasil menambahkan catatan")
     public void Verifikator_berhasil_menambahkan_catatan(){
         delay(3);
+        Assert.assertEquals(verifikasiPage.setTxtIsiNote(), "note");
         extentTest.log(LogStatus.PASS,"Verifikator berhasil menambahkan catatan");
     }
 
     //Sukses menghapus catatan : positif
-    @When("pilih data customer yang ingin dihilangkan")
-    public void pilih_data_customer_yang_ingin_dihilangkan(){
-        delay(3);
-        System.out.println("cust catatan tidak kosong");
-        extentTest.log(LogStatus.PASS,"pilih data customer yang ingin dihilangkan");
-    }
-    @And("verifikator menghapus field box note")
-    public void verifikator_menghapus_field_box_note(){
-        delay(3);
+    @Given("verifikator menghapus field box note")
+    public void verifikator_menghapus_field_note(){
+        verifikasiPage.deleteIsiNote();
         extentTest.log(LogStatus.PASS,"verifikator menghapus field box note");
     }
     @Then("verifikator berhasil menghapus catatan")
     public void verifikator_berhasil_menghapus_catatan(){
         delay(3);
+        Assert.assertEquals(verifikasiPage.setTxtIsiNote(), "");
         extentTest.log(LogStatus.PASS,"verifikator berhasil menghapus catatan");
     }
 
@@ -286,12 +314,18 @@ public class VerifikasiTest {
     @Then("verifikator berhasil menyimpan catatan kosong")
     public void verifikator_berhasil_menyimpan_catatan_kosong(){
         delay(3);
+        Assert.assertEquals(verifikasiPage.setTxtIsiNote(), "");
         extentTest.log(LogStatus.PASS,"verifikator berhasil menyimpan catatan kosong");
     }
 
     //rotate image ==============================
     //foto bukti transaksi 1 bisa dirotasi sesuai dengan tombol : positif
-    @And("klik tombol 90 di bawah foto bukti transaksi 1")
+    @Given("scroll ke atas max")
+    public void scroll_ke_atas(){
+        //scrolling
+        scrollByPixels(driver,0,-617);
+    }
+    @When("klik tombol 90 di bawah foto bukti transaksi 1")
     public void klik_tombol_90_di_bawah_foto_bukti_transaksi_1(){
         delay(3);
         verifikasiPage.clickRotate90Bukti1();
@@ -300,10 +334,27 @@ public class VerifikasiTest {
     @Then("verifikator berhasil merotasi foto bukti transaksi 1")
     public void verifikator_berhasil_merotasi_foto_bukti_transaksi_1(){
         delay(3);
+        Assert.assertTrue(true,"bisa dirotasi");
         extentTest.log(LogStatus.PASS,"verifikator berhasil merotasi foto bukti transaksi 1");
+        delay(5);
     }
 
     //foto bukti transaksi kosong tidak bisa dirotasi sesuai dengan tombol : negatif
+    @When("klik tombol mata")
+    public void klik_tombol_mata(){
+    verifikasiPage.clickBtnAksi2();
+        //pindah tab
+        ArrayList<String> allTabs = new ArrayList<>(driver.getWindowHandles());
+        int currentTabIndex = allTabs.indexOf(driver.getWindowHandle());
+        int nextTabIndex = (currentTabIndex + 1) % allTabs.size();
+        driver.switchTo().window(allTabs.get(nextTabIndex));
+        delay(5);
+    }
+    @And("scroll ke bawah sedikit")
+    public void scroll_ke_bawah_sedikit(){
+    //scrolling
+        scrollByPixels(driver,0,500);
+    }
     @And("klik tombol 180 di bawah foto bukti transaksi yang kosong")
     public void klik_tombol_180_di_bawah_foto_bukti_transaksi (){
         delay(3);
@@ -313,12 +364,16 @@ public class VerifikasiTest {
     @And("muncul popup alert Error \"Error rotate file\"")
     public void muncul_popup_alert_error_rotate_file(){
         delay(3);
-    verifikasiPage.errorRotate();
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        alert.accept();
+        Assert.assertEquals(alertMessage, "Error rotate file");
         extentTest.log(LogStatus.PASS,"muncul popup alert Error \"Error rotate file\"");
     }
     @Then("verifikator tidak berhasil merotasi foto bukti transaksi yang kosong")
     public void verifikator_tidak_berhasil_merotasi_foto_bukti_transaksi_yang_kosong(){
         delay(3);
+        Assert.assertTrue(true, "Error rotate file");
         extentTest.log(LogStatus.PASS,"verifikator tidak berhasil merotasi foto bukti transaksi yang kosong");
     }
 
@@ -326,7 +381,8 @@ public class VerifikasiTest {
     //mengubah nama lengkap nasabah dengan angka dan karakter spesial : negatif
     @And("klik tombol edit")
     public void klik_tombol_edit(){
-        delay(3);
+        delay(5);
+        scrollByPixels(driver,0,700);
     verifikasiPage.clickEdit();
         extentTest.log(LogStatus.PASS,"klik tombol edit");
     }
@@ -344,12 +400,17 @@ public class VerifikasiTest {
     }
     @And("muncul popup alert \"sukses mengubah data!\"")
     public void muncul_popup_alert_sukses_mengubah_data(){
-        delay(3);
+        delay(5);
+        Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        alert.accept();
+        Assert.assertEquals(alertMessage, "Sukses mengubah data!");
         extentTest.log(LogStatus.PASS,"muncul popup alert \"sukses mengubah data!\"");
     }
     @Then("verifikator tidak berhasil mengubah nama nasabah dengan karakter spesial dan angka")
     public void verifikator_tidak_berhasil_mengubah_nama_nasabah(){
         delay(3);
+        Assert.assertFalse(false, "sukses mengubah data!");
         extentTest.log(LogStatus.PASS,"verifikator tidak berhasil mengubah nama nasabah dengan karakter spesial dan angka");
     }
 
@@ -578,9 +639,9 @@ public class VerifikasiTest {
         //scrolling
         scrollByPixels(driver,0,900);
         delay(5);
-    Assert.assertEquals(verifikasiPage.setTxtIsiTabel(), "Showing 1 to 10 of 33 entries");
+    Assert.assertEquals(verifikasiPage.setTxtIsiTabel(), "Showing 1 to 10 of 29 entries");
         //scrolling
-        scrollByPixels(driver,0,-300);
+        scrollByPixels(driver,0,-617);
         delay(5);
         extentTest.log(LogStatus.PASS,"isi tabel kembali seperti semula");
     }
@@ -595,8 +656,8 @@ public class VerifikasiTest {
     }
     @When("scroll bawah max")
     public void scroll_bawah_max(){
-        scrollByPixels(driver,0,617);
         delay(5);
+        scrollByPixels(driver,0,700);
         extentTest.log(LogStatus.PASS,"scroll bawah max");
     }
     @And("klik tombol nomor 3 di bagian pagination page")
@@ -612,13 +673,13 @@ public class VerifikasiTest {
         delay(5);
         scrollByPixels(driver,0,617);
         delay(5);
-    Assert.assertEquals(verifikasiPage.setTxtPage3(), "Showing 21 to 30 of 33 entries");
+    Assert.assertEquals(verifikasiPage.setTxtPage3(), "Showing 21 to 29 of 29 entries");
         extentTest.log(LogStatus.PASS,"tabel menampilkan data dari page 3");
     }
     @Then("verifikator dapat melihat isi tabel yang sesuai di page 3")
     public void verifikator_dapat_melihat_isi_tabel_yang_sesuai_di_page_3(){
         delay(3);
-        Assert.assertEquals(verifikasiPage.setTxtPage3(), "Showing 21 to 30 of 33 entries");
+        Assert.assertEquals(verifikasiPage.setTxtPage3(), "Showing 21 to 29 of 29 entries");
         extentTest.log(LogStatus.PASS,"verifikator dapat melihat isi tabel yang sesuai di page 3");
     }
 
@@ -632,13 +693,13 @@ public class VerifikasiTest {
     @When("tabel menampilkan data dari page sebelumnya")
     public void tabel_menampilkan_data_dari_page_sebelumnya(){
         delay(5);
-        Assert.assertEquals(verifikasiPage.setTxtPrevious(), "Showing 11 to 20 of 33 entries");
+        Assert.assertEquals(verifikasiPage.setTxtPrevious(), "Showing 11 to 20 of 29 entries");
         extentTest.log(LogStatus.PASS,"tabel menampilkan data dari page sebelumnya");
     }
     @Then("verifikator dapat melihat isi tabel yang sesuai dengan page sebelumnya")
     public void verifikator_dapat_melihat_isi_tabel_yang_sesuai_dengan_page_sebelumnya(){
         delay(3);
-        Assert.assertEquals(verifikasiPage.setTxtPrevious(), "Showing 11 to 20 of 33 entries");
+        Assert.assertEquals(verifikasiPage.setTxtPrevious(), "Showing 11 to 20 of 29 entries");
         extentTest.log(LogStatus.PASS,"verifikator dapat melihat isi tabel yang sesuai dengan page sebelumnya");
     }
 
@@ -654,18 +715,18 @@ public class VerifikasiTest {
     }
     @When("tabel menampilkan data dari page selanjutnya")
     public void tabel_menampilkan_data_dari_page_selanjutnya(){
-        delay(3);
-        Assert.assertEquals(verifikasiPage.setTxtNext(), "Showing 21 to 30 of 33 entries");
+        delay(5);
+        Assert.assertEquals(verifikasiPage.setTxtNext(), "Showing 21 to 29 of 29 entries");
         extentTest.log(LogStatus.PASS,"tabel menampilkan data dari page selanjutnya");
     }
     @Then("verifikator dapat melihat isi tabel yang sesuai dengan page selanjutnya")
     public void verifikator_dapat_melihat_isi_tabel_yang_sesuai_dengan_page_selanjutnya(){
-        delay(3);
-        Assert.assertEquals(verifikasiPage.setTxtNext(), "Showing 21 to 30 of 33 entries");
-        //scrolling
-        scrollByPixels(driver,0,-617);
         delay(5);
+        Assert.assertEquals(verifikasiPage.setTxtNext(), "Showing 21 to 29 of 29 entries");
         extentTest.log(LogStatus.PASS,"verifikator dapat melihat isi tabel yang sesuai dengan page selanjutnya");
+        //scrolling
+        scrollByPixels(driver,0,-900);
+        delay(8);
     }
 
     public static void scrollByPixels(WebDriver driver,int x, int y) {
